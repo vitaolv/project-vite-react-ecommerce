@@ -1,0 +1,15 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  background: #ededed;
+}
+
+.section-product {
+  width: 100%;
+  background-image: url("/assets/fundo-top.png");
+  background-repeat: repeat-x;
+}
+
+.section-product h2 {
+  padding-top: 4.5rem;
+}

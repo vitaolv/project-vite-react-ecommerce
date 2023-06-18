@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap");
+
+.color-nav {
+  background-color: #e3d98d;
+}
+
+a.nav-link {
+  color: #151515;
+  transition: 0.8s;
+}
+
+a.nav-link:hover {
+  box-shadow: 0 2px 0 #252525;
+}
+
+.logo {
+  font-family: "Libre Barcode 39 Text", cursive;
+  font-size: 34px !important;
+  font-weight: bold;
+  color: #212529 !important;
+}
+
+#seucarrinho {
+  padding: 12px 12px 12px 12px;
+  margin-right: 1rem;
+  border: 1px solid #151515;
+  border-radius: 50%;
+  font-weight: bold;
+  margin: 10px;
+  background-color: transparent;
+}
+
+#seucarrinho svg,
+#logar-conta svg {
+  width: 20px;
+  height: 20px;
+}
+
+#logar-conta {
+  background-color: transparent;
+  border: 1px solid #151515;
+  border-radius: 50%;
+  padding: 12px 12px 12px 12px;
+  margin-right: 2rem;
+  font-weight: bold;
+  margin: 10px;
+}
+
+#seucarrinho:hover,
+#logar-conta:hover {
+  background-color: #212529;
+  color: #f8f9fa;
+  transition: 0.24s ease-in-out;
+}
+
+.btn-outline-dark {
+  border-radius: 2rem;
+}

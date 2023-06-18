@@ -1,0 +1,153 @@
+.lateral-detalhe-produto {
+  padding-top: 1.5rem;
+  posision: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-button-contador-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8em;
+}
+
+#buttonAumentoOuDesfaz {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#buttonAumentoOuDesfaz button {
+  border-radius: 50%;
+  width: 30px;
+  background: #e3d98d;
+}
+
+#buttonAumentoOuDesfaz button:hover {
+  border-color: rgba(77, 77, 77, 77);
+  transition: 0.2s linear;
+  background: #424649;
+  color: #fff;
+}
+
+#buttonAumentoOuDesfaz button:active {
+  background: rgba(55, 55, 55, 55);
+  color: white;
+}
+
+.content-radio-colors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 1rem;
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label {
+  display: inline-block;
+  padding: 10px 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  border-color: black;
+  border: 3px solid black;
+}
+
+#radio-preto + label {
+  background-color: #181818;
+}
+
+#radio-branco + label {
+  background-color: #ffffff;
+}
+
+#radio-dourado + label {
+  background-color: #e3d98d;
+}
+
+#radio-roxo-profundo + label {
+  background-color: #8e6ed8;
+}
+
+.content-detalhe-produto {
+  display: flex;
+  posision: relative;
+}
+
+.lateral-detalhe-produto {
+  posision: relative;
+  margin: 1rem;
+  width: 100%;
+}
+
+.info-produto-com-foto {
+  width: 200%;
+  posision: relative;
+}
+
+.info-produto-com-foto p {
+  padding: 0rem 4rem 2rem 4rem;
+}
+
+.route-detali {
+  float: left;
+}
+
+.content-buttons-detali {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.button-comprar-agora {
+  color: black;
+  background-color: #e3d98d;
+  border-radius: 10px;
+}
+
+.button-adicionar-carrinho {
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+}
+
+.button-comprar-agora:hover,
+.button-adicionar-carrinho:hover {
+  background-color: #424649;
+  color: white;
+  transition: 0.3s background-color;
+  border-color: #000000;
+}
+
+.button-comprar-agora:active,
+.button-adicionar-carrinho:active {
+  background-color: #151515;
+  color: white;
+  transition: 0.3s background-color;
+  border-color: #000000;
+}
+
+#extra-vantagens {
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+#extra-vantagens span {
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}

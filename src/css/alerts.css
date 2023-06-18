@@ -1,0 +1,10 @@
+.alerta-sem-sucesso {
+  background-color: #ff9e9e;
+  color: #a32626;
+  border: 2px solid #a85d5d;
+  position: relative;
+  border-radius: 4px;
+  margin: 1rem;
+  align-text: center;
+  justify-content: center;
+}
