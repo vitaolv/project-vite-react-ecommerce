@@ -1,3 +1,8 @@
+.route-detali a {
+  text-decoration: underline dotted;
+  color: #242424;
+}
+
 .lateral-detalhe-produto {
   padding-top: 1.5rem;
   posision: relative;
@@ -150,4 +155,15 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+}
+
+.section-text-detali-product {
+  margin: 3rem 1rem 1rem 4rem;
+}
+
+.section-text-detali-product p {
+  padding: 0 20px 20px 20px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.75;
 }

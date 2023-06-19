@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "project-vite-react-ecommerce",
-=======
-  "name": "project-vite-and-react-ecommerce",
->>>>>>> 8e9e27d79c7992a63ae483e8e8f93f49f7be415b
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,6 +18,8 @@
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
+    "react-image-gallery": "^1.2.12",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.12.1",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",

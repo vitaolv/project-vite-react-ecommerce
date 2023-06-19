@@ -4,7 +4,7 @@ export const products = [
     name: "Cesta sonho dos chocólatras",
     priceBefore: 139.89,
     price: 129.99,
-    cover: "/assets/product1.png",
+    cover: ["/assets/product1.png"],
     availableColors: null,
     textDetali:
       " Seja feliz com esta cesta linda! \n \
@@ -26,7 +26,7 @@ export const products = [
     name: "Caixa de doce - 6 unidades",
     priceBefore: 41.2,
     price: 30.99,
-    cover: "/assets/product2.png",
+    cover: ["/assets/product2.png"],
     availableColors: null,
   },
   {
@@ -34,7 +34,7 @@ export const products = [
     name: "Caixa de bombons sortidos",
     priceBefore: 49.9,
     price: 24.9,
-    cover: "/assets/product3.png",
+    cover: ["/assets/product3.png"],
     availableColors: null,
   },
   {
@@ -42,13 +42,17 @@ export const products = [
     name: "Bombonier Chocolates",
     priceBefore: 164.9,
     price: 128.0,
-    cover: "/assets/product4.png",
-    availableColors: ["mista", "chocolate-70%", "chocolate-meio-amargo"],
+    cover: [
+      "/assets/product4-choco.png",
+      "/assets/product4-meioamargo.png",
+      "/assets/product4-mista.png",
+    ],
+    lableColors: ["mista", "chocolate-70%", "chocolate-meio-amargo"],
     textDetali:
       "O sabor do chocolate puro e das clássicas drágeas em uma bombonier recheada de sabor. \
         \nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
-        \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ. \
-        Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.Contém glúten.\n",
+        \n\n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
+        Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
   },
   {
     id: 5,
@@ -56,7 +60,7 @@ export const products = [
     priceBefore: 184.9,
     price: 148.0,
     availableColors: null,
-    cover: "/assets/product5.png",
+    cover: ["/assets/product5.png"],
   },
   {
     id: 6,
@@ -64,7 +68,7 @@ export const products = [
     priceBefore: 79.9,
     price: 62.0,
     availableColors: null,
-    cover: "/assets/product6.png",
+    cover: ["/assets/product6.png"],
   },
   {
     id: 7,
@@ -72,7 +76,7 @@ export const products = [
     priceBefore: 18.0,
     price: 13.4,
     availableColors: ["mista", "chocolate-70%", "chocolate-branco"],
-    cover: "/assets/product7.png",
+    cover: ["/assets/product7.png"],
   },
   {
     id: 8,
@@ -80,7 +84,7 @@ export const products = [
     priceBefore: 60.0,
     price: 52.2,
     availableColors: null,
-    cover: "/assets/product8.png",
+    cover: ["/assets/product8.png"],
   },
   {
     id: 9,
@@ -88,14 +92,14 @@ export const products = [
     priceBefore: 22.0,
     price: 18.2,
     availableColors: ["chocolate-70%", "chocolate-meio-amargo"],
-    cover: "/assets/product9.png",
+    cover: ["/assets/product9.png"],
   },
   {
     id: 10,
     name: "Barra de chocolate",
     priceBefore: 18.9,
     price: 15.4,
-    cover: "/assets/product10.png",
+    cover: ["/assets/product10.png"],
     availableColors: [
       "mista",
       "chocolate-70%",
@@ -111,7 +115,7 @@ export const products = [
     priceBefore: 19.9,
     price: 16.2,
     availableColors: ["chocolate-70%", "chocolate-branco"],
-    cover: "/assets/product11.png",
+    cover: ["/assets/product11.png"],
   },
   {
     id: 12,
@@ -119,7 +123,7 @@ export const products = [
     priceBefore: 14.9,
     price: 12.4,
     availableColors: ["chocolate-70%", "chocolate-branco"],
-    cover: "/assets/product12.png",
+    cover: ["/assets/product12.png"],
     textDetalli: "",
   },
 ];

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
 
@@ -19,18 +19,55 @@ export function SectionInfoProduct() {
         </React.Fragment>
       ))
     : null;
+
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
+  };
+
   return (
-    <div>
+    <>
+      <br />
       <p className="route-detali">
         <a href="/">Home</a> ⇒ {selectedProduct.name}
       </p>
-      <img
-        className="img-product"
-        src={selectedProduct.cover}
-        alt={selectedProduct.name}
-      ></img>
-      <h4>Informações do produto:</h4>
-      <p>{formattedTextDetali}</p>
-    </div>
+      <div className="section-info-product">
+        <div className="main-image-container">
+          <img
+            src={selectedProduct.cover[selectedImageIndex]}
+            alt={`${selectedProduct.name}-${selectedImageIndex}`}
+            className="main-image"
+            style={{
+              minWidth: "100px",
+              width: "100%",
+              maxWidth: "600px",
+            }}
+          />
+        </div>
+        <div className="slide-photos-container">
+          <div className="section-slide">
+            <div className="list-photos">
+              {selectedProduct.cover.map((cover, index) => (
+                <img
+                  key={index}
+                  src={cover}
+                  alt={`${selectedProduct.name}-${index}`}
+                  className={`slide-photo ${
+                    index === selectedImageIndex ? "active" : ""
+                  }`}
+                  onClick={() => handleImageClick(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="section-text-detali-product">
+          <hr />
+          <h4>Informações do produto:</h4>
+          <p>{formattedTextDetali}</p>
+        </div>
+      </div>
+    </>
   );
 }
