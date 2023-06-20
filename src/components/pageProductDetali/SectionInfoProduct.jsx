@@ -39,9 +39,11 @@ export function SectionInfoProduct() {
             alt={`${selectedProduct.name}-${selectedImageIndex}`}
             className="main-image"
             style={{
-              minWidth: "100px",
               width: "100%",
+              minWidth: "600px",
               maxWidth: "600px",
+              minHeight: "420px",
+              maxHeight: "420px",
             }}
           />
         </div>
