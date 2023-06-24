@@ -5,17 +5,17 @@ import { BsFillBoxSeamFill } from "react-icons/bs";
 export function AdvantageInformationIcons() {
   return (
     <div id="extra-vantagens">
-      <div>
+      <div id="compra-segura">
         <AiFillLock />
         <span>Compra segura.</span>
       </div>
-      <hr />
-      <div>
+      <div id="entrega-rapidez">
         <GiHandTruck />
-        <span>Enviado pela ToSweeten, alta qualidade e rapidez na entrega.</span>
+        <span>
+          Enviado pela ToSweeten, alta qualidade e rapidez na entrega.
+        </span>
       </div>
-      <hr />
-      <div>
+      <div className="termos=de-devolução">
         <BsFillBoxSeamFill />
         <span>Temos a política de devolução.</span>
       </div>

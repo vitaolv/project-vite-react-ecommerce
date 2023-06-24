@@ -1,8 +1,18 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { NotificationInfo } from "../AlertsNotifications";
 
-export function CheckboxColor({ onColorSelected }) {
+export function CheckboxColor({ onColorSelected, availableColors }) {
   const [corSelecionada, setCorSelecionada] = useState(null);
+
+  useEffect(() => {
+    if (availableColors && availableColors.length > 0) {
+      setCorSelecionada(availableColors[0]);
+      onColorSelected(availableColors[0]);
+    } else {
+      setCorSelecionada(null);
+    }
+  }, [availableColors]);
 
   const handleColorSelecionada = (event) => {
     const cor = event.target.value;
@@ -11,58 +21,41 @@ export function CheckboxColor({ onColorSelected }) {
   };
 
   return (
-    <div className='content-radio-colors'>
-      <div className="radio-group">
-        <input 
-          type="radio" 
-          id="radio-preto" 
-          name="color" 
-          value="Preto" 
-          checked={corSelecionada === 'Preto'}
-          onChange={handleColorSelecionada}
-          required
-        />
-        <label htmlFor="radio-preto"></label>
-
-        <input 
-          type="radio" 
-          id="radio-branco" 
-          name="color" 
-          value="Branco"
-          checked={corSelecionada === 'Branco'}
-          onChange={handleColorSelecionada}
-          required
-        />
-        <label htmlFor="radio-branco"></label>
-
-        <input 
-          type="radio" 
-          id="radio-dourado" 
-          name="color" 
-          value="Dourado"
-          checked={corSelecionada === 'Dourado'}
-          onChange={handleColorSelecionada}
-          required
-        />
-        <label htmlFor="radio-dourado"></label>
-
-        <input 
-          type="radio" 
-          id="radio-roxo-profundo" 
-          name="color" 
-          value="Roxo profundo" 
-          checked={corSelecionada === 'Roxo profundo'}
-          onChange={handleColorSelecionada}
-          required
-        />
-        <label htmlFor="radio-roxo-profundo"></label>
-      </div>
-
-      <h5>* Cor selecionada: {corSelecionada}</h5>
+    <div className="content-radio-colors">
+      {availableColors && availableColors.length > 0 ? (
+        <>
+          <h5>Selecione um sabor de chocolate:</h5>
+          <div className="radio-group">
+            {availableColors.map((color) => (
+              <React.Fragment key={color}>
+                <input
+                  type="radio"
+                  id={`radio-${color.toLowerCase().replace(/ /g, "-")}`}
+                  name="color"
+                  value={color}
+                  checked={corSelecionada === color}
+                  onChange={handleColorSelecionada}
+                  required
+                />
+                <label
+                  htmlFor={`radio-${color.toLowerCase().replace(/ /g, "-")}`}
+                />
+              </React.Fragment>
+            ))}
+          </div>
+          <h6>* Sabor selecionado: {corSelecionada}</h6>
+        </>
+      ) : (
+        <>
+          <h6>A escolha de sabor deste produto não está disponível.</h6>
+          <NotificationInfo mensagemInfo="Este produto contém sabores sortidos e brindes. Não é possivel escolher um sabor." />
+        </>
+      )}
     </div>
   );
 }
 
 CheckboxColor.propTypes = {
   onColorSelected: PropTypes.func.isRequired,
+  availableColors: PropTypes.arrayOf(PropTypes.string),
 };

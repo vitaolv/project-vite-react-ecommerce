@@ -34,18 +34,13 @@ export function SectionInfoProduct() {
       </p>
       <div className="section-info-product">
         <div className="main-image-container">
-          <img
-            src={selectedProduct.cover[selectedImageIndex]}
-            alt={`${selectedProduct.name}-${selectedImageIndex}`}
-            className="main-image"
-            style={{
-              width: "100%",
-              minWidth: "600px",
-              maxWidth: "600px",
-              minHeight: "420px",
-              maxHeight: "420px",
-            }}
-          />
+          <div className="main-image-wrapper">
+            <img
+              src={selectedProduct.cover[selectedImageIndex]}
+              alt={`${selectedProduct.name}-${selectedImageIndex}`}
+              className="main-image"
+            />
+          </div>
         </div>
         <div className="slide-photos-container">
           <div className="section-slide">

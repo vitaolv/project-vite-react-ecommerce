@@ -8,6 +8,14 @@
   posision: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.lateral-detalhe-produto hr {
+  width: 93%;
+  height: 1px;
+  border: 0px;
+  border-top: 1px solid #252525;
 }
 
 .content-button-contador-item {
@@ -27,6 +35,7 @@
   border-radius: 50%;
   width: 30px;
   background: #e3d98d;
+  border: 1px solid #dbdbdb;
 }
 
 #buttonAumentoOuDesfaz button:hover {
@@ -66,20 +75,24 @@
   border: 3px solid black;
 }
 
-#radio-preto + label {
-  background-color: #181818;
+#radio-chocolate-ao-leite + label {
+  background-color: #635340;
 }
 
-#radio-branco + label {
-  background-color: #ffffff;
+#radio-chocolate-branco + label {
+  background-color: #f7f3d0;
 }
 
-#radio-dourado + label {
-  background-color: #e3d98d;
+#radio-mista-chocolate-ao-leite-e-chocolate-branco + label {
+  background: linear-gradient(45deg, #f7f3d0 50%, #635340 50%);
 }
 
-#radio-roxo-profundo + label {
-  background-color: #8e6ed8;
+#radio-chocolate-meio-amargo + label {
+  background-color: #30291f;
+}
+
+#radio-chocolate-ruby + label {
+  background-color: #ff87af;
 }
 
 .content-detalhe-produto {
@@ -108,19 +121,24 @@
 
 .content-buttons-detali {
   display: flex;
+  width: 80%;
   flex-direction: column;
   gap: 0.7rem;
 }
 
 .button-comprar-agora {
   color: black;
+  border: none;
   background-color: #e3d98d;
+  padding: 0.5rem;
   border-radius: 10px;
 }
 
 .button-adicionar-carrinho {
   background-color: #fff;
+  padding: 0.5rem;
   color: black;
+  border: 1px solid #dbdbdb;
   border-radius: 10px;
 }
 
@@ -141,11 +159,10 @@
 }
 
 #extra-vantagens {
-  width: 100%;
   font-size: 30px;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 3px;
   justify-content: center;
 }
 
@@ -155,6 +172,12 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+}
+
+#entrega-rapidez,
+#compra-segura,
+#termos-de-devolucao {
+  width: 14rem;
 }
 
 .section-text-detali-product {

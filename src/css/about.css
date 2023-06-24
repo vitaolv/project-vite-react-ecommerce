@@ -3,6 +3,7 @@
   overflow: hidden;
   height: 100%;
   min-height: 20rem;
+  box-shadow: 0px 0px 25px 1px #252525;
 }
 
 .about h1 {

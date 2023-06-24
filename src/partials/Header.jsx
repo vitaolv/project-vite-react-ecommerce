@@ -19,9 +19,7 @@ export default function Header() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/#slider-container" title="Nossos produtos">
-              Nossos produtos
-            </Nav.Link>
+            <Nav.Link href="/#slider-container">Nossos produtos</Nav.Link>
             <Nav.Link href="/#content-card-about">Sobre nós</Nav.Link>
           </Nav>
 

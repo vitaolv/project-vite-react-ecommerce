@@ -31,7 +31,7 @@
 
 .slide-photo.active {
   opacity: 1;
-  border: 4px solid #242424;
+  border: 3px double #242424;
   border-radius: 9px;
 }
 
@@ -41,8 +41,23 @@
 }
 
 .main-image {
-  max-width: 100%;
-  height: auto;
+  width: 640px;
+  height: 480px;
+  object-fit: contain;
   border: 2px solid #252525;
   border-radius: 9px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-image {
+    max-width: 80%;
+  }
 }

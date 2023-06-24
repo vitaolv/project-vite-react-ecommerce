@@ -25,11 +25,13 @@
 
 .product-card {
   background-color: #fff;
-  border: 1px solid #e3d98d;
-  border-radius: 3px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
   padding: 2rem;
-  height: 560px;
+  height: 500px;
   align-text: center;
+  position: relative;
 }
 
 button.slick-prev:before,
@@ -64,32 +66,36 @@ button.slick-next:before {
 .card-body-action {
   text-align: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: grid;
   grid-template-rows: repeat(auto-fit, minmax(10px, 1fr));
+  margin-bottom: 10px;
 }
 
 .card-body-action .card-link {
   background-color: rgb(255, 255, 255);
+  padding: 10px;
   color: #252525;
   margin: 7px;
   width: 13rem;
-  border: 1px solid #252525;
+  border: 1px solid #dbdbdb;
   font-size: 16px;
-  font-weight: bolder;
-  border-radius: 2rem;
+  border-radius: 1rem;
   text-decoration: none;
 }
 
 .card-body-action .card-link-buy {
+  padding: 10px;
   background-color: #e3d98d;
   color: #252525;
   margin: 7px;
   width: 13rem;
-  border: 2px solid #252525;
+  border: 1px solid #e3d98d;
   font-size: 16px;
-  font-weight: bolder;
-  border-radius: 2rem;
+  border-radius: 1rem;
   text-decoration: none;
 }
 
@@ -99,4 +105,10 @@ button.slick-next:before {
   color: #e3d98d;
   transition: 0.24s ease-in-out;
   text-decoration: none;
+}
+
+.card-image-slick {
+  max-width: 130px;
+  max-height: 130px;
+  object-fit: contain;
 }

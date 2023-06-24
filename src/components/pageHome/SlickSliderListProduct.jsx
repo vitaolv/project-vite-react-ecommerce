@@ -33,8 +33,12 @@ export function SlickSliderListProduct() {
       <Slider {...settings}>
         {filteredProducts1.map((product) => (
           <div key={product.id} className="product-card">
-            <img src={product.cover[0]} alt={product.name} />
-            <h4>{product.name}</h4>
+            <img
+              src={product.cover[0]}
+              alt={product.name}
+              className="card-image-slick"
+            />
+            <h5>{product.name}</h5>
             <h5 style={{ textDecoration: "line-through" }}>
               {product.formattedPriceBefore}
             </h5>
@@ -77,8 +81,12 @@ export function SlickSliderListProduct() {
       <Slider {...settings}>
         {filteredProducts2.map((product) => (
           <div key={product.id} className="product-card">
-            <img src={product.cover[0]} alt={product.name} />
-            <h4>{product.name}</h4>
+            <img
+              src={product.cover[0]}
+              alt={product.name}
+              className="card-image-slick"
+            />
+            <h5>{product.name}</h5>
             <h5 style={{ textDecoration: "line-through" }}>
               {product.formattedPriceBefore}
             </h5>

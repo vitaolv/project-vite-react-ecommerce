@@ -68,7 +68,11 @@ export const products = [
       "/assets/product4-meioamargo.png",
       "/assets/product4-mista.png",
     ],
-    lableColors: ["mista", "chocolate-70%", "chocolate-meio-amargo"],
+    availableColors: [
+      "Chocolate ao leite",
+      "Chocolate meio amargo",
+      "Mista chocolate ao leite e chocolate branco",
+    ],
     textDetali:
       "O sabor do chocolate puro e das clássicas drágeas em uma bombonier recheada de sabor. \
         \nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
@@ -80,7 +84,12 @@ export const products = [
     name: "Trufas chocolates douradas - 20 unidades ",
     priceBefore: 184.9,
     price: 148.0,
-    availableColors: ["chocolate-70%", "chocolate-meio-amargo"],
+    availableColors: [
+      "Mista chocolate ao leite e chocolate branco",
+      "Chocolate ao leite",
+      "Chocolate branco",
+      "Chocolate meio amargo",
+    ],
     textDetali:
       "Embalagem dourada com decoração em laço contendo 20 deliciosas trufas com a folha da árvore Plátanos, nossa marca. \n\
       Disponível em diversos sabores. Uma das nossas embalagens mais solicitadas. \n\
@@ -110,10 +119,14 @@ export const products = [
     name: "Ovo com brinde surpresa - 2 unidades",
     priceBefore: 21.39,
     price: 15.79,
-    availableColors: ["mista", "chocolate-70%", "chocolate-branco"],
+    availableColors: [
+      "Mista chocolate ao leite e chocolate branco",
+      "Chocolate ao leite",
+      "Chocolate branco",
+    ],
     textDetali:
       "Características:\n\
-      A textura macia do marshmallow tradicional coberto com chocolate ao leite, chocolate branco ou chocolate mista (branco e preto).\n\
+      A textura macia do marshmallow tradicional coberto com chocolate ao leite, chocolate branco ou chocolate Mista chocolate ao leite e chocolate branco (branco e preto).\n\
       - Porção de 38g (2 unidades) \n\
     \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
@@ -125,7 +138,11 @@ export const products = [
     name: "Caneca com trufas",
     priceBefore: 78.0,
     price: 64.2,
-    availableColors: ["chocolate-70%", "chocolate-branco", "mista"],
+    availableColors: [
+      "Chocolate ao leite",
+      "Chocolate branco",
+      "Mista chocolate ao leite e chocolate branco",
+    ],
     textDetali:
       "Uma caneca com bombons (por 30G), uma lembrança perfeita para a pessoa que você ama.\n\
     \nIngredientes:\n\
@@ -142,7 +159,7 @@ export const products = [
     name: "Barra de chocolate Ruby com fruta vermelha",
     priceBefore: 22.0,
     price: 18.2,
-    availableColors: ["chocolate-fruta-vermelha"],
+    availableColors: ["Chocolate ruby"],
     textDetali:
       "O Ruby é um chocolate produzido com grãos de cacau especiais que possuem um tom rosa claro natural.\n" +
       "E muito diferente dos demais tipos de chocolate, é frutado, predominantemente de frutas vermelhas.\n\n" +
@@ -160,16 +177,16 @@ export const products = [
       "/assets/product10.png",
       "/assets/product10-white.png",
       "/assets/product10-mista.png",
-      "/assets/product10-meio-amargo",
+      "/assets/product10-meio-amargo.png",
     ],
     availableColors: [
-      "mista",
-      "chocolate-70%",
-      "chocolate-branco",
-      "chocolate-meio-amargo",
+      "Chocolate ao leite",
+      "Chocolate branco",
+      "Mista chocolate ao leite e chocolate branco",
+      "Chocolate meio amargo",
     ],
     textDetali:
-      "CHOCOLATE 70% CACAU: A barra 70% é rica em antioxidantes e com maior concentração de derivados de cacau.\n" +
+      "Chocolate ao leite: A barra 70% é rica em antioxidantes e com maior concentração de derivados de cacau.\n" +
       "Não contém gordura trans e é benéfico para a saúde do coração.\n" +
       "Ingredientes:" +
       "Massa de cacau, açúcar, manteiga de cacau, leite em pó integral, avelã, cacau em pó, xarope de glicose, castanha do pará,\n" +
@@ -187,7 +204,7 @@ export const products = [
     name: "Pirulito de chocolate",
     priceBefore: 19.9,
     price: 16.2,
-    availableColors: ["chocolate-70%", "chocolate-branco"],
+    availableColors: ["Chocolate ao leite", "Chocolate branco"],
     textDetali:
       " Ingredientes: chocolate branco (açúcar, manteiga de cacau, leite em pó integral, emulsificantes lecitina de soja e INS 476 e aromatizante)" +
       "e confeitos de chocolate (açúcar, gordura vegetal fracionada, cacau em pó, óleo de palmíste, soro de leite em pó, massa de cacau," +
@@ -203,7 +220,7 @@ export const products = [
     name: "Barra de Brownie",
     priceBefore: 14.9,
     price: 12.4,
-    availableColors: ["chocolate-70%", "chocolate-branco"],
+    availableColors: ["Chocolate ao leite", "Chocolate branco"],
     cover: ["/assets/product12.jpg", "/assets/product12-white.jpg"],
     textDetali:
       "Barrinha de chocolate com recheio e brownie \
