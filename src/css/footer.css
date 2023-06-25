@@ -1,5 +1,5 @@
 .content-card {
-  background-color: #242424;
+  background-color: #252525;
   padding-top: 0.5rem;
   text-align: center;
   box-shadow: 0px 0px 30px 1px #252525;
@@ -7,14 +7,62 @@
 }
 
 .card-body {
-  display: grid;
-  justify-content: space-around;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
-  margin: 2rem;
+  margin: 1rem 1rem 2rem 2rem;
   align-items: center;
   text-align: center;
   color: #fff;
+  flex-basis: calc(33.33% - 2rem);
+}
+
+@media screen and (max-width: 768px) {
+  .card-body {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card-body {
+    flex-basis: calc(100% - 2rem);
+  }
+}
+.links-helps {
+  background-color: #e3d98d;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  color: #252525;
+  padding: 20px;
+  width: 340px;
+}
+
+#list-link-social {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.link-social {
+  background-color: #e3d98d;
+  border-radius: 30px;
+  color: #252525;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  width: 340px;
+}
+
+.links-map {
+  background-color: #e3d98d;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  color: #252525;
+  padding: 20px;
+  width: 340px;
 }
 
 .logo-footer {
@@ -44,4 +92,25 @@
 .assinatura:hover {
   transition: 0.6s;
   color: #fff;
+}
+
+#link-facebook,
+#link-twitter,
+#link-linkedin,
+#link-instagram {
+  border: 1px solid #252525;
+  font-size: 19px;
+  border-radius: 18px;
+  padding: 10px;
+  width: 60px;
+  transtion: 2s ease-in-out;
+}
+
+#link-facebook:hover,
+#link-twitter:hover,
+#link-linkedin:hover,
+#link-instagram:hover {
+  background-color: #252525;
+  color: #fff;
+  transtion: 2s background-color ease-in;
 }
