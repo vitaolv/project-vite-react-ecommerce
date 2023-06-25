@@ -36,6 +36,7 @@
   color: #252525;
   padding: 20px;
   width: 340px;
+  height: 160px;
 }
 
 #list-link-social {
@@ -54,6 +55,7 @@
   align-items: center;
   text-align: center;
   width: 340px;
+  height: 160px;
 }
 
 .links-map {
@@ -63,6 +65,7 @@
   color: #252525;
   padding: 20px;
   width: 340px;
+  height: 160px;
 }
 
 .logo-footer {
@@ -113,4 +116,9 @@
   background-color: #252525;
   color: #fff;
   transtion: 2s background-color ease-in;
+}
+
+.link-social svg {
+  width: 30px;
+  height: 30px;
 }
