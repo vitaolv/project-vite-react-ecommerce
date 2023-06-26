@@ -6,10 +6,11 @@
 
 .section-product {
   width: 100%;
-  background-image: url("/assets/fundo-top.png");
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
   background-repeat: repeat-x;
 }
 
 .section-product h2 {
-  padding-top: 4.5rem;
+  padding-top: 7%;
 }

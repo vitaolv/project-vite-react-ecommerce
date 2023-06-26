@@ -15,7 +15,7 @@ export function AdvantageInformationIcons() {
           Enviado pela ToSweeten, alta qualidade e rapidez na entrega.
         </span>
       </div>
-      <div className="termos=de-devolução">
+      <div id="termos-de-devolucao">
         <BsFillBoxSeamFill />
         <span>Temos a política de devolução.</span>
       </div>

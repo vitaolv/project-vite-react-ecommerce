@@ -51,7 +51,6 @@ export function ProductDetali() {
         <div className="info-produto-com-foto">
           <SectionInfoProduct />
         </div>
-        <hr />
         <aside className="lateral-detalhe-produto">
           <ValorDoProduto />
           <hr />

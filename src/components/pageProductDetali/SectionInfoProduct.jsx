@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
 
@@ -10,15 +10,6 @@ export function SectionInfoProduct() {
       product.id === parseInt(id) &&
       product.name.toLowerCase() === nome.toLowerCase()
   );
-
-  const formattedTextDetali = selectedProduct.textDetali
-    ? selectedProduct.textDetali.split("\n").map((line, index) => (
-        <React.Fragment key={index}>
-          {line}
-          <br />
-        </React.Fragment>
-      ))
-    : null;
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -58,11 +49,6 @@ export function SectionInfoProduct() {
               ))}
             </div>
           </div>
-        </div>
-        <div className="section-text-detali-product">
-          <hr />
-          <h4>Informações do produto:</h4>
-          <p>{formattedTextDetali}</p>
         </div>
       </div>
     </>

@@ -3,37 +3,18 @@
   overflow: hidden;
   height: 100%;
   min-height: 20rem;
-  box-shadow: 0px 0px 25px 1px #252525;
 }
 
 .about h1 {
   font-size: 2.2rem;
 }
 
-.image-overlay {
-  position: relative;
-  height: 100%;
-  min-height: 20rem;
-}
-
-.image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: repeat;
-  z-index: 1;
-  min-height: 20rem;
-}
-
 .content-card-about {
   position: relative;
   z-index: 2;
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: white;
-  min-height: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,4 +28,5 @@
   backdrop-filter: blur(7px);
   background: rgb(37, 37, 37, 0.7);
   border-radius: 16px;
+  box-shadow: 0px 0px 25px 1px #252525;
 }

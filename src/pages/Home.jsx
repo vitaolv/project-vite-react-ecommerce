@@ -1,6 +1,5 @@
 import { SlickSliderListProduct } from "../components/pageHome/SlickSliderListProduct";
 import { ControlCarousel } from "../components/pageHome/controlCarousel";
-import fundoSobreNos from "/assets/fundo-sobre-nos.png";
 
 export default function Home() {
   return (
@@ -37,10 +36,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div
-            className="image"
-            style={{ backgroundImage: `url(${fundoSobreNos})` }}
-          ></div>
         </div>
       </section>
     </div>
