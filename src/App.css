@@ -4,6 +4,10 @@
   background: #ededed;
 }
 
+body {
+  margin: 20px;
+}
+
 .section-product {
   width: 100%;
   background-image: url("/assets/img-header.svg");

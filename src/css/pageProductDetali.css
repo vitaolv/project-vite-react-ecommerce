@@ -1,3 +1,8 @@
+.route-detali {
+  margin: 1rem;
+  padding-left: 1rem;
+}
+
 .route-detali a {
   text-decoration: underline dotted;
   color: #242424;
@@ -6,20 +11,52 @@
 .content-detalhe-produto {
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  align-items: center;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .content-detalhe-produto {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section-text-detali-product {
+  grid-column: 1 / -1;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-text-detali-product p {
+  padding: 0 20px 20px 20px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.75;
+  align-items: center;
+  text-align: center;
 }
 
 .info-produto-com-foto {
   width: 100% !important;
-  padding-left: 5rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .lateral-detalhe-produto {
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  padding: 5rem 5rem 0 5rem;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .lateral-detalhe-produto hr {
@@ -161,11 +198,8 @@
 #extra-vantagens {
   font-size: 30px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-basis: calc(33.33% - 2rem);
   width: 90%;
   gap: 2rem;
@@ -175,7 +209,7 @@
   font-size: 15px;
   display: flex;
   flex-direction: row;
-  width: 95px;
+  width: 94px;
 }
 
 @media screen and (max-width: 768px) {
@@ -188,15 +222,4 @@
   .card-body {
     flex-basis: calc(100% - 2rem);
   }
-}
-
-.section-text-detali-product {
-  margin: 3rem 1rem 1rem 4rem;
-}
-
-.section-text-detali-product p {
-  padding: 0 20px 20px 20px;
-  margin: 0 auto;
-  font-size: 17px;
-  line-height: 1.75;
 }

@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-export function SectionInfoProduct() {
-  const products = useProductContext();
-  const { id, nome } = useParams();
-  const selectedProduct = products.find(
+export function SectionInfoProduct({ name, id }) {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const product = useProductContext();
+
+  const selectedProduct = product.find(
     (product) =>
       product.id === parseInt(id) &&
-      product.name.toLowerCase() === nome.toLowerCase()
+      product.name.toLowerCase() === name.toLowerCase()
   );
-
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
@@ -20,9 +20,6 @@ export function SectionInfoProduct() {
   return (
     <>
       <br />
-      <p className="route-detali">
-        <a href="/">Home</a> ⇒ {selectedProduct.name}
-      </p>
       <div className="section-info-product">
         <div className="main-image-container">
           <div className="main-image-wrapper">
@@ -54,3 +51,8 @@ export function SectionInfoProduct() {
     </>
   );
 }
+
+SectionInfoProduct.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

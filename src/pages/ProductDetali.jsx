@@ -9,6 +9,7 @@ import { AdvantageInformationIcons } from "../components/pageProductDetali/Advan
 import { useProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
 import { NotificationSuccess } from "../components/AlertsNotifications";
+import { TextDetaliProduct } from "../components/pageProductDetali/TextDetaliProduct";
 
 export function ProductDetali() {
   const [corSelecionada, setCorSelecionada] = useState("");
@@ -47,12 +48,18 @@ export function ProductDetali() {
 
   return (
     <div>
+      <p className="route-detali">
+        <a href="/">Home</a> ⇒ {selectedProduct.name}
+      </p>
       <div className="content-detalhe-produto">
         <div className="info-produto-com-foto">
-          <SectionInfoProduct />
+          <SectionInfoProduct
+            name={selectedProduct.name}
+            id={selectedProduct.id}
+          />
         </div>
         <aside className="lateral-detalhe-produto">
-          <ValorDoProduto />
+          <ValorDoProduto name={selectedProduct.name} id={selectedProduct.id} />
           <hr />
           <Contador />
           <hr />
@@ -67,6 +74,10 @@ export function ProductDetali() {
           <br />
           <AdvantageInformationIcons />
         </aside>
+        <TextDetaliProduct
+          name={selectedProduct.name}
+          id={selectedProduct.id}
+        />
       </div>
       <div className={`notification-container ${showSuccess ? "show" : ""}`}>
         {showSuccess && (

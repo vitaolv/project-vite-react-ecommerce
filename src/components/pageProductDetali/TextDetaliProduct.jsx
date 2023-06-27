@@ -1,13 +1,13 @@
-import React, { useParams } from "react";
+import PropTypes from "prop-types";
+import React from "react";
 import { useProductContext } from "../../context/ProductContext";
 
-export function textDetaliProduct() {
+export function TextDetaliProduct({ name, id }) {
   const products = useProductContext();
-  const { id, nome } = useParams();
   const selectedProduct = products.find(
     (product) =>
       product.id === parseInt(id) &&
-      product.name.toLowerCase() === nome.toLowerCase()
+      product.name.toLowerCase() === name.toLowerCase()
   );
 
   const formattedTextDetali = selectedProduct.textDetali
@@ -27,3 +27,8 @@ export function textDetaliProduct() {
     </div>
   );
 }
+
+TextDetaliProduct.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

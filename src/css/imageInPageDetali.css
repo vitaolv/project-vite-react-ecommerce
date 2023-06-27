@@ -1,5 +1,6 @@
 .slide-photos-container {
   margin-top: 20px;
+  position: relative;
 }
 
 .section-slide {

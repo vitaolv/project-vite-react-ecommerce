@@ -1,14 +1,13 @@
+import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
-import { useParams } from "react-router-dom";
 
-export function ValorDoProduto() {
+export function ValorDoProduto({ name, id }) {
   const product = useProductContext();
-  const { id, nome } = useParams();
 
   const selectedProduct = product.find(
     (product) =>
       product.id === parseInt(id) &&
-      product.name.toLowerCase() === nome.toLowerCase()
+      product.name.toLowerCase() === name.toLowerCase()
   );
 
   return (
@@ -21,3 +20,8 @@ export function ValorDoProduto() {
     </div>
   );
 }
+
+ValorDoProduto.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
