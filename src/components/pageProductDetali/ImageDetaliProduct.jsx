@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
@@ -25,6 +25,12 @@ export function ImageDetaliProduct({ name, id }) {
         return prevIndex - 1;
       }
     });
+
+    const listPhotosElement = document.querySelector(".list-photos");
+    listPhotosElement.scrollTo({
+      left: listPhotosElement.scrollLeft - 20, // Valor do deslocamento em pixels
+      behavior: "smooth", // Deslocamento suave
+    });
   };
 
   const nextSlide = () => {
@@ -35,10 +41,16 @@ export function ImageDetaliProduct({ name, id }) {
         return prevIndex + 1;
       }
     });
+
+    const listPhotosElement = document.querySelector(".list-photos");
+    listPhotosElement.scrollTo({
+      left: listPhotosElement.scrollLeft + 20, // Valor do deslocamento em pixels
+      behavior: "smooth", // Deslocamento suave
+    });
   };
 
   const shouldRenderArrows = selectedProduct.cover.length > 3;
-
+  const listPhotosRef = useRef(null);
   const renderPhotos = () => {
     return selectedProduct.cover.map((cover, index) => (
       <img
@@ -68,14 +80,16 @@ export function ImageDetaliProduct({ name, id }) {
         </div>
         <div className="slide-photos-container">
           <div className="section-slide">
-            <div className="list-photos">{renderPhotos()}</div>
+            <div className="list-photos" ref={listPhotosRef}>
+              {renderPhotos()}
+            </div>
           </div>
           {shouldRenderArrows && (
             <>
-              <button id="prev-slide-detali" onClick={() => prevSlide()}>
+              <button id="prev-slide-detali" onClick={prevSlide}>
                 ❮
               </button>
-              <button id="next-slide-detali" onClick={() => nextSlide()}>
+              <button id="next-slide-detali" onClick={nextSlide}>
                 ❯
               </button>
             </>
