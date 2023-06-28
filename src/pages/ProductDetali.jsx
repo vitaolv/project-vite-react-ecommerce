@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { CheckboxColor } from "../components/pageProductDetali/CheckboxColor";
 import { ButtonDetalheProduto } from "../components/pageProductDetali/ButtonDetalheProduto";
-import { SectionInfoProduct } from "../components/pageProductDetali/SectionInfoProduct";
+import { ImageDetaliProduct } from "../components/pageProductDetali/ImageDetaliProduct";
 import { ValorDoProduto } from "../components/pageProductDetali/ValorDoProduto";
 import { Contador } from "../components/pageProductDetali/Contador";
 import { AdvantageInformationIcons } from "../components/pageProductDetali/AdvantageInformationIcons";
@@ -53,7 +53,7 @@ export function ProductDetali() {
       </p>
       <div className="content-detalhe-produto">
         <div className="info-produto-com-foto">
-          <SectionInfoProduct
+          <ImageDetaliProduct
             name={selectedProduct.name}
             id={selectedProduct.id}
           />

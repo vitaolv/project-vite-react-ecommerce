@@ -69,7 +69,9 @@ export default function Header() {
               className="me-2"
               aria-label="Buscar"
             />
-            <Button variant="dark">Buscar</Button>
+            <Button variant="warning" className="custom-search-button">
+              Buscar
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>

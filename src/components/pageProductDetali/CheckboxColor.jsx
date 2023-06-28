@@ -48,7 +48,7 @@ export function CheckboxColor({ onColorSelected, availableColors }) {
       ) : (
         <>
           <h6>A escolha de sabor deste produto não está disponível.</h6>
-          <NotificationInfo mensagemInfo="Este produto contém sabores sortidos e brindes. Não é possivel escolher um sabor." />
+          <NotificationInfo mensagemInfo="Este produto contém sabores sortidos. Não é possivel escolher um sabor." />
         </>
       )}
     </div>

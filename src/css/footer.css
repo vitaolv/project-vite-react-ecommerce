@@ -117,8 +117,8 @@
 #link-twitter:hover,
 #link-linkedin:hover,
 #link-instagram:hover {
-  background-color: #252525;
-  color: #fff;
+  background-color: #382a21;
+  color: #e3d98d;
   transtion: 2s background-color ease-in;
 }
 

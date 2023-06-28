@@ -22,10 +22,10 @@ a.nav-link:hover {
 }
 
 #seucarrinho {
-  padding: 12px 12px 12px 12px;
+  padding: 12px 45px 12px 12px;
   margin-right: 1rem;
   border: 1px solid #151515;
-  border-radius: 50%;
+  border-radius: 20px;
   font-weight: bold;
   margin: 10px;
   background-color: transparent;
@@ -40,7 +40,7 @@ a.nav-link:hover {
 #logar-conta {
   background-color: transparent;
   border: 1px solid #151515;
-  border-radius: 50%;
+  border-radius: 18px;
   padding: 12px 12px 12px 12px;
   margin-right: 2rem;
   font-weight: bold;
@@ -49,11 +49,24 @@ a.nav-link:hover {
 
 #seucarrinho:hover,
 #logar-conta:hover {
-  background-color: #212529;
-  color: #f8f9fa;
+  background-color: #382a21;
+  color: #e3d98d;
   transition: 0.24s ease-in-out;
 }
 
 .btn-outline-dark {
   border-radius: 2rem;
+}
+
+.custom-search-button {
+  background-color: #e3d98d !important;
+  border-color: #e3d98d !important;
+  color: #151515 !important;
+  border-radius: 12px !important;
+  border: 1px solid #151515 !important;
+}
+
+.custom-search-button:hover {
+  background-color: #382a21 !important;
+  color: #e3d98d !important;
 }

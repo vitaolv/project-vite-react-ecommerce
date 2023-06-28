@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-export function SectionInfoProduct({ name, id }) {
+export function ImageDetaliProduct({ name, id }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const product = useProductContext();
@@ -52,7 +52,7 @@ export function SectionInfoProduct({ name, id }) {
   );
 }
 
-SectionInfoProduct.propTypes = {
+ImageDetaliProduct.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
