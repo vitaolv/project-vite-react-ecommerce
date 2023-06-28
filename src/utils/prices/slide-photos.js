@@ -5,6 +5,7 @@ const nextButtom = document.querySelector(".next-buttom");
 let slidePosition = 0;
 
 const slideCount = slider.children.length;
+const slideWidth = slider.offsetWidth;
 
 prevButton.addEventListener("click", () => {
   slidePosition--;
@@ -23,4 +24,5 @@ nextButtom.addEventListener("click", () => {
 
 function updateSlidePosition() {
   slider.computedStyleMap.transform = `translateX(=${slidePosition * 100}%)`;
+  slider.scrollLeft = slidePosition * slideWidth;
 }

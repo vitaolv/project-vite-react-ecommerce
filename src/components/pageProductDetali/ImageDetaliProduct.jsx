@@ -17,6 +17,42 @@ export function ImageDetaliProduct({ name, id }) {
     setSelectedImageIndex(index);
   };
 
+  const prevSlide = () => {
+    setSelectedImageIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        return selectedProduct.cover.length - 1;
+      } else {
+        return prevIndex - 1;
+      }
+    });
+  };
+
+  const nextSlide = () => {
+    setSelectedImageIndex((prevIndex) => {
+      if (prevIndex === selectedProduct.cover.length - 1) {
+        return 0;
+      } else {
+        return prevIndex + 1;
+      }
+    });
+  };
+
+  const shouldRenderArrows = selectedProduct.cover.length > 3;
+
+  const renderPhotos = () => {
+    return selectedProduct.cover.map((cover, index) => (
+      <img
+        key={index}
+        src={cover}
+        alt={`${selectedProduct.name}-${index}`}
+        className={`slide-photo ${
+          index === selectedImageIndex ? "active" : ""
+        }`}
+        onClick={() => handleImageClick(index)}
+      />
+    ));
+  };
+
   return (
     <>
       <br />
@@ -32,20 +68,18 @@ export function ImageDetaliProduct({ name, id }) {
         </div>
         <div className="slide-photos-container">
           <div className="section-slide">
-            <div className="list-photos">
-              {selectedProduct.cover.map((cover, index) => (
-                <img
-                  key={index}
-                  src={cover}
-                  alt={`${selectedProduct.name}-${index}`}
-                  className={`slide-photo ${
-                    index === selectedImageIndex ? "active" : ""
-                  }`}
-                  onClick={() => handleImageClick(index)}
-                />
-              ))}
-            </div>
+            <div className="list-photos">{renderPhotos()}</div>
           </div>
+          {shouldRenderArrows && (
+            <>
+              <button id="prev-slide-detali" onClick={() => prevSlide()}>
+                ❮
+              </button>
+              <button id="next-slide-detali" onClick={() => nextSlide()}>
+                ❯
+              </button>
+            </>
+          )}
         </div>
       </div>
     </>

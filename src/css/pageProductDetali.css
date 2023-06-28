@@ -80,21 +80,22 @@
 }
 
 #buttonAumentoOuDesfaz button {
-  border-radius: 50%;
+  border-radius: 8px;
   width: 30px;
   background: #e3d98d;
   border: 1px solid #dbdbdb;
+  font-weight: bold;
 }
 
 #buttonAumentoOuDesfaz button:hover {
   border-color: rgba(77, 77, 77, 77);
   transition: 0.2s linear;
-  background: #424649;
-  color: #fff;
+  background-color: #252525;
+  color: #e3d98d;
 }
 
 #buttonAumentoOuDesfaz button:active {
-  background: rgba(55, 55, 55, 55);
+  background: #382a21;
   color: white;
 }
 
