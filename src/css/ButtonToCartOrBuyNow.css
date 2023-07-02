@@ -1,0 +1,40 @@
+.content-buttons-detali {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.button-comprar-agora {
+  color: black;
+  border: none;
+  background-color: #e3d98d;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.button-adicionar-carrinho {
+  background-color: #fff;
+  padding: 0.5rem;
+  color: black;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+}
+
+.button-comprar-agora:hover,
+.button-adicionar-carrinho:hover {
+  background-color: #424649;
+  color: white;
+  transition: 0.3s background-color;
+  border-color: #000000;
+}
+
+.button-comprar-agora:active,
+.button-adicionar-carrinho:active {
+  background-color: #151515;
+  color: white;
+  transition: 0.3s background-color;
+  border-color: #000000;
+}

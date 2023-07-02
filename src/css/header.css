@@ -22,13 +22,15 @@ a.nav-link:hover {
 }
 
 #seucarrinho {
-  padding: 12px 45px 12px 12px;
+  padding: 12px 12px 12px 12px;
   margin-right: 1rem;
   border: 1px solid #151515;
   border-radius: 20px;
   font-weight: bold;
   margin: 10px;
   background-color: transparent;
+  position: relative;
+  color: #252525;
 }
 
 #seucarrinho svg,
@@ -69,4 +71,20 @@ a.nav-link:hover {
 .custom-search-button:hover {
   background-color: #382a21 !important;
   color: #e3d98d !important;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #382a21;
+  color: #e3d98d;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

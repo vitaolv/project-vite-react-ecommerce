@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 import { NotificationSuccess } from "../components/AlertsNotifications";
 import { TextDetaliProduct } from "../components/pageProductDetali/TextDetaliProduct";
 
-export function ProductDetali() {
+export default function ProductDetali() {
   const [corSelecionada, setCorSelecionada] = useState("");
   const [showSuccess, setShowSucess] = useState(false);
   const products = useProductContext();

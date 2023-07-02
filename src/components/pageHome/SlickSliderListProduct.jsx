@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import { Link, useLocation } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
+import { ButtonToCartOrBuyNow } from "../ButtonToCartOrBuyNow";
 
 export function SlickSliderListProduct() {
   const settings = {
@@ -37,14 +38,11 @@ export function SlickSliderListProduct() {
   const produtosFormatados = useProductContext();
 
   const location = useLocation();
-
-  // Divide os produtos em duas listas diferentes para os slides
-  const filteredProducts1 = produtosFormatados.filter(
-    (_, index) => index % 2 === 0
-  );
-  const filteredProducts2 = produtosFormatados.filter(
-    (_, index) => index % 2 !== 0
-  );
+  const lista = produtosFormatados;
+  const tamanho = lista.length;
+  const meio = Math.floor(tamanho / 2);
+  const filteredProducts1 = lista.slice(0, meio);
+  const filteredProducts2 = lista.slice(meio);
 
   return (
     <div className="slider-container" id="slider-container">
@@ -79,12 +77,7 @@ export function SlickSliderListProduct() {
               >
                 Ver detalhes...
               </Link>
-              <button href="#" className="card-link-buy">
-                Comprar agora
-              </button>
-              <button href="#" className="card-link">
-                Adicionar no carrinho
-              </button>
+              <ButtonToCartOrBuyNow product={product} />
             </div>
           </div>
         ))}
@@ -127,12 +120,7 @@ export function SlickSliderListProduct() {
               >
                 Ver detalhes...
               </Link>
-              <button href="#" className="card-link-buy">
-                Comprar agora
-              </button>
-              <button href="#" className="card-link">
-                Adicionar no carrinho
-              </button>
+              <ButtonToCartOrBuyNow product={product} />
             </div>
           </div>
         ))}
