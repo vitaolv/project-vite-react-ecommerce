@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { hideNotification } from "../../store/Actions";
+import { hideNotification } from "../../store/actions/ActionsNotification";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "react-bootstrap/Alert";
 

@@ -1,4 +1,4 @@
-import * as types from "./Types";
+import * as types from "../Types";
 
 export function addToCart(product) {
   return (dispatch, getState) => {
@@ -32,18 +32,5 @@ export function removeFromCart(productID) {
       type: types.SET_CART_ITEM_COUNT,
       payload: productInCart.length,
     });
-  };
-}
-
-export function showNotification(message, variant) {
-  return {
-    type: types.SHOW_NOTIFICATION,
-    payload: { message, variant },
-  };
-}
-
-export function hideNotification() {
-  return {
-    type: types.HIDE_NOTIFICATION,
   };
 }

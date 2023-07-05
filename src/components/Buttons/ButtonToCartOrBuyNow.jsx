@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/Actions";
-import { showNotification } from "../../store/Actions";
+import { addToCart } from "../../store/actions/ActionsCart";
+import { showNotification } from "../../store/actions/ActionsNotification";
 
 export function ButtonToCartOrBuyNow({ product }) {
   const dispatch = useDispatch();

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { addToCart } from "../store/Actions";
+import { addToCart } from "../store/actions/ActionsCart";
 
 export default function Header() {
   const productInCart = useSelector((state) => state.cart.productInCart);
