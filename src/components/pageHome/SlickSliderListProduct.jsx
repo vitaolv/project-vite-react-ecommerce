@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import { Link, useLocation } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
-import { ButtonToCartOrBuyNow } from "../ButtonToCartOrBuyNow";
+import { ButtonToCartOrBuyNow } from "../Buttons/ButtonToCartOrBuyNow";
 
 export function SlickSliderListProduct() {
   const settings = {

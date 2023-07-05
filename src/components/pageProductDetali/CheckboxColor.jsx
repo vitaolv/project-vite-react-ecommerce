@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { NotificationInfo } from "../AlertsNotifications";
+import { NotificationInfo } from "../Notifications/NotificationInfo";
 
 export function CheckboxColor({ onColorSelected, availableColors }) {
   const [corSelecionada, setCorSelecionada] = useState(null);

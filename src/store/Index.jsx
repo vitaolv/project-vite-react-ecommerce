@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { Reducer } from "./Reducer";
+import { rootReducer } from "./reducers/rootReducer";
 import PropTypes from "prop-types";
 
-const store = configureStore({ reducer: Reducer });
+const store = configureStore({ reducer: rootReducer });
 
 export default function StoreProvider({ children }) {
   return <Provider store={store}>{children}</Provider>;

@@ -8,7 +8,7 @@ export function addToCart(product) {
       payload: product,
     });
 
-    const { productInCart } = getState();
+    const { productInCart } = getState().cart;
     localStorage.setItem("productInCart", JSON.stringify(productInCart));
 
     dispatch({
@@ -25,12 +25,25 @@ export function removeFromCart(productID) {
       payload: productID,
     });
 
-    const { productInCart } = getState();
+    const { productInCart } = getState().cart;
     localStorage.setItem("productInCart", JSON.stringify(productInCart));
 
     dispatch({
       type: types.SET_CART_ITEM_COUNT,
       payload: productInCart.length,
     });
+  };
+}
+
+export function showNotification(message, variant) {
+  return {
+    type: types.SHOW_NOTIFICATION,
+    payload: { message, variant },
+  };
+}
+
+export function hideNotification() {
+  return {
+    type: types.HIDE_NOTIFICATION,
   };
 }

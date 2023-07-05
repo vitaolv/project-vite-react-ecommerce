@@ -1,15 +1,16 @@
-import * as types from "./Types";
+import * as types from "../Types";
 
 const initialState = {
   productInCart: [],
+  priceTotal: 0,
 };
 
-export function Reducer(state = initialState, action) {
+export function cartReducer(state = initialState, action) {
   switch (action.type) {
     case types.ADD_TO_CART: {
       const newItem = {
         ...action.payload,
-        quantity: action.payload.quantity, // Usar a quantidade selecionada pelo usuário
+        quantity: action.payload.quantity,
       };
       return {
         ...state,

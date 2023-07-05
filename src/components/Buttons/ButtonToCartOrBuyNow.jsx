@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/Actions";
+import { addToCart } from "../../store/Actions";
+import { showNotification } from "../../store/Actions";
 
 export function ButtonToCartOrBuyNow({ product }) {
   const dispatch = useDispatch();
@@ -13,6 +14,12 @@ export function ButtonToCartOrBuyNow({ product }) {
     };
 
     dispatch(addToCart(updatedProduct));
+    dispatch(
+      showNotification(
+        "Este produto foi adicionado ao carrinho com sucesso!",
+        "success"
+      )
+    );
     console.log("Produto adicionado ao carrinho:", updatedProduct);
   };
 

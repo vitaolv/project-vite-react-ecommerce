@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { addToCart } from "../store/Actions";
 
 export default function Header() {
-  const productInCart = useSelector((state) => state.productInCart);
+  const productInCart = useSelector((state) => state.cart.productInCart);
   const dispatch = useDispatch();
 
   useEffect(() => {

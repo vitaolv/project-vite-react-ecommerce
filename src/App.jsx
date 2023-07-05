@@ -8,12 +8,13 @@ import "./App.css";
 import StoreProvider from "./store";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { Notification } from "./components/Notifications/Notification";
 
 function App() {
-  const productInCart = useSelector((state) => state.productInCart);
+  const productInCart = useSelector((state) => state.cart.productInCart);
 
   useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(productInCart));
+    localStorage.setItem("productInCart", JSON.stringify(productInCart));
   }, [productInCart]);
 
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/minhas-compras" element={<ProductDetali />} />
           </Routes>
         </ProductProvider>
+        <Notification />
         <Footer />
       </StoreProvider>
     </BrowserRouter>
