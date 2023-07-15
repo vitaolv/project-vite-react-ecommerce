@@ -1,9 +1,9 @@
-.route-detali {
+.route-Detail {
   margin: 1rem;
   padding-left: 1rem;
 }
 
-.route-detali a {
+.route-Detail a {
   text-decoration: underline dotted;
   color: #242424;
 }
@@ -23,7 +23,7 @@
   }
 }
 
-.section-text-detali-product {
+.section-text-Detail-product {
   grid-column: 1 / -1;
   width: 80%;
   margin: 0 auto;
@@ -31,7 +31,7 @@
   flex-direction: column;
 }
 
-.section-text-detali-product p {
+.section-text-Detail-product p {
   padding: 0 20px 20px 20px;
   margin: 0 auto;
   font-size: 17px;
@@ -153,7 +153,7 @@
   padding: 0rem 4rem 2rem 4rem;
 }
 
-.route-detali {
+.route-Detail {
   float: left;
 }
 

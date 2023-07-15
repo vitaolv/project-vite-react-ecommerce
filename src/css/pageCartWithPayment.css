@@ -1,0 +1,10 @@
+.list-cart-image {
+  width: 140px;
+  border-radius: 14px;
+}
+
+.list-productInCart li {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 18px;
+}

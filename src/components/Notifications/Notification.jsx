@@ -3,7 +3,7 @@ import { hideNotification } from "../../store/actions/ActionsNotification";
 import { useDispatch, useSelector } from "react-redux";
 import Alert from "react-bootstrap/Alert";
 
-export function Notification() {
+export default function Notification() {
   const dispatch = useDispatch();
   const notification = useSelector((state) => state.notification);
 

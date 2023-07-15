@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-export function ImageDetaliProduct({ name, id }) {
+export function ImageDetailProduct({ name, id }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const product = useProductContext();
@@ -86,10 +86,10 @@ export function ImageDetaliProduct({ name, id }) {
           </div>
           {shouldRenderArrows && (
             <>
-              <button id="prev-slide-detali" onClick={prevSlide}>
+              <button id="prev-slide-Detail" onClick={prevSlide}>
                 ❮
               </button>
-              <button id="next-slide-detali" onClick={nextSlide}>
+              <button id="next-slide-Detail" onClick={nextSlide}>
                 ❯
               </button>
             </>
@@ -100,7 +100,7 @@ export function ImageDetaliProduct({ name, id }) {
   );
 }
 
-ImageDetaliProduct.propTypes = {
+ImageDetailProduct.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
