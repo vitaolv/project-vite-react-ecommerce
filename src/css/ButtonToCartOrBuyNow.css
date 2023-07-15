@@ -1,6 +1,5 @@
 .content-buttons-Detail {
   display: flex;
-  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,15 +8,17 @@
 
 .button-comprar-agora {
   color: black;
+  width: 100%;
+  padding: 0.7rem;
   border: none;
   background-color: #e3d98d;
-  padding: 0.5rem;
   border-radius: 10px;
 }
 
 .button-adicionar-carrinho {
   background-color: #fff;
-  padding: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
   color: black;
   border: 1px solid #dbdbdb;
   border-radius: 10px;

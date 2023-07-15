@@ -21,9 +21,10 @@
   border: 1px solid #dbdbdb;
   border-radius: 30px;
   padding: 2rem;
-  height: 500px;
+  height: 340px;
   align-text: center;
   position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
 button.slick-prev:before,
@@ -53,6 +54,24 @@ button.slick-next:before {
 
 .slider-container .slick-next {
   right: 10px;
+}
+
+.product-card .card-body-action a {
+  display: none;
+}
+
+.product-card:hover .card-body-action a {
+  display: block;
+}
+
+.product-card:hover {
+  height: 370px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-hover {
+  text-decoration: none;
+  color: #252525;
 }
 
 .card-body-action {
@@ -106,7 +125,7 @@ button.slick-next:before {
 }
 
 .slick-initialized .slick-slide {
-  height: 530px;
+  height: 465px;
   display: flex;
   align-items: center;
   justify-content: center;
