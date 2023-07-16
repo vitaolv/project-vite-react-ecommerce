@@ -50,10 +50,10 @@ export default function ProductDetail() {
   };
 
   return (
-    <div>
-      <p className="route-Detail">
+    <div className="container-page-product">
+      <div className="route-Detail">
         <a href="/">Home</a> ⇒ {selectedProduct.name}
-      </p>
+      </div>
       <div className="content-detalhe-produto">
         <div className="info-produto-com-foto">
           <ImageDetailProduct

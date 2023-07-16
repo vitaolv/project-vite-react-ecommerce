@@ -1,0 +1,85 @@
+.content-page-404 {
+  width: 100%;
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  padding-bottom: 4.5rem;
+}
+.content-page-404 img {
+  width: 30%;
+  margin: 3rem;
+}
+
+.content-page-404 h2 {
+  margin: 0.7rem;
+}
+@media (max-width: 1020px) {
+  .content-page-404 img {
+    width: 38%;
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .content-page-404 img {
+    width: 55%;
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .content-page-404 img {
+    width: 74%;
+    margin: 0.5rem;
+  }
+}
+
+.page-not-found-text-2 {
+  font-size: 1.22rem;
+}
+
+.link-not-found {
+  font-size: 1rem;
+}
+
+.links-page-not-found {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 300px) {
+  .links-page-not-found {
+    flex-direction: column;
+  }
+}
+
+.link-to-home {
+  background-color: #e3d98d;
+  border: 1px solid #e0e0a0;
+  color: black;
+  padding: 0.8rem;
+  width: 9rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.link-to-back {
+  background-color: none;
+  border: 1px solid #424649;
+  color: black;
+  width: 6rem;
+  padding: 0.8rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.link-to-home:hover,
+.link-to-back:hover {
+  background-color: #382a21;
+  color: #e0e0a0;
+  transition: 0.3s background-color;
+}

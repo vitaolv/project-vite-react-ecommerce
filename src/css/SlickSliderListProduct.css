@@ -56,11 +56,11 @@ button.slick-next:before {
   right: 10px;
 }
 
-.product-card .card-body-action a {
+.product-card .card-body-action button {
   display: none;
 }
 
-.product-card:hover .card-body-action a {
+.product-card:hover .card-body-action button {
   display: block;
 }
 
@@ -125,7 +125,7 @@ button.slick-next:before {
 }
 
 .slick-initialized .slick-slide {
-  height: 465px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;

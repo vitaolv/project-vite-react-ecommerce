@@ -40,19 +40,7 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <Link
-                  to={`/produto/${encodeURIComponent(product.name)}/${
-                    product.id
-                  }`}
-                  className={`card-link ${
-                    location.pathname ===
-                    `/produto/${encodeURIComponent(product.name)}/${product.id}`
-                      ? "active"
-                      : ""
-                  }`}
-                >
-                  Ver detalhes...
-                </Link>
+                <button className="card-link">Ver detalhes...</button>
               </div>
             </div>
           </Link>
@@ -88,19 +76,7 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <Link
-                  to={`/produto/${encodeURIComponent(product.name)}/${
-                    product.id
-                  }`}
-                  className={`card-link ${
-                    location.pathname ===
-                    `/produto/${encodeURIComponent(product.name)}/${product.id}`
-                      ? "active"
-                      : ""
-                  }`}
-                >
-                  Ver detalhes...
-                </Link>
+                <button className="card-link">Ver detalhes...</button>
               </div>
             </div>
           </Link>

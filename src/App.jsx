@@ -5,6 +5,8 @@ import Footer from "./partials/Footer";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import CartWithPayment from "./pages/CartWithPayment";
+import PageNotFound from "./pages/PageNotFound";
+
 import Notification from "./components/Notifications/Notification";
 
 import "./App.css";
@@ -31,6 +33,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/produto/:nome/:id" element={<ProductDetail />} />
             <Route path="/carrinho-e-pagamento" element={<CartWithPayment />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </ProductProvider>
         <Notification />

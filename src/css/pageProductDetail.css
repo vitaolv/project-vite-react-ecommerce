@@ -1,4 +1,12 @@
+.container-page-product {
+  width: 100%;
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
 .route-Detail {
+  padding-top: 8%;
   margin: 1rem;
   padding-left: 1rem;
 }
