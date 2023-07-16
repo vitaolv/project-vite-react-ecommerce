@@ -13,6 +13,21 @@ export class ProductItem {
 
 export function addToCart(product) {
   const { id, name, cover, price, flavorSelected, quantity } = product;
+  const cartItems = JSON.parse(localStorage.getItem("productInCart")) || [];
+
+  const updatedCart = [
+    ...cartItems,
+    {
+      id,
+      name,
+      cover,
+      price,
+      flavorSelected,
+      quantity,
+    },
+  ];
+
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
 
   return {
     type: types.ADD_TO_CART,
@@ -26,6 +41,7 @@ export function addToCart(product) {
     },
   };
 }
+
 export function setQuantityToCart(productID, quantity) {
   console.log("Product ID:", productID);
   console.log("Quantity:", quantity);
