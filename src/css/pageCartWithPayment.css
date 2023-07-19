@@ -12,62 +12,84 @@
   justify-content: center;
 }
 
-.table-responsive {
-  overflow-x: auto;
-  width: 100%;
-  backdrop-filter: blur(7px);
-  background: rgb(255, 255, 255, 0.9);
+.cart-list {
+  list-style: none;
+  width: 75%;
   border-radius: 20px;
 }
 
-.cart-table {
-  width: 100%;
-  border-collapse: separate;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.24), 0px 0px 48px rgba(0, 0, 0, 0.12);
-  border-radius: 10px;
-  border-spacing: 5px 40px;
+.product-details {
+  text-align: start;
 }
 
-.cart-table th,
-.cart-table td {
-  padding: 10px;
-  text-align: center;
-  border-radius: 8px;
-}
-
-.cart-table td {
-  border-bottom: 3px solid rgb(227, 217, 141, 0.7);
-  border-radius: 2px;
-}
-
-.cart-table th {
-  background-color: rgb(227, 217, 141, 0.7);
+.item-info {
   backdrop-filter: blur(7px);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.cart-table td select {
-  width: 80px;
-  padding: 0.25rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.cart-table td .name {
+  width: 100%;
   display: flex;
-  align-items: center;
+  justify-content: start;
+  flex-direction: rows;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 3px solid rgba(227, 217, 141, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 2rem;
 }
 
-.cart-table td .name img {
-  width: 30px;
-  height: 30px;
-  margin-right: 0.5rem;
+.cart-item:last-child {
+  border-bottom: none;
 }
 
-.product-image {
-  width: 50px;
+.cart-item img.product-image {
+  width: 80px;
   border-radius: 10px;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex: 1;
+  flex-grow: 2;
+  width: 100%;
+}
+
+.quantity-control {
+  flex: 2;
+  padding: 2rem 2rem;
+}
+
+.item-price {
+  flex: 3;
+  margin: 1rem;
+}
+
+.item-action {
+  padding-top: 3rem;
+}
+
+.item-action span {
+  flex: 4;
+  width: 5px;
+}
+
+.product-details span {
+  display: block;
+  flex: 1;
+  flex-grow: 2;
+  width: 480px;
+}
+
+.product-details div {
+  margin-top: 5px;
+}
+
+.quantity-control {
+  margin-top: 10px;
+}
+
+.cart-item .item-price,
+.cart-item .item-subtotal,
+.cart-item .item-action {
+  text-align: center;
+  font-weight: bold;
 }
 
 .cart-without-products {
@@ -100,7 +122,7 @@
   }
 }
 
-.cart-without-products h6 {
+.cart-without-products h4 {
   color: #404040;
   margin: 1rem;
 }
@@ -109,6 +131,6 @@
   color: #403030;
 }
 
-.action-table {
-  opacity: 1%;
+.cart-list .item-action {
+  margin-left: auto;
 }

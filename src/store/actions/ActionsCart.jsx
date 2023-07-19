@@ -76,6 +76,13 @@ export function setFlavorSelected(productID, flavorSelected) {
   };
 }
 
+export const updatePriceTotal = (priceTotal) => {
+  return {
+    type: "UPDATE_PRICE_TOTAL",
+    payload: priceTotal,
+  };
+};
+
 export function removeFromCart(productID) {
   return (dispatch, getState) => {
     dispatch({

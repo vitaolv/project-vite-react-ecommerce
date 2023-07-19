@@ -3,6 +3,7 @@ import { addReducer } from "./addReducer";
 import { updateReducer } from "./updateReducer";
 import { deleteReducer } from "./deleteReducer";
 import { setFlavorSelectedReducer } from "./setFlavorSelectedReducer";
+import { updatePriceTotalReducer } from "./finalPriceReducer";
 
 const initialState = {
   productInCart: [],
@@ -26,6 +27,10 @@ export function cartReducer(state = initialState, action) {
 
     case types.REMOVE_FROM_CART: {
       return deleteReducer(state, action);
+    }
+
+    case types.UPDATE_PRICE_TOTAL: {
+      return updatePriceTotalReducer(state, action);
     }
 
     case types.CLEAR_CART: {

@@ -2,7 +2,7 @@ import { RadioColor } from "../components/pageProductDetail/RadioColor";
 import { ButtonToCartOrBuyNow } from "../components/Buttons/ButtonToCartOrBuyNow";
 import { ImageDetailProduct } from "../components/pageProductDetail/ImageDetailProduct";
 import { ValorDoProduto } from "../components/pageProductDetail/ValorDoProduto";
-import { Contador } from "../components/pageProductDetail/Contador";
+import { Contador } from "../components/Count/Contador";
 import { AdvantageInformationIcons } from "../components/pageProductDetail/AdvantageInformationIcons";
 import { useProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
