@@ -1,4 +1,5 @@
 import * as types from "../Types";
+import { v4 as uuidv4 } from "uuid";
 
 export class ProductItem {
   constructor(id, name, cover, price, flavorSelected, quantity) {
@@ -13,11 +14,13 @@ export class ProductItem {
 
 export function addToCart(product) {
   const { id, name, cover, price, flavorSelected, quantity } = product;
+  const objID = uuidv4();
   const cartItems = JSON.parse(localStorage.getItem("productInCart")) || [];
 
   const updatedCart = [
     ...cartItems,
     {
+      objID,
       id,
       name,
       cover,
@@ -32,12 +35,22 @@ export function addToCart(product) {
   return {
     type: types.ADD_TO_CART,
     payload: {
+      objID,
       id,
       name,
       cover,
       price,
       flavorSelected,
       quantity,
+    },
+  };
+}
+export function updateQuantity(objID, quantity) {
+  return {
+    type: types.UPDATE_QUANTITY,
+    payload: {
+      objID: objID,
+      quantity: quantity,
     },
   };
 }

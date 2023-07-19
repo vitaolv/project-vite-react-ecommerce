@@ -12,19 +12,23 @@ export function cartReducer(state = initialState, action) {
       const { payload } = action;
       const { id, name, flavorSelected, quantity, price } = payload;
 
-      const existingProductIndex = state.productInCart.findIndex(
+      const existingProduct = state.productInCart.find(
         (item) =>
           item.id === id &&
           item.name === name &&
           item.flavorSelected === flavorSelected
       );
 
-      if (existingProductIndex !== -1) {
-        const updatedCart = state.productInCart.map((item, index) => {
-          if (index === existingProductIndex) {
+      if (existingProduct) {
+        const updatedCart = state.productInCart.map((item) => {
+          if (
+            item.id === id &&
+            item.name === name &&
+            item.flavorSelected === flavorSelected
+          ) {
             return {
               ...item,
-              quantity: quantity,
+              quantity: quantity, // Atualizar para a nova quantidade selecionada
             };
           }
           return item;
@@ -34,13 +38,11 @@ export function cartReducer(state = initialState, action) {
           ...state,
           productInCart: updatedCart,
           quantityTotal:
-            state.quantityTotal +
-            (quantity - state.productInCart[existingProductIndex].quantity),
+            state.quantityTotal + (quantity - existingProduct.quantity), // Subtrair a quantidade anteriormente selecionada e adicionar a nova quantidade
           priceTotal:
             state.priceTotal +
             (price * quantity -
-              state.productInCart[existingProductIndex].price *
-                state.productInCart[existingProductIndex].quantity),
+              existingProduct.price * existingProduct.quantity), // Subtrair o preço anteriormente selecionado e adicionar o preço da nova quantidade
         };
       } else {
         return {
@@ -50,6 +52,33 @@ export function cartReducer(state = initialState, action) {
           priceTotal: state.priceTotal + price * quantity,
         };
       }
+    }
+
+    case types.UPDATE_QUANTITY: {
+      const { objID, quantity } = action.payload;
+      const itemToUpdate = state.productInCart.find(
+        (item) => item.objID === objID
+      );
+
+      if (!itemToUpdate) {
+        return state;
+      }
+
+      const quantityDifference = quantity - itemToUpdate.quantity;
+
+      return {
+        ...state,
+        productInCart: state.productInCart.map((item) => {
+          if (item.objID === objID) {
+            return {
+              ...item,
+              quantity: quantity,
+            };
+          }
+          return item;
+        }),
+        quantityTotal: state.quantityTotal + quantityDifference,
+      };
     }
 
     case types.SET_FLAVOR_SELECTED: {
@@ -68,20 +97,6 @@ export function cartReducer(state = initialState, action) {
         productInCart: updatedCart,
       };
     }
-
-    case types.UPDATE_CART_ITEM:
-      return {
-        ...state,
-        productInCart: action.payload,
-        quantityTotal: action.payload.reduce(
-          (total, item) => total + item.quantity,
-          0
-        ),
-        priceTotal: action.payload.reduce(
-          (total, item) => total + item.price * item.quantity,
-          0
-        ),
-      };
 
     case types.REMOVE_FROM_CART: {
       return {

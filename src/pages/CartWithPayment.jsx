@@ -1,13 +1,23 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 import { ButtonRemove } from "../components/Buttons/ButtonRemove";
+import { Contador } from "../components/pageProductDetail/Contador";
+import { updateQuantity } from "../store/actions/ActionsCart";
 
 export default function CartWithPayment() {
   const cart = useSelector((state) => state.cart.productInCart);
+  const dispatch = useDispatch();
 
-  const handleQuantityChange = (productId, newQuantity) => {
-    // Atualize a quantidade do produto no carrinho
-    // Utilize o Redux ou outra forma de gerenciamento de estado
+  const handleQuantityChange = (idObj, newQuantity) => {
+    dispatch(updateQuantity(idObj, newQuantity));
   };
+
+  useEffect(() => {
+    console.log("Atualizado", cart);
+  }, [cart]);
 
   return (
     <div className="container-page-cartWithPayment">
@@ -21,7 +31,6 @@ export default function CartWithPayment() {
                   <th>ID</th>
                   <th>Item</th>
                   <th>Quantidade</th>
-                  <th>Sabor</th>
                   <th>Preço</th>
                   <th>Subtotal</th>
                   <th className="action-table"></th>
@@ -29,7 +38,7 @@ export default function CartWithPayment() {
               </thead>
               <tbody>
                 {cart.map((item) => (
-                  <tr key={item.id}>
+                  <tr key={item.objID}>
                     <td>{item.id}</td>
                     <td>
                       <div className="product-info">
@@ -39,22 +48,26 @@ export default function CartWithPayment() {
                           className="product-image"
                         />
                         <span>{item.name}</span>
+                        {item.flavorSelected ? (
+                          <div>
+                            <br />
+                            <span>
+                              <strong>Sabor selecionado:</strong>{" "}
+                              {item.flavorSelected}
+                            </span>
+                          </div>
+                        ) : null}
                       </div>
                     </td>
                     <td>
-                      <select
-                        value={item.quantity}
-                        onChange={(e) =>
-                          handleQuantityChange(
-                            item.id,
-                            parseInt(e.target.value)
-                          )
+                      <Contador
+                        onQuantityChange={(newQuantity) =>
+                          handleQuantityChange(item.objID, newQuantity)
                         }
-                      >
-                        {/* Opções para a quantidade */}
-                      </select>
+                        initQuantity={item.quantity}
+                      />
                     </td>
-                    <td>{item.flavorSelected}</td>
+
                     <td>{item.price}</td>
                     <td></td>
                     <td>
@@ -68,7 +81,11 @@ export default function CartWithPayment() {
         </section>
       ) : (
         <div className="cart-without-products">
-          {/* Conteúdo quando o carrinho está vazio */}
+          <img src="/assets/cart-without-products.png"></img>
+          <h4>Seu carrinho de compras está vazio.</h4>
+          <p>
+            Há produtos esperam por você, <Link to="/">dê uma olhada.</Link>{" "}
+          </p>
         </div>
       )}
     </div>

@@ -64,6 +64,7 @@ export default function ProductDetail() {
         <aside className="lateral-detalhe-produto">
           <ValorDoProduto name={selectedProduct.name} id={selectedProduct.id} />
           <hr />
+          <h6 id="h6-quantidade">Quantidade:</h6>
           <Contador
             onQuantityChange={handleQuantityChange}
             initQuantity={selectedQuantity}

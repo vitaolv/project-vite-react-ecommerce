@@ -74,37 +74,8 @@
   border-top: 1px solid #252525;
 }
 
-.content-button-contador-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.8em;
-}
-
-#buttonAumentoOuDesfaz {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-#buttonAumentoOuDesfaz button {
-  border-radius: 8px;
-  width: 30px;
-  background: #e3d98d;
-  border: 1px solid #dbdbdb;
-  font-weight: bold;
-}
-
-#buttonAumentoOuDesfaz button:hover {
-  border-color: rgba(77, 77, 77, 77);
-  transition: 0.2s linear;
-  background-color: #252525;
-  color: #e3d98d;
-}
-
-#buttonAumentoOuDesfaz button:active {
-  background: #382a21;
-  color: white;
+#h6-quantidade h6 {
+  font-size: 1.2rem;
 }
 
 .content-radio-colors {
