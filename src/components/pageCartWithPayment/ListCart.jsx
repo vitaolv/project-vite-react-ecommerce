@@ -31,23 +31,36 @@ export function ListCart() {
             {cart.map((item) => (
               <li key={item.objID} className="cart-item">
                 <div className="item-info">
-                  <div className="product-details">
-                    <img
-                      src={item.cover}
-                      alt={item.name}
-                      className="product-image"
-                    />
-                    <span>{item.name}</span>
-                    <span>ID de item: {item.id}</span>
-                    {item.flavorSelected && (
-                      <div>
-                        <span>
-                          <strong>Sabor selecionado:</strong>{" "}
-                          {item.flavorSelected}
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                  <Link
+                    key={item.objID}
+                    to={`/produto/${encodeURIComponent(item.name)}/${item.id}`}
+                    className={`card-hover ${
+                      location.pathname ===
+                      `/produto/${encodeURIComponent(item.name)}/${item.id}`
+                        ? "active"
+                        : ""
+                    }`}
+                  >
+                    <div className="product-details">
+                      <img
+                        src={item.cover}
+                        alt={item.name}
+                        className="product-image"
+                      />
+                      <span>
+                        <strong>{item.name}</strong>
+                      </span>
+                      <span>ID de item: {item.id}</span>
+                      {item.flavorSelected && (
+                        <div>
+                          <span>
+                            <strong>Sabor selecionado:</strong>{" "}
+                            {item.flavorSelected}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
                   <div className="quantity-control">
                     <span>Quantidade:</span>
                     <Contador
