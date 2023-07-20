@@ -5,8 +5,8 @@ export const products = [
     priceBefore: 139.89,
     price: 129.99,
     cover: ["/assets/product1.jpg"],
-    availableColors: null,
-    textDetali:
+    availableColors: [],
+    textDetail:
       " Seja feliz com esta cesta linda! \n \
        Contém: \n\
        3 ovos ao leite 40g \n\
@@ -27,7 +27,7 @@ export const products = [
     priceBefore: 41.2,
     price: 30.99,
     cover: ["/assets/product2.png"],
-    textDetali:
+    textDetail:
       "Caixa de doce - 4 unidades: é uma caixa de doces artesanais com os sabores diferentes mais aguardados do ano, com a grande fama e cheio de personalidade.\n\
       \n A caixa de doce contém: \n\
       - 1 doce de brigadeiro \n\
@@ -35,15 +35,15 @@ export const products = [
       - 1 doce de amendoim \n\
       - 1 doce de meio amargo \n\
       \n Pode conter vestígios de GLÚTEN, OVOS, LEITE e frutos de casca rija.",
-    availableColors: null,
+    availableColors: [],
   },
   {
     id: 3,
     name: "Caixa de bombons sortidos",
     priceBefore: 49.9,
     price: 24.9,
-    cover: ["/assets/product3.jpg", "/assets/product3-detali.jpg"],
-    textDetali:
+    cover: ["/assets/product3.jpg", "/assets/product3-Detail.jpg"],
+    textDetail:
       "Esta Caixa Gourmet inclui 25 bombons de chocolate negro (min. 54% de cacau) com recheios pensados em colaboração com alguns parceiros:\
     \n5 Bombons de Azeite \
     \n5 Bombons de Melcom Ouro \
@@ -56,7 +56,7 @@ export const products = [
     <1%. Recheio: água, açúcar invertido, NATAS, xarope de glucose, sorbitol, chocolate de LEITE 34% de cacau, chocolate branco 28% de cacau, mel, ouro, \
     azeite virgem extra (Terras Dazibo Anfora​)​, queijo de cabra curado ​(Martins&Rebello) ​, vinho do Porto, amêndoas, flor de sal \
     \n\nPode conter vestígios de GLÚTEN, OVOS, LEITE e frutos de casca rija.",
-    availableColors: null,
+    availableColors: [],
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const products = [
       "Chocolate meio amargo",
       "Mista chocolate ao leite e chocolate branco",
     ],
-    textDetali:
+    textDetail:
       "O sabor do chocolate puro e das clássicas drágeas em uma bombonier recheada de sabor. \
         \nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
         \n\n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
@@ -90,7 +90,7 @@ export const products = [
       "Chocolate branco",
       "Chocolate meio amargo",
     ],
-    textDetali:
+    textDetail:
       "Embalagem dourada com decoração em laço contendo 20 deliciosas trufas com a folha da árvore Plátanos, nossa marca. \n\
       Disponível em diversos sabores. Uma das nossas embalagens mais solicitadas. \n\
       \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
@@ -103,7 +103,7 @@ export const products = [
     name: "Cookies sortidos",
     priceBefore: 79.9,
     price: 62.0,
-    textDetali:
+    textDetail:
       "Cookie crocante por fora e macio por dentro com muitas gotas de chocolate, com 35 gramas cada e aproximadamente 5 a 6 centimetro de diametro.\n\
       \nValidade:\n\
       15 dias em geladeira 5°\n\
@@ -111,7 +111,7 @@ export const products = [
       \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
       \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
       Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    availableColors: null,
+    availableColors: [],
     cover: ["/assets/product6.png"],
   },
   {
@@ -124,7 +124,7 @@ export const products = [
       "Chocolate ao leite",
       "Chocolate branco",
     ],
-    textDetali:
+    textDetail:
       "Características:\n\
       A textura macia do marshmallow tradicional coberto com chocolate ao leite, chocolate branco ou chocolate Mista chocolate ao leite e chocolate branco (branco e preto).\n\
       - Porção de 38g (2 unidades) \n\
@@ -143,7 +143,7 @@ export const products = [
       "Chocolate branco",
       "Mista chocolate ao leite e chocolate branco",
     ],
-    textDetali:
+    textDetail:
       "Uma caneca com bombons (por 30G), uma lembrança perfeita para a pessoa que você ama.\n\
     \nIngredientes:\n\
     Açúcar, manteiga de cacau, leite desnatado em pó, pasta de cacau, soro de leite em pó, \
@@ -160,7 +160,7 @@ export const products = [
     priceBefore: 22.0,
     price: 18.2,
     availableColors: ["Chocolate ruby"],
-    textDetali:
+    textDetail:
       "O Ruby é um chocolate produzido com grãos de cacau especiais que possuem um tom rosa claro natural.\n" +
       "E muito diferente dos demais tipos de chocolate, é frutado, predominantemente de frutas vermelhas.\n\n" +
       "\n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
@@ -185,7 +185,7 @@ export const products = [
       "Mista chocolate ao leite e chocolate branco",
       "Chocolate meio amargo",
     ],
-    textDetali:
+    textDetail:
       "Chocolate ao leite: A barra 70% é rica em antioxidantes e com maior concentração de derivados de cacau.\n" +
       "Não contém gordura trans e é benéfico para a saúde do coração.\n" +
       "Ingredientes:" +
@@ -205,7 +205,7 @@ export const products = [
     priceBefore: 19.9,
     price: 16.2,
     availableColors: ["Chocolate ao leite", "Chocolate branco"],
-    textDetali:
+    textDetail:
       " Ingredientes: chocolate branco (açúcar, manteiga de cacau, leite em pó integral, emulsificantes lecitina de soja e INS 476 e aromatizante)" +
       "e confeitos de chocolate (açúcar, gordura vegetal fracionada, cacau em pó, óleo de palmíste, soro de leite em pó, massa de cacau," +
       "maltodextrina, sal, goma arábica, emulsificantes lecitina de soja e INS 476, glaceantes INS 904 e INS 903, antiumectante INS 553i). \n\n" +
@@ -222,9 +222,11 @@ export const products = [
     price: 12.4,
     availableColors: ["Chocolate ao leite", "Chocolate branco"],
     cover: ["/assets/product12.jpg", "/assets/product12-white.jpg"],
-    textDetali:
+    textDetail:
       "Barrinha de chocolate com recheio e brownie \
       \nDoce de leite argentino: Barrinha de chocolate meio amargo, com brownie e doce de leite argentino \
       \nOreo com Nutella: Barrinha de chocolate branco com Óreo, com brownie e Nutella.",
   },
 ];
+
+export const productsSelector = (state) => state.products.products;

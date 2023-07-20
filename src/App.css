@@ -1,11 +1,14 @@
 #root {
   margin: 0 auto;
+  top: 0;
+  left: 0;
   text-align: center;
   background: #ededed;
 }
 
-body {
-  margin: 20px;
+body,
+html {
+  overflow: visible;
 }
 
 .section-product {
@@ -17,4 +20,15 @@ body {
 
 .section-product h2 {
   padding-top: 7%;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  #root {
+    margin: auto;
+    width: 100%;
+  }
 }

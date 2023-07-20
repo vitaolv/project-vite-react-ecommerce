@@ -1,0 +1,17 @@
+.action-remove-item {
+  border-radius: 10px;
+}
+
+.button-remove {
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #eb5e5e;
+  background-color: transparent;
+  opacity: 0 - 1;
+  border: none;
+}
+
+.button-remove:hover {
+  color: #382a21;
+  transition: 0.3s ease-in-out;
+}

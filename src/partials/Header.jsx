@@ -4,7 +4,39 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
+import { Link } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addToCart } from "../store/actions/ActionsCart";
+
 export default function Header() {
+  const quantityTotal = useSelector((state) => state.cart.quantityTotal);
+  const productInCart = useSelector((state) => state.cart.productInCart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const cartItemCountFromStorage = localStorage.getItem("productInCart");
+    if (cartItemCountFromStorage) {
+      try {
+        const cartItems = JSON.parse(cartItemCountFromStorage);
+        if (Array.isArray(cartItems)) {
+          cartItems.forEach((item) => {
+            dispatch(addToCart(item));
+          });
+        }
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+      }
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    console.log("Cart Item Count:", productInCart?.length);
+    console.log("Carrinho:", productInCart);
+    console.log("Total Item Count:", quantityTotal);
+  }, [productInCart, quantityTotal]);
+
   return (
     <Navbar variant="light" className="color-nav" expand="lg">
       <Container fluid>
@@ -23,7 +55,8 @@ export default function Header() {
             <Nav.Link href="/#content-card-about">Sobre nós</Nav.Link>
           </Nav>
 
-          <button
+          <Link
+            to="/carrinho-e-pagamento"
             id="seucarrinho"
             aria-label="Seu carrinho"
             title="Seu carrinho"
@@ -38,7 +71,10 @@ export default function Header() {
             >
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
             </svg>
-          </button>
+            {productInCart?.length > 0 && quantityTotal > 0 && (
+              <span className="cart-counter">{quantityTotal}</span>
+            )}
+          </Link>
 
           <button
             id="logar-conta"

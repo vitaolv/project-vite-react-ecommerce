@@ -1,0 +1,38 @@
+.content-button-contador-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#quantity {
+  font-size: 1.1rem;
+}
+
+#buttonAumentoOuDesfaz {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#buttonAumentoOuDesfaz button {
+  border-radius: 8px;
+  width: 30px;
+  box-sizing: border-box;
+  height: 26px;
+  padding: 0;
+  font-weight: bold;
+  background: #e3d98d;
+  border: 1px solid #dbdbdb;
+}
+
+#buttonAumentoOuDesfaz button:hover {
+  border-color: rgba(77, 77, 77, 77);
+  transition: 0.2s linear;
+  background-color: #252525;
+  color: #e3d98d;
+}
+
+#buttonAumentoOuDesfaz button:active {
+  background: #382a21;
+  color: white;
+}

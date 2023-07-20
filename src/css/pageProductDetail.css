@@ -1,9 +1,17 @@
-.route-detali {
+.container-page-product {
+  width: 100%;
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+.route-Detail {
+  padding-top: 8%;
   margin: 1rem;
   padding-left: 1rem;
 }
 
-.route-detali a {
+.route-Detail a {
   text-decoration: underline dotted;
   color: #242424;
 }
@@ -23,7 +31,7 @@
   }
 }
 
-.section-text-detali-product {
+.section-text-Detail-product {
   grid-column: 1 / -1;
   width: 80%;
   margin: 0 auto;
@@ -31,7 +39,7 @@
   flex-direction: column;
 }
 
-.section-text-detali-product p {
+.section-text-Detail-product p {
   padding: 0 20px 20px 20px;
   margin: 0 auto;
   font-size: 17px;
@@ -66,37 +74,8 @@
   border-top: 1px solid #252525;
 }
 
-.content-button-contador-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.8em;
-}
-
-#buttonAumentoOuDesfaz {
-  display: flex;
-  justify-content: center;
-  gap: 0.5em;
-}
-
-#buttonAumentoOuDesfaz button {
-  border-radius: 8px;
-  width: 30px;
-  background: #e3d98d;
-  border: 1px solid #dbdbdb;
-  font-weight: bold;
-}
-
-#buttonAumentoOuDesfaz button:hover {
-  border-color: rgba(77, 77, 77, 77);
-  transition: 0.2s linear;
-  background-color: #252525;
-  color: #e3d98d;
-}
-
-#buttonAumentoOuDesfaz button:active {
-  background: #382a21;
-  color: white;
+#h6-quantidade h6 {
+  font-size: 1.2rem;
 }
 
 .content-radio-colors {
@@ -153,47 +132,8 @@
   padding: 0rem 4rem 2rem 4rem;
 }
 
-.route-detali {
+.route-Detail {
   float: left;
-}
-
-.content-buttons-detali {
-  display: flex;
-  width: 80%;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.button-comprar-agora {
-  color: black;
-  border: none;
-  background-color: #e3d98d;
-  padding: 0.5rem;
-  border-radius: 10px;
-}
-
-.button-adicionar-carrinho {
-  background-color: #fff;
-  padding: 0.5rem;
-  color: black;
-  border: 1px solid #dbdbdb;
-  border-radius: 10px;
-}
-
-.button-comprar-agora:hover,
-.button-adicionar-carrinho:hover {
-  background-color: #424649;
-  color: white;
-  transition: 0.3s background-color;
-  border-color: #000000;
-}
-
-.button-comprar-agora:active,
-.button-adicionar-carrinho:active {
-  background-color: #151515;
-  color: white;
-  transition: 0.3s background-color;
-  border-color: #000000;
 }
 
 #extra-vantagens {

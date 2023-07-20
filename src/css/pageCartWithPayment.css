@@ -1,0 +1,136 @@
+.container-page-cartWithPayment {
+  width: 100%;
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  padding-top: 8%;
+}
+
+.list-cart {
+  padding: 2rem 4rem 4rem 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cart-list {
+  list-style: none;
+  width: 75%;
+  border-radius: 20px;
+}
+
+.product-details {
+  text-align: start;
+}
+
+.item-info {
+  backdrop-filter: blur(7px);
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-direction: rows;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 3px solid rgba(227, 217, 141, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 2rem;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item img.product-image {
+  width: 80px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex: 1;
+  flex-grow: 2;
+  width: 100%;
+}
+
+.quantity-control {
+  flex: 2;
+  padding: 2rem 2rem;
+}
+
+.item-price {
+  flex: 3;
+  margin: 1rem;
+}
+
+.item-action {
+  padding-top: 3rem;
+}
+
+.item-action span {
+  flex: 4;
+  width: 5px;
+}
+
+.product-details span {
+  display: block;
+  flex: 1;
+  flex-grow: 2;
+  width: 480px;
+}
+
+.product-details div {
+  margin-top: 5px;
+}
+
+.quantity-control {
+  margin-top: 10px;
+}
+
+.cart-item .item-price,
+.cart-item .item-subtotal,
+.cart-item .item-action {
+  text-align: center;
+  font-weight: bold;
+}
+
+.cart-without-products {
+  padding: 1rem;
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.cart-without-products img {
+  width: 22%;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+@media (max-width: 1020px) {
+  .cart-without-products img {
+    width: 35%;
+  }
+}
+
+@media (max-width: 800px) {
+  .cart-without-products img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cart-without-products img {
+    width: 70%;
+  }
+}
+
+.cart-without-products h4 {
+  color: #404040;
+  margin: 1rem;
+}
+
+.cart-without-products a {
+  color: #403030;
+}
+
+.cart-list .item-action {
+  margin-left: auto;
+}

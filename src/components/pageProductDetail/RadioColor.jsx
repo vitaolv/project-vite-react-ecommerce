@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { NotificationInfo } from "../AlertsNotifications";
+import { NotificationInfo } from "../Notifications/NotificationInfo";
 
-export function CheckboxColor({ onColorSelected, availableColors }) {
-  const [corSelecionada, setCorSelecionada] = useState(null);
-
-  useEffect(() => {
-    if (availableColors && availableColors.length > 0) {
-      setCorSelecionada(availableColors[0]);
-      onColorSelected(availableColors[0]);
-    } else {
-      setCorSelecionada(null);
-    }
-  }, [availableColors]);
+export function RadioColor({ availableColors, onFlavorChance, initFlavor }) {
+  const [selected, setSelected] = useState(initFlavor);
 
   const handleColorSelecionada = (event) => {
-    const cor = event.target.value;
-    setCorSelecionada(cor);
-    onColorSelected(cor);
+    const flavor = event.target.value;
+    setSelected(flavor);
+    onFlavorChance(flavor);
   };
 
   return (
@@ -33,7 +24,7 @@ export function CheckboxColor({ onColorSelected, availableColors }) {
                   id={`radio-${color.toLowerCase().replace(/ /g, "-")}`}
                   name="color"
                   value={color}
-                  checked={corSelecionada === color}
+                  checked={selected === color}
                   onChange={handleColorSelecionada}
                   required
                 />
@@ -43,7 +34,7 @@ export function CheckboxColor({ onColorSelected, availableColors }) {
               </React.Fragment>
             ))}
           </div>
-          <h6>* Sabor selecionado: {corSelecionada}</h6>
+          <h6>* Sabor selecionado: {selected}</h6>
         </>
       ) : (
         <>
@@ -55,7 +46,8 @@ export function CheckboxColor({ onColorSelected, availableColors }) {
   );
 }
 
-CheckboxColor.propTypes = {
-  onColorSelected: PropTypes.func.isRequired,
+RadioColor.propTypes = {
   availableColors: PropTypes.arrayOf(PropTypes.string),
+  onFlavorChance: PropTypes.func.isRequired,
+  initFlavor: PropTypes.string.isRequired,
 };

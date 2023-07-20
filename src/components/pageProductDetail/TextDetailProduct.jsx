@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useProductContext } from "../../context/ProductContext";
 
-export function TextDetaliProduct({ name, id }) {
+export function TextDetailProduct({ name, id }) {
   const products = useProductContext();
   const selectedProduct = products.find(
     (product) =>
@@ -10,8 +10,8 @@ export function TextDetaliProduct({ name, id }) {
       product.name.toLowerCase() === name.toLowerCase()
   );
 
-  const formattedTextDetali = selectedProduct.textDetali
-    ? selectedProduct.textDetali.split("\n").map((line, index) => (
+  const formattedTextDetail = selectedProduct.textDetail
+    ? selectedProduct.textDetail.split("\n").map((line, index) => (
         <React.Fragment key={index}>
           {line}
           <br />
@@ -20,15 +20,15 @@ export function TextDetaliProduct({ name, id }) {
     : null;
 
   return (
-    <div className="section-text-detali-product">
+    <div className="section-text-Detail-product">
       <hr />
       <h4>Informações do produto:</h4>
-      <p>{formattedTextDetali}</p>
+      <p>{formattedTextDetail}</p>
     </div>
   );
 }
 
-TextDetaliProduct.propTypes = {
+TextDetailProduct.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };
