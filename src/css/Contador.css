@@ -23,10 +23,14 @@
   font-weight: bold;
   background: #e3d98d;
   border: 1px solid #dbdbdb;
+
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 #buttonAumentoOuDesfaz button:hover {
   border-color: rgba(77, 77, 77, 77);
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
   transition: 0.2s linear;
   background-color: #252525;
   color: #e3d98d;

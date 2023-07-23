@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+.aside-buy-resume-content {
+  position: sticky;
+  top: 150px;
+
+  right: 20px;
+  width: 380px;
+  height: 50%;
+
+  background-color: rgb(255, 255, 255, 0.5);
+  margin-top: 42px;
+
+  backdrop-filter: blur(7px);
+
+  border-radius: 15px;
+  border-bottom: 2px solid #e3d98d;
+  border-top: 2px solid #e3d98d;
+
+  padding: 10px;
+}
+
+@media (max-width: 1150px) {
+  .cart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cart-list {
+    margin-right: 0;
+  }
+
+  .aside-buy-resume-content {
+    width: 100%;
+    top: 0px;
+    bottom: 0px;
+    height: 220px;
+    font-size: 8px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .button-to-payment {
+    border-radius: 15px;
+    border: none;
+
+    height: 44px !important;
+    width: 220px !important;
+
+    font-size: 15px !important;
+  }
+
+  .price-resume {
+    padding: 5px !important;
+  }
+}
+
+.button-to-payment {
+  background-color: #e3d98d;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+
+  border-radius: 15px;
+  border: none;
+
+  height: 68px;
+  width: 200px;
+
+  padding: 8px;
+
+  font-size: 16px;
+}
+
+.button-to-payment:hover {
+  background-color: #382a21;
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
+  color: #e3d98d;
+  transition: 0.3s ease-in-out;
+}
+
+.price-resume {
+  background: #252525;
+  color: #e3d98d;
+
+  padding: 24px;
+
+  border: 2px solid #e3d98d;
+
+  border-radius: 15px;
+}

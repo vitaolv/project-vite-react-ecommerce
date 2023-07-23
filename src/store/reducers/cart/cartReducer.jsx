@@ -2,7 +2,6 @@ import * as types from "../../Types";
 import { addReducer } from "./addReducer";
 import { updateReducer } from "./updateReducer";
 import { deleteReducer } from "./deleteReducer";
-import { setFlavorSelectedReducer } from "./setFlavorSelectedReducer";
 import { updatePriceTotalReducer } from "./finalPriceReducer";
 
 const initialState = {
@@ -19,10 +18,6 @@ export function cartReducer(state = initialState, action) {
 
     case types.UPDATE_QUANTITY: {
       return updateReducer(state, action);
-    }
-
-    case types.SET_FLAVOR_SELECTED: {
-      return setFlavorSelectedReducer(state, action);
     }
 
     case types.REMOVE_FROM_CART: {
