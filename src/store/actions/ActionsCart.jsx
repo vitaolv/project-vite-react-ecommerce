@@ -12,7 +12,7 @@ export class ProductItem {
   }
 }
 
-export function addToCart(product) {
+export function addToCartAction(product) {
   const { id, name, cover, price, flavorSelected, quantity } = product;
   const objID = uuidv4();
   const cartItems = JSON.parse(localStorage.getItem("productInCart")) || [];
@@ -45,7 +45,7 @@ export function addToCart(product) {
     },
   };
 }
-export function updateQuantity(objID, quantity) {
+export function updateQuantityAction(objID, quantity) {
   return {
     type: types.UPDATE_QUANTITY,
     payload: {
@@ -55,47 +55,16 @@ export function updateQuantity(objID, quantity) {
   };
 }
 
-export function setQuantityToCart(productID, quantity) {
-  console.log("Product ID:", productID);
-  console.log("Quantity:", quantity);
+export const updatePriceTotalAction = (priceTotal) => {
   return {
-    type: types.SET_QUANTITY_TO_CART,
-    payload: {
-      productID,
-      quantity,
-    },
-  };
-}
-
-export function setFlavorSelected(productID, flavorSelected) {
-  return async (dispatch) => {
-    dispatch({
-      type: types.SET_FLAVOR_SELECTED,
-      payload: { productID, flavorSelected },
-    });
-  };
-}
-
-export const updatePriceTotal = (priceTotal) => {
-  return {
-    type: "UPDATE_PRICE_TOTAL",
+    type: types.UPDATE_PRICE_TOTAL,
     payload: priceTotal,
   };
 };
 
-export function removeFromCart(productID) {
-  return (dispatch, getState) => {
-    dispatch({
-      type: types.REMOVE_FROM_CART,
-      payload: productID,
-    });
-
-    const { productInCart } = getState().cart;
-    localStorage.setItem("productInCart", JSON.stringify(productInCart));
-
-    dispatch({
-      type: types.SET_CART_ITEM_COUNT,
-      payload: productInCart.length,
-    });
+export function removeFromCartAction(item) {
+  return {
+    type: types.REMOVE_FROM_CART,
+    payload: item,
   };
 }

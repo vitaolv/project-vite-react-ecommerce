@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { addToCart } from "../store/actions/ActionsCart";
+import { addToCartAction } from "../store/actions/ActionsCart";
 
 export default function Header() {
   const quantityTotal = useSelector((state) => state.cart.quantityTotal);
@@ -22,7 +22,7 @@ export default function Header() {
         const cartItems = JSON.parse(cartItemCountFromStorage);
         if (Array.isArray(cartItems)) {
           cartItems.forEach((item) => {
-            dispatch(addToCart(item));
+            dispatch(addToCartAction(item));
           });
         }
       } catch (error) {

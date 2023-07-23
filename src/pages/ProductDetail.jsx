@@ -8,7 +8,7 @@ import { useProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
 import { TextDetailProduct } from "../components/pageProductDetail/TextDetailProduct";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/actions/ActionsCart";
+import { addToCartAction } from "../store/actions/ActionsCart";
 import { useState } from "react";
 
 export default function ProductDetail() {
@@ -45,7 +45,7 @@ export default function ProductDetail() {
       flavorSelected: selectedFlavor,
       quantity: selectedQuantity,
     };
-    dispatch(addToCart(productToAdd));
+    dispatch(addToCartAction(productToAdd));
     console.log("Produto adicionado ao carrinho:", productToAdd);
   };
 
