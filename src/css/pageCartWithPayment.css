@@ -22,7 +22,7 @@
 .cart-list {
   display: grid;
   align-items: center;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
   gap: 1rem;
   list-style: none;
 
@@ -139,10 +139,6 @@
 @media (max-width: 768px) {
   .list-cart {
     padding: 2rem;
-  }
-
-  .cart-list {
-    grid-template-rows: repeat(4, auto);
   }
 
   .item-info {

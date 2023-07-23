@@ -68,3 +68,9 @@ export function removeFromCartAction(item) {
     payload: item,
   };
 }
+
+export function clearCartAction() {
+  return {
+    type: types.CLEAR_CART,
+  };
+}
