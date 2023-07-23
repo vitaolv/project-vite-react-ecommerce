@@ -26,83 +26,73 @@ export function ListCart() {
 
   return (
     <>
-      {cart && cart.length > 0 ? (
-        <section className="list-cart">
-          <ul className="cart-list">
-            {cart.map((item) => (
-              <li key={item.objID} className="cart-item">
-                <div className="item-info">
-                  <Link
-                    key={item.objID}
-                    to={`/produto/${encodeURIComponent(item.name)}/${item.id}`}
-                    className={`card-hover ${
-                      location.pathname ===
-                      `/produto/${encodeURIComponent(item.name)}/${item.id}`
-                        ? "active"
-                        : ""
-                    }`}
-                  >
-                    <div className="product-details">
-                      <img
-                        src={item.cover}
-                        alt={item.name}
-                        className="product-image"
-                      />
-                      <span>
-                        <strong>{item.name}</strong>
-                      </span>
-                      <span>ID de item: {item.id}</span>
-                      {item.flavorSelected && (
-                        <div>
-                          <span>
-                            <strong>Sabor selecionado:</strong>{" "}
-                            {item.flavorSelected}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  </Link>
-                  <div className="quantity-control">
-                    <span>Quantidade:</span>
-                    <Contador
-                      onQuantityChange={(newQuantity) =>
-                        handleQuantityChange(item.objID, newQuantity)
-                      }
-                      initQuantity={item.quantity}
+      <section className="list-cart">
+        <ul className="cart-list">
+          {cart.map((item) => (
+            <li key={item.objID} className="cart-item">
+              <div className="item-info">
+                <Link
+                  key={item.objID}
+                  to={`/produto/${encodeURIComponent(item.name)}/${item.id}`}
+                  className={`card-hover ${
+                    location.pathname ===
+                    `/produto/${encodeURIComponent(item.name)}/${item.id}`
+                      ? "active"
+                      : ""
+                  }`}
+                >
+                  <div className="product-details">
+                    <img
+                      src={item.cover}
+                      alt={item.name}
+                      className="product-image"
                     />
-                  </div>
-                  <div className="item-price">
                     <span>
-                      Preço: <br />
-                      {getFormattedPriceValue(item.price)}
+                      <strong>{item.name}</strong>
                     </span>
-                    <br />
-                    <hr />
-                    <span>
-                      Preço subtotal: <br />
-                      {getFormattedPriceValue(
-                        calculateSubtotal(item.price, item.quantity)
-                      )}
-                    </span>
+                    <span>ID de item: {item.id}</span>
+                    {item.flavorSelected && (
+                      <div>
+                        <span>
+                          <strong>Sabor selecionado:</strong>{" "}
+                          {item.flavorSelected}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <div className="item-action">
-                    <ButtonRemove item={item} />
-                  </div>
+                </Link>
+                <div className="quantity-control">
+                  <span>Quantidade:</span>
+                  <Contador
+                    onQuantityChange={(newQuantity) =>
+                      handleQuantityChange(item.objID, newQuantity)
+                    }
+                    initQuantity={item.quantity}
+                  />
                 </div>
-              </li>
-            ))}
-          </ul>
-          <ModalConfirmationToRemove />
-        </section>
-      ) : (
-        <div className="cart-without-products">
-          <img src="/assets/cart-without-products.png" alt="Carrinho vazio" />
-          <h4>Seu carrinho de compras está vazio.</h4>
-          <p>
-            Há produtos esperam por você, <Link to="/">dê uma olhada.</Link>{" "}
-          </p>
-        </div>
-      )}
+                <div className="item-price">
+                  <span>
+                    Preço: <br />
+                    {getFormattedPriceValue(item.price)}
+                  </span>
+                  <br />
+                  <hr />
+                  <span>
+                    Preço subtotal: <br />
+                    {getFormattedPriceValue(
+                      calculateSubtotal(item.price, item.quantity)
+                    )}
+                  </span>
+                </div>
+                <div className="item-action">
+                  <ButtonRemove item={item} />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <ModalConfirmationToRemove />
+      </section>
     </>
   );
 }

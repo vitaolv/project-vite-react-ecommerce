@@ -31,7 +31,9 @@ export function cartReducer(state = initialState, action) {
     case types.CLEAR_CART: {
       return {
         ...state,
-        items: [],
+        productInCart: [],
+        quantityTotal: 0,
+        priceTotal: 0,
       };
     }
 
