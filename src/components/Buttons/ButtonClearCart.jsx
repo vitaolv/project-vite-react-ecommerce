@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
-import { clearCartAction } from "../../store/actions/ActionsCart";
+import { openModalToClearCartAction } from "../../store/actions/ActionsModais";
 
 export function ButtonClearCart() {
   const dispatch = useDispatch();
 
   const handleToClearCart = () => {
-    dispatch(clearCartAction());
-    alert("Carrinho limpo!");
+    dispatch(openModalToClearCartAction());
   };
 
   return (
