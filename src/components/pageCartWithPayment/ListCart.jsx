@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { ButtonRemove } from "../Buttons/ButtonRemove";
 import { Contador } from "../Count/Contador";
 import { updateQuantityAction } from "../../store/actions/ActionsCart";
-import { getFormattedInstallmentValue } from "../../utils/prices/priceUtils";
+import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ModalConfirmationToRemove } from "../Modais/modalConfirmationToRemove";
 
 export function ListCart() {
@@ -74,13 +74,13 @@ export function ListCart() {
                   <div className="item-price">
                     <span>
                       Preço: <br />
-                      {getFormattedInstallmentValue(item.price)}
+                      {getFormattedPriceValue(item.price)}
                     </span>
                     <br />
                     <hr />
                     <span>
                       Preço subtotal: <br />
-                      {getFormattedInstallmentValue(
+                      {getFormattedPriceValue(
                         calculateSubtotal(item.price, item.quantity)
                       )}
                     </span>

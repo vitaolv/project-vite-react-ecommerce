@@ -11,7 +11,7 @@ export function openModalToRemoveAction(item) {
 
 export function closeModalToRemoveAction() {
   return async (dispatch) => {
-    await sleep(700);
+    await sleep(500);
     dispatch({
       type: types.CLOSE_MODAL_TO_REMOVE_ITEM,
     });

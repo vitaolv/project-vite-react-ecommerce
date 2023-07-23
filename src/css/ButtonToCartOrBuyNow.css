@@ -13,6 +13,8 @@
   border: none;
   background-color: #e3d98d;
   border-radius: 10px;
+
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button-adicionar-carrinho {
@@ -22,14 +24,18 @@
   color: black;
   border: 1px solid #dbdbdb;
   border-radius: 10px;
+
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button-comprar-agora:hover,
 .button-adicionar-carrinho:hover {
-  background-color: #424649;
-  color: white;
+  background-color: #382a21;
+  color: #e3d98d;
   transition: 0.3s background-color;
   border-color: #000000;
+
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
 }
 
 .button-comprar-agora:active,

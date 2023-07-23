@@ -5,7 +5,7 @@ export function getFormattedPrice(price) {
     minimumFractionDigits: 2, // Defina o número mínimo de dígitos decimais
   });
 }
-export function getFormattedInstallmentValue(price) {
+export function getFormattedPriceValue(price) {
   const numericValue = Number(price);
   const formattedValue = getFormattedPrice(numericValue);
   return formattedValue;

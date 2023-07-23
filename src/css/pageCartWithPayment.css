@@ -6,6 +6,11 @@
   padding-top: 8%;
 }
 
+.cart-container {
+  display: flex;
+  justify-content: center;
+}
+
 .list-cart {
   padding: 2rem 4rem;
   display: grid;
@@ -20,6 +25,9 @@
   grid-template-rows: repeat(4, 1fr);
   gap: 1rem;
   list-style: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .item-info {
