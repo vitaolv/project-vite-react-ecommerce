@@ -1,6 +1,11 @@
-export function updatePriceTotalReducer(state, action) {
+export function updatePriceTotalReducer(state) {
+  let totalPrice = 0;
+  state.productInCart.forEach((item) => {
+    totalPrice += item.price * item.quantity;
+  });
+
   return {
     ...state,
-    priceTotal: action.payload,
+    priceTotal: totalPrice,
   };
 }

@@ -5,14 +5,15 @@ import { useEffect } from "react";
 
 import { ButtonRemove } from "../Buttons/ButtonRemove";
 import { Contador } from "../Count/Contador";
-import { updateQuantity } from "../../store/actions/ActionsCart";
+import { updateQuantityAction } from "../../store/actions/ActionsCart";
 import { getFormattedInstallmentValue } from "../../utils/prices/priceUtils";
+import { ModalConfirmationToRemove } from "../Modais/modalConfirmationToRemove";
 
 export function ListCart() {
   const cart = useSelector((state) => state.cart.productInCart);
   const dispatch = useDispatch();
   const handleQuantityChange = (idObj, newQuantity) => {
-    dispatch(updateQuantity(idObj, newQuantity));
+    dispatch(updateQuantityAction(idObj, newQuantity));
   };
 
   useEffect(() => {
@@ -85,12 +86,13 @@ export function ListCart() {
                     </span>
                   </div>
                   <div className="item-action">
-                    <ButtonRemove />
+                    <ButtonRemove item={item} />
                   </div>
                 </div>
               </li>
             ))}
           </ul>
+          <ModalConfirmationToRemove />
         </section>
       ) : (
         <div className="cart-without-products">

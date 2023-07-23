@@ -17,7 +17,7 @@ export function addReducer(state, payload) {
       ) {
         return {
           ...item,
-          quantity: quantity, // Atualizar para a nova quantidade selecionada
+          quantity: quantity,
         };
       }
       return item;
