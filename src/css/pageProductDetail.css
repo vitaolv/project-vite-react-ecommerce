@@ -52,18 +52,15 @@
   width: 100% !important;
   align-items: center;
   text-align: center;
-  justify-content: center;
 }
 
 .lateral-detalhe-produto {
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   align-items: center;
   text-align: center;
-  justify-content: center;
   margin: 0 auto;
 }
 
@@ -162,5 +159,28 @@
 @media screen and (max-width: 480px) {
   .card-body {
     flex-basis: calc(100% - 2rem);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .content-detalhe-produto {
+    gap: 2rem;
+    grid-template-columns: repeat(1, fr);
+    width: 100%;
+  }
+
+  #extra-vantagens {
+    font-size: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #extra-vantagens span {
+    font-size: 15px;
+    flex-direction: columns;
+  }
+
+  .content-radio-colors {
+    width: 100%;
   }
 }
