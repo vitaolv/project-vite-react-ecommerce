@@ -14,13 +14,9 @@ export const ResumeAside = () => {
 
   const dispatch = useDispatch();
 
-  const handleUpdatePriceTotal = () => {
-    dispatch(updatePriceTotalAction());
-  };
-
   useEffect(() => {
-    handleUpdatePriceTotal();
-  }, [handleUpdatePriceTotal]);
+    dispatch(updatePriceTotalAction());
+  }, [dispatch]);
 
   return (
     <aside className="aside-buy-resume-content">

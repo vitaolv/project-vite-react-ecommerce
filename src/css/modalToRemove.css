@@ -4,10 +4,10 @@
 }
 
 #buttonConfirmToRemove {
-  background-color: red !important;
+  background-color: #e3d98d !important;
   border: none;
   color: black !important;
-  border: 1px solid red !important;
+  border: 1px solid #e3d98d !important;
 }
 
 #buttonToCancel {
@@ -16,14 +16,9 @@
   color: black !important;
 }
 
-#buttonToCancel:hover {
+#buttonToCancel:hover,
+#buttonConfirmToRemove:hover {
   background-color: #252525 !important;
   color: #e3d98d !important;
   transition: 0.24s ease-in-out !important;
-}
-
-#buttonConfirmToRemove:hover {
-  background-color: #bf0010 !important;
-  transition: 0.24s ease-in-out !important;
-  border: 1px solid #bf0010 !important;
 }

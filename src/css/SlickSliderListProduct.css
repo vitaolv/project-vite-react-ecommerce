@@ -31,14 +31,14 @@ button.slick-prev:before,
 button.slick-next:before {
   color: #000 !important;
   font-size: 2rem;
-  transtion: 2s linear;
+  transition: 2s linear;
 }
 
 .slider-container .slick-prev,
 .slider-container .slick-next {
   position: absolute;
   top: 50%;
-  transtion: 2s linear;
+  transition: 2s linear;
   transform: translateY(-50%);
   width: 30px;
   height: 30px;

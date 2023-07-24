@@ -10,8 +10,6 @@ export function ButtonRemove({ item }) {
     dispatch(openModalToRemoveAction(item));
   };
 
-  console.log("objID:", item.objID);
-
   return (
     <div className="action-remove-item">
       <button type="button" className="button-remove" onClick={handleRemove}>

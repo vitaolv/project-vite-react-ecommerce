@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 export function ModalConfirmationToRemove() {
-  const isOpen = useSelector((state) => state.modal.isOpen);
+  const isRemoveItemOpen = useSelector((state) => state.modal.isRemoveItemOpen);
   const itemToRemove = useSelector((state) => state.modal.itemToRemove);
   const dispatch = useDispatch();
 
@@ -22,9 +22,9 @@ export function ModalConfirmationToRemove() {
 
   return (
     <>
-      {isOpen && (
+      {isRemoveItemOpen && (
         <>
-          <Modal show={isOpen} onHide={handleClose} animation={true}>
+          <Modal show={isRemoveItemOpen} onHide={handleClose} animation={true}>
             <div id="modal-content">
               <Modal.Header closeButton>
                 <Modal.Title>Confirmação</Modal.Title>

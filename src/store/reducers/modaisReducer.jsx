@@ -1,7 +1,8 @@
 import * as types from "../Types";
 
 const initialState = {
-  isOpen: false,
+  isRemoveItemOpen: false,
+  isClearCartModalOpen: false,
   itemToRemove: null,
 };
 
@@ -10,7 +11,7 @@ export function modaisReducer(state = initialState, action) {
     case types.OPEN_MODAL_TO_REMOVE_ITEM: {
       return {
         ...state,
-        isOpen: true,
+        isRemoveItemOpen: true,
         itemToRemove: action.payload,
       };
     }
@@ -18,8 +19,22 @@ export function modaisReducer(state = initialState, action) {
     case types.CLOSE_MODAL_TO_REMOVE_ITEM: {
       return {
         ...state,
-        isOpen: false,
+        isRemoveItemOpen: false,
         itemToRemove: null,
+      };
+    }
+
+    case types.OPEN_MODAL_TO_CLEAR_CART: {
+      return {
+        ...state,
+        isClearCartModalOpen: true,
+      };
+    }
+
+    case types.CLOSE_MODAL_TO_CLEAR_CART: {
+      return {
+        ...state,
+        isClearCartModalOpen: false,
       };
     }
 

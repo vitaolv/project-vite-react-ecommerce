@@ -38,8 +38,7 @@
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 3px solid rgba(227, 217, 141, 0.7);
   border-radius: 15px;
-
-  width: 100%;
+  width: 740px;
 }
 
 .cart-item:last-child {
@@ -136,7 +135,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   .list-cart {
     padding: 2rem;
   }
@@ -149,6 +148,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
   }
 
   .item-info .product-details {

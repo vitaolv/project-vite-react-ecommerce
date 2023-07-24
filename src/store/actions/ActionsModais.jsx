@@ -19,8 +19,11 @@ export function closeModalToRemoveAction() {
 }
 
 export function openModalToClearCartAction() {
-  return {
-    type: types.OPEN_MODAL_TO_CLEAR_CART,
+  return async (dispatch) => {
+    await sleep(500);
+    dispatch({
+      type: types.OPEN_MODAL_TO_CLEAR_CART,
+    });
   };
 }
 
