@@ -3,6 +3,7 @@ import * as types from "../Types";
 const initialState = {
   isRemoveItemOpen: false,
   isClearCartModalOpen: false,
+  isPaymentOpen: false,
   itemToRemove: null,
 };
 
@@ -35,6 +36,20 @@ export function modaisReducer(state = initialState, action) {
       return {
         ...state,
         isClearCartModalOpen: false,
+      };
+    }
+
+    case types.OPEN_MODAL_TO_PAYMENT: {
+      return {
+        ...state,
+        isPaymentOpen: true,
+      };
+    }
+
+    case types.CLOSE_MODAL_TO_PAYMENT: {
+      return {
+        ...state,
+        isPaymentOpen: false,
       };
     }
 

@@ -1,11 +1,3 @@
-.content-buttons-Detail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
-}
-
 .button-comprar-agora {
   color: black;
   width: 100%;
