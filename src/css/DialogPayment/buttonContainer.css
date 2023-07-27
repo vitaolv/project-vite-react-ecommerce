@@ -1,0 +1,102 @@
+/* Estilos para os botões personalizados */
+
+.custom-button {
+  padding: 10px 20px;
+  background-color: #e3d98d;
+  border: none;
+  color: #382a21;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.custom-dialog-actions {
+  justify-content: scape-between !important;
+  padding: 16px 24px;
+  gap: 75%;
+}
+
+.custom-button:hover {
+  background-color: #382a21;
+  color: #e3d98d;
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  flex-grow: 1;
+}
+
+.button-cancel-dialog {
+  background-color: #252525;
+  color: #e3d98d;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.button-back-and-next {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-back {
+  background-color: transparent;
+  border: 1px solid #252525;
+  width: 100px !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-next {
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-final {
+  width: 175px !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back:hover {
+  background-color: #382a21;
+  color: #e3d98d;
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
+}
+
+@media (max-width: 500px) {
+  .btn-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .custom-button {
+    margin-bottom: 8px;
+    width: 180px;
+  }
+
+  .btn-back {
+    background-color: transparent;
+    width: 140px !important;
+  }
+
+  .btn-final {
+    width: 175px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .button-back-and-next {
+    flex-direction: column-reverse;
+  }
+
+  .btn-back {
+    width: 175px !important;
+  }
+}

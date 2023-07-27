@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { openModalToClearCartAction } from "../../store/actions/ActionsModais";
+import { Button } from "@mui/material";
 
 export function ButtonClearCart() {
   const dispatch = useDispatch();
@@ -10,9 +11,9 @@ export function ButtonClearCart() {
 
   return (
     <div>
-      <button className="button-clean-cart" onClick={handleToClearCart}>
+      <Button variant="outlined" onClick={handleToClearCart}>
         Limpar tudo
-      </button>
+      </Button>
     </div>
   );
 }

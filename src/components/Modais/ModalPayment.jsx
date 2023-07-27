@@ -1,16 +1,17 @@
-import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
-import DialogContent from "@mui/material/DialogContent";
-import DialogActions from "@mui/material/DialogActions";
-import Button from "@mui/material/Button";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
+import { Stack } from "@mui/system";
 
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
 
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
-import { StepperToPayment } from "../Stepper/StepperToPayment";
-
 import { steps } from "../../utils/stepsDialog/steps";
+import { StepperToPayment } from "../Stepper/StepperToPayment";
 
 export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
@@ -46,24 +47,40 @@ export function ModalPayment() {
           <DialogContent>
             <StepperToPayment activeStep={activeStep} steps={steps} />
           </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} variant="outlined" color="warning">
-              Cancelar
-            </Button>
-            {activeStep > 0 && (
-              <Button onClick={handlePreviousStep} className="DialogBackButton">
-                Voltar
-              </Button>
-            )}
-            {activeStep < steps.length - 1 ? (
-              <Button onClick={handleNextStep} className="DialogNextButton">
-                Próximo
-              </Button>
-            ) : (
-              <Button onClick={handleClose} className="DialogFinishButton">
-                Finalizar Compra
-              </Button>
-            )}
+          <DialogActions className="custom-dialog-actions">
+            <div className="btn-container">
+              <button
+                className="custom-button button-cancel-dialog"
+                onClick={handleClose}
+              >
+                Cancelar
+              </button>
+              <div className="button-back-and-next">
+                {activeStep > 0 && (
+                  <button
+                    className="custom-button btn-back"
+                    onClick={handlePreviousStep}
+                  >
+                    Voltar
+                  </button>
+                )}
+                {activeStep < steps.length - 1 ? (
+                  <button
+                    className="custom-button btn-next"
+                    onClick={handleNextStep}
+                  >
+                    Próximo
+                  </button>
+                ) : (
+                  <button
+                    className="custom-button btn-final"
+                    onClick={handleClose}
+                  >
+                    Finalizar Compra
+                  </button>
+                )}
+              </div>
+            </div>
           </DialogActions>
         </Dialog>
       )}
