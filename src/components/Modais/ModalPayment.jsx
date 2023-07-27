@@ -4,7 +4,6 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
-import { Stack } from "@mui/system";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";

@@ -22,6 +22,7 @@ export default function CartWithPayment() {
               <ListCart />
               <ResumeAside />
             </div>
+
             <ModalConfirmationToClearCart />
           </>
         ) : (
