@@ -1,39 +1,14 @@
-.button-comprar-agora {
-  color: black;
-  width: 100%;
-  padding: 0.7rem;
-  border: none;
-  background-color: #e3d98d;
-  border-radius: 10px;
-
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+.buy-and-cart-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-.button-adicionar-carrinho {
-  background-color: #fff;
-  width: 100%;
-  padding: 0.7rem;
-  color: black;
-  border: 1px solid #dbdbdb;
-  border-radius: 10px;
-
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+.buttons-detali {
+  transition: all 0.3s ease 0s;
 }
 
-.button-comprar-agora:hover,
-.button-adicionar-carrinho:hover {
-  background-color: #382a21;
-  color: #e3d98d;
-  transition: 0.3s background-color;
-  border-color: #000000;
-
-  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
-}
-
-.button-comprar-agora:active,
-.button-adicionar-carrinho:active {
-  background-color: #151515;
-  color: white;
-  transition: 0.3s background-color;
-  border-color: #000000;
+.buttons-detali:hover {
+  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.3) !important;
+  transition: 0.3s ease-in-out;
 }

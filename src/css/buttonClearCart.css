@@ -1,26 +1,13 @@
 .button-clean-cart {
-  margin-top: 20px;
-  background-color: rgba(136, 136, 136, 0.1);
-
-  border: 1px solid #252525;
-
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7px);
   transition: all 0.3s ease 0s;
 
   border-radius: 13px;
-
-  height: 42px;
-  width: 128px;
-
-  padding: 8px;
-
   font-size: 16px;
 }
 
 .button-clean-cart:hover {
-  background-color: #e3d98d;
-  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
-  color: #252525;
+  box-shadow: 0px 15px 20px rgba(400, 229, 157, 0.3);
   transition: 0.3s ease-in-out;
 }

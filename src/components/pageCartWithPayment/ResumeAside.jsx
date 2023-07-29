@@ -10,6 +10,8 @@ import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ModalPayment } from "../Modais/ModalPayment";
 import { openModalToPaymentAction } from "../../store/actions/ActionsModais";
 
+import { Button } from "@mui/material";
+
 export const ResumeAside = () => {
   const totalPrice = useSelector((state) => state.cart.priceTotal);
   const [numInstallments, formattedInstallmentValue] =
@@ -31,17 +33,23 @@ export const ResumeAside = () => {
         <h3>
           <AiOutlineFileSearch /> Resumo
         </h3>
-        <hr />
+        <div className="aside-hr" />
         <div className="price-resume">
           <h5>Preço final a pagar: {getFormattedPriceValue(totalPrice)}</h5>
           <h6>
             ou em até {numInstallments} de: {formattedInstallmentValue}
           </h6>
         </div>
-        <br />
-        <button className="button-to-payment" onClick={handleToPayment}>
+        <Button
+          className="button-to-payment"
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={handleToPayment}
+        >
           <strong>Clique para pagamento</strong>
-        </button>
+        </Button>
+        <br />
       </aside>
       <ModalPayment />
     </>

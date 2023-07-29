@@ -4,6 +4,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
+import { Button } from "@mui/material";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
@@ -48,35 +49,41 @@ export function ModalPayment() {
           </DialogContent>
           <DialogActions className="custom-dialog-actions">
             <div className="btn-container">
-              <button
-                className="custom-button button-cancel-dialog"
+              <Button
+                color="secondary"
+                variant="contained"
                 onClick={handleClose}
               >
                 Cancelar
-              </button>
+              </Button>
               <div className="button-back-and-next">
                 {activeStep > 0 && (
-                  <button
-                    className="custom-button btn-back"
+                  <Button
+                    color="black"
+                    variant="outlined"
                     onClick={handlePreviousStep}
                   >
                     Voltar
-                  </button>
+                  </Button>
                 )}
                 {activeStep < steps.length - 1 ? (
-                  <button
-                    className="custom-button btn-next"
+                  <Button
+                    className="buttonntainer"
+                    color="primary"
+                    variant="contained"
                     onClick={handleNextStep}
                   >
                     Próximo
-                  </button>
+                  </Button>
                 ) : (
-                  <button
-                    className="custom-button btn-final"
+                  <Button
+                    className="custom-button"
+                    color="primary"
+                    variant="contained"
                     onClick={handleClose}
                   >
                     Finalizar Compra
-                  </button>
+                  </Button>
                 )}
               </div>
             </div>

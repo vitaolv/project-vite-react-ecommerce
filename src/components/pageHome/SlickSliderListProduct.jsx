@@ -2,6 +2,9 @@ import Slider from "react-slick";
 import { Link, useLocation } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
 import { settings } from "./SettingsSlickSlider";
+
+import { Button } from "@mui/material";
+
 export function SlickSliderListProduct() {
   const produtosFormatados = useProductContext();
 
@@ -40,7 +43,9 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <button className="card-link">Ver detalhes...</button>
+                <Button className="card-link" variant="outlined" color="black">
+                  Ver detalhes...
+                </Button>
               </div>
             </div>
           </Link>
@@ -76,7 +81,9 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <button className="card-link">Ver detalhes...</button>
+                <Button className="card-link" variant="outlined" color="black">
+                  Ver detalhes...
+                </Button>
               </div>
             </div>
           </Link>
