@@ -30,8 +30,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <StoreProvider>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <StoreProvider>
           <Header />
           <ProductProvider>
             <Routes>
@@ -46,8 +46,8 @@ function App() {
           </ProductProvider>
           <Notification />
           <Footer />
-        </ThemeProvider>
-      </StoreProvider>
+        </StoreProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

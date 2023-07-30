@@ -1,6 +1,8 @@
 import * as types from "../Types";
 import { v4 as uuidv4 } from "uuid";
 
+import { updatePriceTotalReducer } from "../reducers/cart/finalPriceReducer";
+
 export class ProductItem {
   constructor(id, name, cover, price, flavorSelected, quantity) {
     this.id = id;
@@ -32,45 +34,68 @@ export function addToCartAction(product) {
 
   localStorage.setItem("cartItems", JSON.stringify(updatedCart));
 
-  return {
-    type: types.ADD_TO_CART,
-    payload: {
-      objID,
-      id,
-      name,
-      cover,
-      price,
-      flavorSelected,
-      quantity,
-    },
-  };
-}
-export function updateQuantityAction(objID, quantity) {
-  return {
-    type: types.UPDATE_QUANTITY,
-    payload: {
-      objID: objID,
-      quantity: quantity,
-    },
+  return (dispatch) => {
+    dispatch({
+      type: types.ADD_TO_CART,
+      payload: {
+        objID,
+        id,
+        name,
+        cover,
+        price,
+        flavorSelected,
+        quantity,
+      },
+    });
+
+    dispatch(updatePriceTotalAction());
   };
 }
 
-export const updatePriceTotalAction = (priceTotal) => {
-  return {
-    type: types.UPDATE_PRICE_TOTAL,
-    payload: priceTotal,
+export function updateQuantityAction(objID, quantity) {
+  return (dispatch) => {
+    dispatch({
+      type: types.UPDATE_QUANTITY,
+      payload: {
+        objID: objID,
+        quantity: quantity,
+      },
+    });
+
+    dispatch(updatePriceTotalAction());
   };
-};
+}
 
 export function removeFromCartAction(item) {
-  return {
-    type: types.REMOVE_FROM_CART,
-    payload: item,
+  return (dispatch) => {
+    dispatch({
+      type: types.REMOVE_FROM_CART,
+      payload: item,
+    });
+
+    dispatch(updatePriceTotalAction());
   };
 }
 
 export function clearCartAction() {
-  return {
-    type: types.CLEAR_CART,
+  return (dispatch) => {
+    dispatch({
+      type: types.CLEAR_CART,
+    });
+
+    dispatch(updatePriceTotalAction());
   };
 }
+
+export const updatePriceTotalAction = () => {
+  return (dispatch, getState) => {
+    const state = getState().cart;
+
+    const totalPrice = updatePriceTotalReducer(state);
+
+    dispatch({
+      type: types.UPDATE_PRICE_TOTAL,
+      payload: totalPrice,
+    });
+  };
+};

@@ -13,18 +13,17 @@ import { openModalToPaymentAction } from "../../store/actions/ActionsModais";
 import { Button } from "@mui/material";
 
 export const ResumeAside = () => {
+  const dispatch = useDispatch();
   const totalPrice = useSelector((state) => state.cart.priceTotal);
   const [numInstallments, formattedInstallmentValue] =
     getFormattedFinalPriceInstallmente(totalPrice);
-
-  const dispatch = useDispatch();
 
   const handleToPayment = () => {
     dispatch(openModalToPaymentAction());
   };
 
   useEffect(() => {
-    dispatch(updatePriceTotalAction());
+    dispatch(updatePriceTotalAction()); // Chamar a ação assíncrona para atualizar o preço total
   }, [dispatch]);
 
   return (

@@ -25,7 +25,7 @@ export function cartReducer(state = initialState, action) {
     }
 
     case types.UPDATE_PRICE_TOTAL: {
-      return updatePriceTotalReducer(state, action);
+      return updatePriceTotalReducer(state);
     }
 
     case types.CLEAR_CART: {
