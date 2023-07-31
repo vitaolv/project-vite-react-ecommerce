@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import PropTypes from "prop-types";
 
 export const Contador = ({ onQuantityChange, initQuantity }) => {
@@ -15,8 +16,12 @@ export const Contador = ({ onQuantityChange, initQuantity }) => {
     <div className="content-button-contador-item">
       <p id="quantity">{initQuantity} </p>
       <div id="buttonAumentoOuDesfaz">
-        <button onClick={handleDecrement}>-</button>
-        <button onClick={handleIncrement}>+</button>
+        <Button variant="outlined" color="secondary" onClick={handleDecrement}>
+          -
+        </Button>
+        <Button variant="outlined" color="secondary" onClick={handleIncrement}>
+          +
+        </Button>
       </div>
     </div>
   );

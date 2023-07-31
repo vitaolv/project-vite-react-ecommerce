@@ -1,0 +1,53 @@
+.custom-button {
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn-container Button {
+  border-radius: 8px !important;
+}
+
+.custom-dialog-actions {
+  justify-content: scape-between !important;
+  padding: 16px 24px;
+  gap: 75%;
+}
+
+.btn-container Button:hover {
+  box-shadow: 0px 8px 20px rgba(400, 229, 157, 0.3);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  flex-grow: 1;
+}
+
+.button-back-and-next {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 500px) {
+  .btn-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .custom-button {
+    margin-bottom: 8px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .button-back-and-next {
+    flex-direction: column-reverse;
+  }
+}

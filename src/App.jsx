@@ -12,10 +12,14 @@ import Notification from "./components/Notifications/Notification";
 import "./App.css";
 
 import { ProductProvider } from "./context/ProductContext";
+import { ThemeProvider } from "@mui/material/styles";
+
 import StoreProvider from "./store";
 
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+
+import { theme } from "./theme/ThemeMaterialUI";
 
 function App() {
   const productInCart = useSelector((state) => state.cart.productInCart);
@@ -26,19 +30,24 @@ function App() {
 
   return (
     <BrowserRouter>
-      <StoreProvider>
-        <Header />
-        <ProductProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produto/:nome/:id" element={<ProductDetail />} />
-            <Route path="/carrinho-e-pagamento" element={<CartWithPayment />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </ProductProvider>
-        <Notification />
-        <Footer />
-      </StoreProvider>
+      <ThemeProvider theme={theme}>
+        <StoreProvider>
+          <Header />
+          <ProductProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/produto/:nome/:id" element={<ProductDetail />} />
+              <Route
+                path="/carrinho-e-pagamento"
+                element={<CartWithPayment />}
+              />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </ProductProvider>
+          <Notification />
+          <Footer />
+        </StoreProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

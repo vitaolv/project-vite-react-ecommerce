@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModalToRemoveAction } from "../../store/actions/ActionsModais";
 import { removeFromCartAction } from "../../store/actions/ActionsCart";
 import { updateQuantityAction } from "../../store/actions/ActionsCart";
-import Button from "react-bootstrap/Button";
+import { Button } from "@mui/material";
 import Modal from "react-bootstrap/Modal";
 
 export function ModalConfirmationToRemove() {
@@ -37,15 +37,18 @@ export function ModalConfirmationToRemove() {
                 </strong>
               </Modal.Body>
               <Modal.Footer>
-                <Button id="buttonToCancel" onClick={handleClose}>
-                  Cancelar
-                </Button>
-                <Button
-                  id="buttonConfirmToRemove"
-                  onClick={handleConfirmToRemove}
-                >
-                  Confirmar
-                </Button>
+                <div className="buttonsConfirmationContainer">
+                  <Button
+                    variant="outlined"
+                    color="black"
+                    onClick={handleClose}
+                  >
+                    Cancelar
+                  </Button>
+                  <Button variant="contained" onClick={handleConfirmToRemove}>
+                    Confirmar
+                  </Button>
+                </div>
               </Modal.Footer>
             </div>
           </Modal>
