@@ -4,19 +4,35 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
-import { Button } from "@mui/material";
+
+import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
-import { steps } from "../../utils/stepsDialog/steps";
+import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
 
 export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
+  const [formData, setFormData] = useState({
+    nome: "",
+    dataNascimento: "",
+    cpf: "",
+    email: "",
+    telefone: "",
+    celular: "",
+
+    cep: "",
+    endereco: "",
+    numero: "",
+    complemento: "",
+    cidade: "",
+    estado: "",
+  });
 
   const handleNextStep = () => {
     setActiveStep((prevStep) => prevStep + 1);
@@ -30,6 +46,16 @@ export function ModalPayment() {
     dispatch(closeModalToPaymentAction());
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const steps = getSteps(formData, handleChange);
+
   return (
     <>
       {isPaymentOpen && (
@@ -42,51 +68,31 @@ export function ModalPayment() {
               handleClose(event);
             }
           }}
+          PaperProps={{
+            style: {
+              minHeight: "80vh",
+              display: "flex",
+              flexDirection: "column",
+            },
+          }}
         >
           <DialogTitle>Etapas de Finalização de Compra</DialogTitle>
           <DialogContent>
-            <StepperToPayment activeStep={activeStep} steps={steps} />
+            <StepperToPayment
+              activeStep={activeStep}
+              steps={steps}
+              formData={formData}
+              handleChange={handleChange}
+            />
           </DialogContent>
           <DialogActions className="custom-dialog-actions">
-            <div className="btn-container">
-              <Button
-                color="secondary"
-                variant="contained"
-                onClick={handleClose}
-              >
-                Cancelar
-              </Button>
-              <div className="button-back-and-next">
-                {activeStep > 0 && (
-                  <Button
-                    color="black"
-                    variant="outlined"
-                    onClick={handlePreviousStep}
-                  >
-                    Voltar
-                  </Button>
-                )}
-                {activeStep < steps.length - 1 ? (
-                  <Button
-                    className="buttonntainer"
-                    color="primary"
-                    variant="contained"
-                    onClick={handleNextStep}
-                  >
-                    Próximo
-                  </Button>
-                ) : (
-                  <Button
-                    className="custom-button"
-                    color="primary"
-                    variant="contained"
-                    onClick={handleClose}
-                  >
-                    Finalizar Compra
-                  </Button>
-                )}
-              </div>
-            </div>
+            <ButtonsPaymentContainerDialogComponent
+              handleClose={handleClose}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+              activeStep={activeStep}
+              steps={steps}
+            />
           </DialogActions>
         </Dialog>
       )}

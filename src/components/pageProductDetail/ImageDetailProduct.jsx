@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
+import { Button } from "@mui/material";
 export function ImageDetailProduct({ name, id }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -86,12 +87,22 @@ export function ImageDetailProduct({ name, id }) {
           </div>
           {shouldRenderArrows && (
             <>
-              <button id="prev-slide-Detail" onClick={prevSlide}>
+              <Button
+                color="black"
+                variant="outlined"
+                id="prev-slide-Detail"
+                onClick={prevSlide}
+              >
                 ❮
-              </button>
-              <button id="next-slide-Detail" onClick={nextSlide}>
+              </Button>
+              <Button
+                color="black"
+                variant="outlined"
+                id="next-slide-Detail"
+                onClick={nextSlide}
+              >
                 ❯
-              </button>
+              </Button>
             </>
           )}
         </div>
