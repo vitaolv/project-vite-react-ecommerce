@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-import { Button } from "@mui/material";
+import { Button } from "antd";
 export function ImageDetailProduct({ name, id }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 

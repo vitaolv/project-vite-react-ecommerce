@@ -10,8 +10,7 @@ import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ModalPayment } from "../Modais/ModalPayment";
 import { openModalToPaymentAction } from "../../store/actions/ActionsModais";
 
-import { Button } from "@mui/material";
-
+import { Button } from "antd";
 export const ResumeAside = () => {
   const dispatch = useDispatch();
   const totalPrice = useSelector((state) => state.cart.priceTotal);
@@ -41,8 +40,6 @@ export const ResumeAside = () => {
         </div>
         <Button
           className="button-to-payment"
-          variant="contained"
-          color="primary"
           size="large"
           onClick={handleToPayment}
         >

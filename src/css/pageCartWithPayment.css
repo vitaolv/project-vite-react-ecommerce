@@ -12,7 +12,7 @@
 }
 
 .list-cart {
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
   display: grid;
   gap: 1rem;
   align-items: center;
@@ -96,7 +96,9 @@
 .cart-without-products {
   padding: 1rem;
   margin: 6rem 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cart-without-products img {

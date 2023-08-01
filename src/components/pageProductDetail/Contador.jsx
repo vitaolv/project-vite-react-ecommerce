@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
+import { Button } from "antd";
+
 export const Contador = ({ onQuantityChange, initQuantity }) => {
   const [quantity, setQuantity] = useState(initQuantity);
 
@@ -19,8 +21,8 @@ export const Contador = ({ onQuantityChange, initQuantity }) => {
   return (
     <div className="content-button-contador-item">
       <div id="buttonAumentoOuDesfaz">
-        <button onClick={handleDecrement}>-</button>
-        <button onClick={handleIncrement}>+</button>
+        <Button onClick={handleDecrement}>-</Button>
+        <Button onClick={handleIncrement}>+</Button>
       </div>
       <h5>Quantidade: {quantity} </h5>
     </div>

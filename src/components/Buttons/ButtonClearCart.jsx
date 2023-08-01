@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { openModalToClearCartAction } from "../../store/actions/ActionsModais";
+import { ClearOutlined } from "@ant-design/icons";
 
-import { Button } from "@mui/material";
+import { Button } from "antd";
 
 export function ButtonClearCart() {
   const dispatch = useDispatch();
@@ -14,9 +15,10 @@ export function ButtonClearCart() {
     <div>
       <br />
       <Button
+        size="large"
+        shape="circule"
+        icon={<ClearOutlined />}
         className="button-clean-cart"
-        variant="outlined"
-        color="black"
         onClick={handleToClearCart}
       >
         Limpar tudo

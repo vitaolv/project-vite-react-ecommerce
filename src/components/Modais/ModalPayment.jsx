@@ -1,12 +1,6 @@
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from "@mui/material";
+import { Modal } from "antd";
 
 import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
-
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -25,7 +19,6 @@ export function ModalPayment() {
     email: "",
     telefone: "",
     celular: "",
-
     cep: "",
     endereco: "",
     numero: "",
@@ -59,42 +52,23 @@ export function ModalPayment() {
   return (
     <>
       {isPaymentOpen && (
-        <Dialog
+        <Modal
           open={isPaymentOpen}
-          fullWidth
-          maxWidth="md"
-          onClose={(event, reason) => {
-            if (reason !== "backdropClick") {
-              handleClose(event);
-            }
-          }}
-          PaperProps={{
-            style: {
-              minHeight: "80vh",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
+          onClose={handleClose}
+          footer={null}
+          centered
+          width="md"
+          title="Etapas de Finalização de Compra"
         >
-          <DialogTitle>Etapas de Finalização de Compra</DialogTitle>
-          <DialogContent>
-            <StepperToPayment
-              activeStep={activeStep}
-              steps={steps}
-              formData={formData}
-              handleChange={handleChange}
-            />
-          </DialogContent>
-          <DialogActions className="custom-dialog-actions">
-            <ButtonsPaymentContainerDialogComponent
-              handleClose={handleClose}
-              handleNextStep={handleNextStep}
-              handlePreviousStep={handlePreviousStep}
-              activeStep={activeStep}
-              steps={steps}
-            />
-          </DialogActions>
-        </Dialog>
+          <StepperToPayment activeStep={activeStep} steps={steps} />
+          <ButtonsPaymentContainerDialogComponent
+            handleClose={handleClose}
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+            activeStep={activeStep}
+            steps={steps}
+          />
+        </Modal>
       )}
     </>
   );

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { showNotification } from "../../store/actions/ActionsNotification";
+import { Button } from "antd";
 
-import { Button } from "@mui/material";
-
+Button;
 export function ButtonToCartOrBuyNow({ onClick }) {
   const dispatch = useDispatch();
 
@@ -20,13 +20,12 @@ export function ButtonToCartOrBuyNow({ onClick }) {
   return (
     <>
       <div className="buy-and-cart-buttons">
-        <Button className="buttons-detali" variant="contained" color="primary">
+        <Button size="large" className="buttons-detali btn-BuyNow">
           Comprar agora
         </Button>
         <Button
-          className="buttons-detali"
-          variant="outlined"
-          color="secondary"
+          size="large"
+          className="buttons-detali btn-addToCart"
           onClick={handleAddToCart}
         >
           Adicionar ao Carrinho

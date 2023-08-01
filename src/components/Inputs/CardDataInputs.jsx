@@ -1,105 +1,90 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-
-import useMediaQuery from "@mui/material/useMediaQuery";
-
-import { Grid } from "@mui/material";
-
+import { Input, Grid, Form } from "antd";
 import PropTypes from "prop-types";
+import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 
 export default function CardDataInputs({ formData, handleChange }) {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const screens = useBreakpoint();
 
   return (
-    <Box
-      component="form"
-      sx={{
+    <Form
+      layout="vertical"
+      style={{
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
-        "& .MuiTextField-root": { m: 1 },
-        "& .medium-input": { width: "90%" },
-        ...(isSmallScreen && {
-          "& .medium-input, & .large-input": { width: "100%" },
-        }),
+        marginY: 1,
+        ...(screens.md && { width: "100%" }),
       }}
-      noValidate
-      autoComplete="off"
     >
       <Grid container spacing={2} item xs={12}>
         <Grid item xs={12}>
-          <TextField
-            required
-            name="nome"
-            label="Nome completo"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.nome}
-            onChange={handleChange}
-          />
+          <Form.Item label="Nome completo" required>
+            <Input
+              name="nome"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.nome}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            name="dataNascimento"
-            label="Data de Nascimento"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.dataNascimento}
-            onChange={handleChange}
-          />
+          <Form.Item label="Data de Nascimento" required>
+            <Input
+              name="dataNascimento"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.dataNascimento}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            name="cpf"
-            label="CPF"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.cpf}
-            onChange={handleChange}
-          />
+          <Form.Item label="CPF" required>
+            <Input
+              name="cpf"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.cpf}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            name="email"
-            label="E-mail"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.email}
-            onChange={handleChange}
-          />
+          <Form.Item label="E-mail" required>
+            <Input
+              name="email"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            name="telefone"
-            label="Telefone"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.telefone}
-            onChange={handleChange}
-          />
+          <Form.Item label="Telefone" required>
+            <Input
+              name="telefone"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.telefone}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            name="celular"
-            label="Celular (OPCIONAL)"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.celular}
-            onChange={handleChange}
-          />
+          <Form.Item label="Celular (OPCIONAL)">
+            <Input
+              name="celular"
+              size="middle"
+              style={{ width: "90%" }}
+              value={formData.celular}
+              onChange={handleChange}
+            />
+          </Form.Item>
         </Grid>
       </Grid>
-    </Box>
+    </Form>
   );
 }
 

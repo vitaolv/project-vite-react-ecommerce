@@ -1,113 +1,77 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
-import Grid from "@mui/material/Grid";
+import { Input, Grid, Select } from "antd";
 import { getBrazilianStates } from "../../utils/estadosBrasileiros/states";
 import PropTypes from "prop-types";
-import useMediaQuery from "@mui/material/useMediaQuery";
-
 export default function LocalDataInputs({ formData, handleChange }) {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-
   return (
-    <Box
-      component="form"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        "& .MuiTextField-root": { m: 1 },
-        "& .small-input": { width: "90%" },
-        "& .medium-input": { width: "90%" },
-        "& .large-input": { width: "90%" },
-        ...(isSmallScreen && {
-          "& .medium-input, & .large-input": { width: "100%" },
-        }),
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <div>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <TextField
+          <Input
             required
             name="cep"
-            label="CEP"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
+            addonBefore="CEP"
+            size="middle"
             value={formData.cep}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <Input
             required
             name="endereco"
-            label="Endereço"
-            variant="outlined"
-            fullWidth
-            className="large-input"
+            addonBefore="Endereço"
+            size="large"
             value={formData.endereco}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <Input
             required
             name="numero"
-            label="Número"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
+            addonBefore="Número"
+            size="middle"
             value={formData.numero}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <Input
             name="complemento"
-            label="Complemento"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
+            addonBefore="Complemento"
+            size="middle"
             value={formData.complemento}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <Input
             required
             name="cidade"
-            label="Cidade"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
+            addonBefore="Cidade"
+            size="middle"
             value={formData.cidade}
             onChange={handleChange}
           />
         </Grid>
         <Grid item xs={12}>
-          <TextField
+          <Select
             required
-            select
             name="estado"
-            label="Estado"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
+            addonBefore="Estado"
+            size="middle"
             value={formData.estado}
             onChange={handleChange}
           >
             {getBrazilianStates.map((state) => (
-              <MenuItem key={state} value={state}>
+              <Select.Option key={state} value={state}>
                 {state}
-              </MenuItem>
+              </Select.Option>
             ))}
-          </TextField>
+          </Select>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 }
 

@@ -1,0 +1,21 @@
+.buttonToCancel {
+  border-color: #463009;
+}
+
+.buttonToRemove {
+  background-color: #e3d98d;
+}
+
+.buttonToRemove:hover,
+.buttonToCancel:hover {
+  background-color: #252525 !important;
+  border-color: #e3d98d !important;
+  color: #e3d98d !important;
+}
+
+.buttonToRemove:active,
+.buttonToCancel:active {
+  background-color: #252525 !important;
+  border-color: #e3d98d !important;
+  color: #e3d98d !important;
+}
