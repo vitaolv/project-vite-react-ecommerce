@@ -1,24 +1,22 @@
 import { Steps } from "antd";
 import PropTypes from "prop-types";
 
-const { Step } = Steps;
-
 export function StepperToPayment({ activeStep, steps }) {
   return (
-    <Steps
-      current={activeStep}
-      size="small"
-      progressDot
-      className="custom-progress-dot"
-    >
-      {steps.map((step, index) => (
-        <Step
-          key={step.title}
-          title={step.title}
-          className={index <= activeStep ? "completed" : ""}
-        />
-      ))}
-    </Steps>
+    <>
+      <Steps
+        current={activeStep}
+        progressDot
+        className="custom-progress-dot"
+        items={steps.map((step) => ({
+          title: step.title,
+          content: step.content,
+        }))}
+      />
+      <br />
+      <hr />
+      <br />
+    </>
   );
 }
 

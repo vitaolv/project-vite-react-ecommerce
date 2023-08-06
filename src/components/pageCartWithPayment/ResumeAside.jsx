@@ -17,12 +17,13 @@ export const ResumeAside = () => {
   const [numInstallments, formattedInstallmentValue] =
     getFormattedFinalPriceInstallmente(totalPrice);
 
+  const isPaymentOpen = true;
   const handleToPayment = () => {
     dispatch(openModalToPaymentAction());
   };
 
   useEffect(() => {
-    dispatch(updatePriceTotalAction()); // Chamar a ação assíncrona para atualizar o preço total
+    dispatch(updatePriceTotalAction());
   }, [dispatch]);
 
   return (
@@ -47,7 +48,7 @@ export const ResumeAside = () => {
         </Button>
         <br />
       </aside>
-      <ModalPayment />
+      <ModalPayment isPaymentOpen={isPaymentOpen} />
     </>
   );
 };

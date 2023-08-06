@@ -1,12 +1,11 @@
 import { Modal } from "antd";
-
-import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
 import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
+
+import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
 export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
@@ -41,10 +40,7 @@ export function ModalPayment() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData({ ...formData, [name]: value });
   };
 
   const steps = getSteps(formData, handleChange);
@@ -61,6 +57,16 @@ export function ModalPayment() {
           title="Etapas de Finalização de Compra"
         >
           <StepperToPayment activeStep={activeStep} steps={steps} />
+
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              style={{ display: activeStep === index ? "block" : "none" }}
+            >
+              {step.content}
+            </div>
+          ))}
+
           <ButtonsPaymentContainerDialogComponent
             handleClose={handleClose}
             handleNextStep={handleNextStep}
