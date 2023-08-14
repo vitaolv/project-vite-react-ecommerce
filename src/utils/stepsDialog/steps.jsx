@@ -4,31 +4,55 @@ import { LocalDataInputs } from "../../components/Inputs/LocalDataInputs";
 
 import { Teste } from "../../components/teste";
 
-const getSteps = (formData, handleChange) => [
+const getSteps = (formData, handleChange, setValidation) => [
   {
     title: "Dados pessoais",
     content: (
-      <PersonalDataInputs formData={formData} handleChange={handleChange} />
+      <PersonalDataInputs
+        formData={formData}
+        handleChange={handleChange}
+        setValidation={setValidation}
+      />
     ),
   },
   {
     title: "Endereço",
     content: (
-      <LocalDataInputs formData={formData} handleChange={handleChange} />
+      <LocalDataInputs
+        formData={formData}
+        handleChange={handleChange}
+        setValidation={setValidation}
+      />
     ),
   },
   {
     title: "Formas de pagamento",
-    content: <CardDataInputs formData={formData} handleChange={handleChange} />,
+    content: (
+      <CardDataInputs
+        formData={formData}
+        handleChange={handleChange}
+        setValidation={setValidation}
+      />
+    ),
   },
   {
     title: "Revisão da compra",
-    content: <Teste formData={formData} handleChange={handleChange} />,
+    content: (
+      <Teste
+        formData={formData}
+        handleChange={handleChange}
+        setValidation={setValidation}
+      />
+    ),
   },
   {
     title: "Finalização da compra",
     content: (
-      <PersonalDataInputs formData={formData} handleChange={handleChange} />
+      <PersonalDataInputs
+        formData={formData}
+        handleChange={handleChange}
+        setValidation={setValidation}
+      />
     ),
   },
 ];

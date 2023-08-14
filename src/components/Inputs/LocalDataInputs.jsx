@@ -3,7 +3,7 @@ import { Input, Form, Row, Col, Select } from "antd";
 import { getBrazilianStates } from "../../utils/estadosBrasileiros/states";
 import PropTypes from "prop-types";
 
-export function LocalDataInputs({ formData, handleChange }) {
+export function LocalDataInputs({ formData, handleChange, setValidation }) {
   const handleDateChange = (date) => {
     handleChange({
       target: {
@@ -11,6 +11,9 @@ export function LocalDataInputs({ formData, handleChange }) {
         value: date,
       },
     });
+    setValidation = true;
+
+    return setValidation;
   };
   return (
     <Form layout="vertical">
@@ -94,4 +97,5 @@ export function LocalDataInputs({ formData, handleChange }) {
 LocalDataInputs.propTypes = {
   formData: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
+  setValidation: PropTypes.func.isRequired,
 };

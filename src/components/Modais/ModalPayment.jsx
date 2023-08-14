@@ -11,25 +11,43 @@ export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
+  const [validation, setValidation] = useState(false);
   const [formData, setFormData] = useState({
+    //Personal
     nome: "",
     dataNascimento: "",
     cpf: "",
     email: "",
     telefone: "",
     celular: "",
+    //Local
     cep: "",
     endereco: "",
     numero: "",
     complemento: "",
     cidade: "",
     estado: "",
+    //Payment card
+    numeroDoCartao: "",
+    nomeEscritoNoCartao: "",
+    vencimento: "",
+    cvv: "",
+    tipoDeCartao: "",
   });
 
-  const handleNextStep = () => {
-    setActiveStep((prevStep) => prevStep + 1);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
+  const steps = getSteps(formData, handleChange, setValidation);
+
+  const handleNextStep = () => {
+    if (!validation) {
+      return;
+    }
+    setActiveStep((prevStep) => prevStep + 1);
+  };
   const handlePreviousStep = () => {
     setActiveStep((prevStep) => prevStep - 1);
   };
@@ -37,13 +55,6 @@ export function ModalPayment() {
   const handleClose = () => {
     dispatch(closeModalToPaymentAction());
   };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const steps = getSteps(formData, handleChange);
 
   return (
     <>

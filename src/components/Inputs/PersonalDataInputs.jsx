@@ -1,9 +1,9 @@
 import { Input, Form, Row, Col, DatePicker } from "antd";
+import { useState } from "react";
 import PropTypes from "prop-types";
-
 import dayjs from "dayjs";
 
-export function PersonalDataInputs({ formData, handleChange }) {
+export function PersonalDataInputs({ formData, handleChange, setValidation }) {
   const dateFormat = "DD/MM/YYYY";
   const handleDateChange = (date, dateString) => {
     const formattedDate = dayjs(dateString, dateFormat).format(dateFormat);
@@ -14,6 +14,129 @@ export function PersonalDataInputs({ formData, handleChange }) {
       },
     });
   };
+
+  const [cpf, setCPF] = useState("");
+  const cpfMaskPlaceholder = "___.___.___-__";
+
+  const handleCPFChange = (e) => {
+    const inputValue = e.target.value;
+    const numericValue = inputValue.replace(/\D/g, "");
+    let formattedValue = "";
+
+    for (let i = 0; i < numericValue.length && i < 11; i++) {
+      if (i === 3 || i === 6) {
+        formattedValue += ".";
+      } else if (i === 9) {
+        formattedValue += "-";
+      }
+      formattedValue += numericValue[i];
+    }
+
+    setCPF(formattedValue);
+    handleChange({
+      target: {
+        name: "cpf",
+        value: formattedValue,
+      },
+    });
+  };
+
+  const [telefone, setTelefone] = useState("");
+
+  const telephoneAndPhoneMaskPlaceholder = "(__) _____-____";
+  const handleTelephone = (e) => {
+    const inputValue = e.target.value;
+    const numericValue = inputValue.replace(/\D/g, "");
+    let formattedValue = "";
+
+    for (let i = 0; i < numericValue.length && i < 11; i++) {
+      if (i === 0) {
+        formattedValue += "(";
+      }
+      if (i === 2) {
+        formattedValue += ")";
+        formattedValue += " ";
+      }
+      if (i === 7) {
+        formattedValue += "-";
+      }
+      formattedValue += numericValue[i];
+    }
+
+    setTelefone(formattedValue);
+    handleChange({
+      target: {
+        name: "telefone",
+        value: formattedValue,
+      },
+    });
+  };
+
+  const [phone, setPhone] = useState("");
+
+  const handlePhone = (e) => {
+    const inputValue = e.target.value;
+    const numericValue = inputValue.replace(/\D/g, "");
+    let formattedValue = "";
+
+    for (let i = 0; i < numericValue.length && i < 11; i++) {
+      if (i === 0) {
+        formattedValue += "(";
+      }
+      if (i === 2) {
+        formattedValue += ")";
+        formattedValue += " ";
+      }
+      if (i === 7) {
+        formattedValue += "-";
+      }
+      formattedValue += numericValue[i];
+    }
+
+    setPhone(formattedValue);
+    handleChange({
+      target: {
+        name: "celular",
+        value: formattedValue,
+      },
+    });
+  };
+
+  const namePlaceHolder = "Seu nome";
+  const handleNameChange = (e) => {
+    let formattedValue = "";
+    const inputValue = e.target.value;
+    const alphabetcValue = inputValue.replace(/[^a-zA-ZÀ-ÿ\s'-]/g, "");
+
+    if (alphabetcValue.length > 256) {
+      formattedValue = alphabetcValue.substring(0, 256);
+    } else {
+      formattedValue = alphabetcValue;
+    }
+
+    console.log(alphabetcValue.length);
+    console.log(formattedValue.length);
+
+    handleChange({
+      target: {
+        name: "nome",
+        value: formattedValue,
+      },
+    });
+  };
+
+  const emailPlaceHolder = "Seu E-mail";
+  const handleEmailChange = (e) => {
+    const inputValue = e.target.value;
+    const maxEmailLength = 320;
+
+    const limitedEmail = inputValue.substring(0, maxEmailLength);
+    console.log(limitedEmail.length);
+    handleChange({
+      target: { name: "email", value: limitedEmail },
+    });
+  };
+
   return (
     <>
       <Form layout="vertical">
@@ -25,7 +148,8 @@ export function PersonalDataInputs({ formData, handleChange }) {
                 size="middle"
                 style={{ width: "100%" }}
                 value={formData.nome}
-                onChange={handleChange}
+                placeholder={namePlaceHolder}
+                onChange={handleNameChange}
               />
             </Form.Item>
           </Col>
@@ -36,6 +160,8 @@ export function PersonalDataInputs({ formData, handleChange }) {
                 size="middle"
                 style={{ width: "100%" }}
                 format={dateFormat}
+                placeholder="DD/MM/AAAA"
+                inputReadOnly
                 value={
                   formData.dataNascimento
                     ? dayjs(formData.dataNascimento, dateFormat)
@@ -52,7 +178,9 @@ export function PersonalDataInputs({ formData, handleChange }) {
                 size="middle"
                 style={{ width: "100%" }}
                 value={formData.cpf}
-                onChange={handleChange}
+                onChange={handleCPFChange}
+                placeholder={cpfMaskPlaceholder}
+                maxLength={cpfMaskPlaceholder.length}
               />
             </Form.Item>
           </Col>
@@ -61,9 +189,11 @@ export function PersonalDataInputs({ formData, handleChange }) {
               <Input
                 name="email"
                 size="middle"
+                type="email"
                 style={{ width: "100%" }}
                 value={formData.email}
-                onChange={handleChange}
+                placeholder={emailPlaceHolder}
+                onChange={handleEmailChange}
               />
             </Form.Item>
           </Col>
@@ -74,7 +204,9 @@ export function PersonalDataInputs({ formData, handleChange }) {
                 size="middle"
                 style={{ width: "100%" }}
                 value={formData.telefone}
-                onChange={handleChange}
+                onChange={handleTelephone}
+                placeholder={telephoneAndPhoneMaskPlaceholder}
+                maxLength={telephoneAndPhoneMaskPlaceholder.length}
               />
             </Form.Item>
           </Col>
@@ -84,8 +216,9 @@ export function PersonalDataInputs({ formData, handleChange }) {
                 name="celular"
                 size="middle"
                 style={{ width: "100%" }}
+                placeholder={telephoneAndPhoneMaskPlaceholder}
                 value={formData.celular}
-                onChange={handleChange}
+                onChange={handlePhone}
               />
             </Form.Item>
           </Col>
@@ -105,4 +238,5 @@ PersonalDataInputs.propTypes = {
     celular: PropTypes.string, // OPCIONAL
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
+  setValidation: PropTypes.func.isRequired,
 };
