@@ -10,20 +10,20 @@ import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ModalPayment } from "../Modais/ModalPayment";
 import { openModalToPaymentAction } from "../../store/actions/ActionsModais";
 
-import { Button } from "@mui/material";
-
+import { Button } from "antd";
 export const ResumeAside = () => {
   const dispatch = useDispatch();
   const totalPrice = useSelector((state) => state.cart.priceTotal);
   const [numInstallments, formattedInstallmentValue] =
     getFormattedFinalPriceInstallmente(totalPrice);
 
+  const isPaymentOpen = true;
   const handleToPayment = () => {
     dispatch(openModalToPaymentAction());
   };
 
   useEffect(() => {
-    dispatch(updatePriceTotalAction()); // Chamar a ação assíncrona para atualizar o preço total
+    dispatch(updatePriceTotalAction());
   }, [dispatch]);
 
   return (
@@ -41,8 +41,6 @@ export const ResumeAside = () => {
         </div>
         <Button
           className="button-to-payment"
-          variant="contained"
-          color="primary"
           size="large"
           onClick={handleToPayment}
         >
@@ -50,7 +48,7 @@ export const ResumeAside = () => {
         </Button>
         <br />
       </aside>
-      <ModalPayment />
+      <ModalPayment isPaymentOpen={isPaymentOpen} />
     </>
   );
 };

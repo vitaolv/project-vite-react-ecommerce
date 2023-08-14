@@ -1,43 +1,53 @@
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-} from "@mui/material";
-
-import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
-
+import { Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
 import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
+
+import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
 export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
+  const [validation, setValidation] = useState(false);
   const [formData, setFormData] = useState({
+    //Personal
     nome: "",
     dataNascimento: "",
     cpf: "",
     email: "",
     telefone: "",
     celular: "",
-
+    //Local
     cep: "",
     endereco: "",
     numero: "",
     complemento: "",
     cidade: "",
     estado: "",
+    //Payment card
+    numeroDoCartao: "",
+    nomeEscritoNoCartao: "",
+    vencimento: "",
+    cvv: "",
+    tipoDeCartao: "",
   });
 
-  const handleNextStep = () => {
-    setActiveStep((prevStep) => prevStep + 1);
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
+  const steps = getSteps(formData, handleChange, setValidation);
+
+  const handleNextStep = () => {
+    if (!validation) {
+      return;
+    }
+    setActiveStep((prevStep) => prevStep + 1);
+  };
   const handlePreviousStep = () => {
     setActiveStep((prevStep) => prevStep - 1);
   };
@@ -46,55 +56,36 @@ export function ModalPayment() {
     dispatch(closeModalToPaymentAction());
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
-
-  const steps = getSteps(formData, handleChange);
-
   return (
     <>
       {isPaymentOpen && (
-        <Dialog
+        <Modal
           open={isPaymentOpen}
-          fullWidth
-          maxWidth="md"
-          onClose={(event, reason) => {
-            if (reason !== "backdropClick") {
-              handleClose(event);
-            }
-          }}
-          PaperProps={{
-            style: {
-              minHeight: "80vh",
-              display: "flex",
-              flexDirection: "column",
-            },
-          }}
+          onClose={handleClose}
+          footer={null}
+          centered
+          width="md"
+          title="Etapas de Finalização de Compra"
         >
-          <DialogTitle>Etapas de Finalização de Compra</DialogTitle>
-          <DialogContent>
-            <StepperToPayment
-              activeStep={activeStep}
-              steps={steps}
-              formData={formData}
-              handleChange={handleChange}
-            />
-          </DialogContent>
-          <DialogActions className="custom-dialog-actions">
-            <ButtonsPaymentContainerDialogComponent
-              handleClose={handleClose}
-              handleNextStep={handleNextStep}
-              handlePreviousStep={handlePreviousStep}
-              activeStep={activeStep}
-              steps={steps}
-            />
-          </DialogActions>
-        </Dialog>
+          <StepperToPayment activeStep={activeStep} steps={steps} />
+
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              style={{ display: activeStep === index ? "block" : "none" }}
+            >
+              {step.content}
+            </div>
+          ))}
+
+          <ButtonsPaymentContainerDialogComponent
+            handleClose={handleClose}
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+            activeStep={activeStep}
+            steps={steps}
+          />
+        </Modal>
       )}
     </>
   );

@@ -1,0 +1,20 @@
+/* Estilizar a cor personalizada (bolinha) para passos concluídos */
+.custom-progress-dot .ant-steps-item.completed .ant-steps-item-icon {
+  color: #e3d98d !important;
+  background-color: #e3d98d !important;
+}
+.ant-steps-icon-dot {
+  color: #e3d98d !important;
+  background-color: #e3d98d !important;
+}
+
+/* Estilizar a cor personalizada (dentro da bolinha) para o número do passo concluído */
+.custom-progress-dot .ant-steps-item.completed .ant-steps-item-icon span {
+  color: #e3d98d !important;
+  background-color: #e3d98d !important;
+}
+
+/* Estilizar a barra de progresso para passos concluídos */
+.ant-steps .ant-steps-item.ant-steps-item-finish .ant-steps-item-tail::after {
+  background-color: #e3d98d !important;
+}

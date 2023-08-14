@@ -1,5 +1,6 @@
-import { Button } from "@mui/material";
 import PropTypes from "prop-types";
+
+import { Button } from "antd";
 
 export const Contador = ({ onQuantityChange, initQuantity }) => {
   const handleIncrement = () => {
@@ -16,12 +17,8 @@ export const Contador = ({ onQuantityChange, initQuantity }) => {
     <div className="content-button-contador-item">
       <p id="quantity">{initQuantity} </p>
       <div id="buttonAumentoOuDesfaz">
-        <Button variant="outlined" color="secondary" onClick={handleDecrement}>
-          -
-        </Button>
-        <Button variant="outlined" color="secondary" onClick={handleIncrement}>
-          +
-        </Button>
+        <Button onClick={handleDecrement}>-</Button>
+        <Button onClick={handleIncrement}>+</Button>
       </div>
     </div>
   );

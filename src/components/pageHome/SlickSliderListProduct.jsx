@@ -3,8 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
 import { settings } from "./SettingsSlickSlider";
 
-import { Button } from "@mui/material";
-
+import { Button } from "antd";
 export function SlickSliderListProduct() {
   const produtosFormatados = useProductContext();
 
@@ -43,7 +42,7 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <Button className="card-link" variant="outlined" color="black">
+                <Button className="card-link" size="large">
                   Ver detalhes...
                 </Button>
               </div>
@@ -81,7 +80,7 @@ export function SlickSliderListProduct() {
               </h5>
               <h5> {product.formattedPrice}</h5>
               <div className="card-body-action">
-                <Button className="card-link" variant="outlined" color="black">
+                <Button className="card-link" size="large">
                   Ver detalhes...
                 </Button>
               </div>

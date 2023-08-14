@@ -1,109 +1,96 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-
-import useMediaQuery from "@mui/material/useMediaQuery";
-
-import { Grid } from "@mui/material";
+import Form from "antd/es/form/Form";
+import { Row, Col, Input } from "antd";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import PropTypes from "prop-types";
 
-export default function CardDataInputs({ formData, handleChange }) {
-  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+export function CardDataInputs({ formData, handleChange, setValidation }) {
+  const handleRecaptchaChange = (value) => {
+    console.log("Valor do reCAPTCHA:", value);
+    setValidation = true;
+
+    return setValidation;
+  };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        "& .MuiTextField-root": { m: 1 },
-        "& .medium-input": { width: "90%" },
-        ...(isSmallScreen && {
-          "& .medium-input, & .large-input": { width: "100%" },
-        }),
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <Grid container spacing={2} item xs={12}>
-        <Grid item xs={12}>
-          <TextField
-            required
-            name="nome"
-            label="Nome completo"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.nome}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            name="dataNascimento"
-            label="Data de Nascimento"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.dataNascimento}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            name="cpf"
-            label="CPF"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.cpf}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            name="email"
-            label="E-mail"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            name="telefone"
-            label="Telefone"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.telefone}
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            name="celular"
-            label="Celular (OPCIONAL)"
-            variant="outlined"
-            fullWidth
-            className="medium-input"
-            value={formData.celular}
-            onChange={handleChange}
-          />
-        </Grid>
-      </Grid>
-    </Box>
+    <div>
+      <h2>Formas de Pagamento</h2>
+
+      <Form layout="vertical" onSubmit={handleChange}>
+        <Row gutter={[16, 16]}>
+          <Col md={12} xs={12}>
+            <Form.Item label="Número de cartão" required>
+              <Input
+                required
+                name="numeroDoCartao"
+                value={formData.numeroDoCartao}
+                onChange={handleChange}
+                onFocus={(e) =>
+                  handleChange({
+                    target: { name: "focused", value: e.target.name },
+                  })
+                }
+                placeholder="Número do cartão"
+                style={{ width: "100%", maxWidth: "400px" }}
+              />
+            </Form.Item>
+          </Col>
+          <Col md={12} xs={12}>
+            <Form.Item label="Nome escrito no cartão" required>
+              <Input
+                required
+                type="text"
+                name="nomeEscritoNoCartao"
+                value={formData.nomeEscritoNoCartao}
+                onChange={handleChange}
+                placeholder="Nome escrito no cartão"
+              />
+            </Form.Item>
+          </Col>
+          <Col md={12} xs={12}>
+            <Form.Item label="Data de vencimento" required>
+              <Input
+                required
+                name="vencimento"
+                value={formData.vencimento}
+                onChange={handleChange}
+                placeholder="Vencimento (MM/AA)"
+              />
+            </Form.Item>
+          </Col>
+          <Col md={12} xs={12}>
+            <Form.Item label="CVV" required>
+              <Input
+                required
+                name="cvv"
+                value={formData.cvv}
+                onChange={handleChange}
+                placeholder="Código de segurança (CVV)"
+                style={{ width: "100%", maxWidth: "100px" }}
+              />
+            </Form.Item>
+          </Col>
+        </Row>
+      </Form>
+
+      <div style={{ margin: "2rem" }}>
+        <ReCAPTCHA
+          sitekey="SUA_CHAVE_PUBLICA_DO_RECAPTCHA"
+          onChange={handleRecaptchaChange}
+        />
+      </div>
+    </div>
   );
 }
 
 CardDataInputs.propTypes = {
-  formData: PropTypes.object.isRequired,
+  formData: PropTypes.shape({
+    numeroDoCartao: PropTypes.string.isRequired,
+    nomeEscritoNoCartao: PropTypes.string.isRequired,
+    vencimento: PropTypes.string.isRequired,
+    cvv: PropTypes.string.isRequired,
+    tipoDeCartao: PropTypes.string.isRequired,
+  }).isRequired,
   handleChange: PropTypes.func.isRequired,
+  setValidation: PropTypes.func.isRequired,
 };

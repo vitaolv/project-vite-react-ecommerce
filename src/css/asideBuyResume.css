@@ -23,6 +23,26 @@
   padding: 10px;
 }
 
+.button-to-payment {
+  background-color: #e3d98d;
+  color: #252525;
+  transition: 0.3s ease-in-out;
+}
+
+.button-to-payment:hover {
+  background-color: #453222;
+  color: #e3d98d !important;
+  border-color: #e3d98d !important;
+  transition: 0.3s ease-in-out;
+}
+
+.button-to-payment:active {
+  background-color: #453222;
+  color: #e3d98d !important;
+  border-color: #e3d98d !important;
+  transition: 0.3s ease-in-out;
+}
+
 @media (max-width: 1150px) {
   .cart-container {
     flex-direction: column;

@@ -10,25 +10,25 @@
 
 .notification-container {
   position: fixed;
-  bottom: 90px; /* Ajuste a posição vertical conforme necessário */
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
-  width: 420px;
+  width: 50%;
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .notification-container {
-    width: 320px;
+    width: 95%;
   }
 }
 
-media (max-width: 300px) {
+@media (max-width: 300px) {
   .notification-container {
-    width: 250px;
+    width: 100%;
   }
 }
 
