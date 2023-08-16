@@ -8,7 +8,7 @@ import { handleEmailChange } from "../../utils/formatteDate/HandleEmailChange";
 import { handleDateChange } from "../../utils/formatteDate/HandleDateChange";
 import { FormDataPersonal } from "./forms/formDataPersonal";
 
-export function PersonalDataInputs({ formData, handleChange, setValidation }) {
+export function PersonalDataInputs({ formData, handleChange }) {
   const dateFormat = "DD/MM/YYYY";
   const handleDateChangeWrapper = (date, dateString) => {
     handleDateChange(date, dateString, dateFormat, handleChange);
@@ -61,5 +61,4 @@ PersonalDataInputs.propTypes = {
     celular: PropTypes.string, // OPCIONAL
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
-  setValidation: PropTypes.func.isRequired,
 };

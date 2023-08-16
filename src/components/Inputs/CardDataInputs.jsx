@@ -4,14 +4,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import PropTypes from "prop-types";
 
-export function CardDataInputs({ formData, handleChange, setValidation }) {
-  const handleRecaptchaChange = (value) => {
-    console.log("Valor do reCAPTCHA:", value);
-    setValidation = true;
-
-    return setValidation;
-  };
-
+export function CardDataInputs({ formData, handleChange }) {
   return (
     <div>
       <h2>Formas de Pagamento</h2>
@@ -74,10 +67,7 @@ export function CardDataInputs({ formData, handleChange, setValidation }) {
       </Form>
 
       <div style={{ margin: "2rem" }}>
-        <ReCAPTCHA
-          sitekey="SUA_CHAVE_PUBLICA_DO_RECAPTCHA"
-          onChange={handleRecaptchaChange}
-        />
+        <ReCAPTCHA sitekey="SUA_CHAVE_PUBLICA_DO_RECAPTCHA" />
       </div>
     </div>
   );
@@ -92,5 +82,4 @@ CardDataInputs.propTypes = {
     tipoDeCartao: PropTypes.string.isRequired,
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
-  setValidation: PropTypes.func.isRequired,
 };
