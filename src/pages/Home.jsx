@@ -13,7 +13,7 @@ export default function Home() {
       <br />
       <br />
 
-      <section className="about">
+      <section className="section-about" id="section-about">
         <div className="image-overlay">
           <div className="content-card-about" id="content-card-about">
             <div className="text-about">

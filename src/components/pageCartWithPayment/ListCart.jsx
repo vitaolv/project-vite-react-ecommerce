@@ -43,7 +43,7 @@ export function ListCart() {
                 >
                   <div className="product-details">
                     <img
-                      src={item.cover}
+                      src={item.cover[0]}
                       alt={item.name}
                       className="product-image"
                     />

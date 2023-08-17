@@ -62,6 +62,7 @@ export function ModalPayment() {
         <Modal
           open={isPaymentOpen}
           onClose={handleClose}
+          closable={false}
           footer={null}
           centered
           width="md"

@@ -65,8 +65,8 @@ export const products = [
     price: 128.0,
     cover: [
       "/assets/product4-choco.png",
-      "/assets/product4-meioamargo.png",
       "/assets/product4-mista.png",
+      "/assets/product4-meioamargo.png",
     ],
     availableColors: [
       "Chocolate ao leite",
@@ -85,9 +85,9 @@ export const products = [
     priceBefore: 184.9,
     price: 148.0,
     availableColors: [
-      "Mista chocolate ao leite e chocolate branco",
       "Chocolate ao leite",
       "Chocolate branco",
+      "Mista chocolate ao leite e chocolate branco",
       "Chocolate meio amargo",
     ],
     textDetail:
@@ -120,8 +120,8 @@ export const products = [
     priceBefore: 21.39,
     price: 15.79,
     availableColors: [
-      "Mista chocolate ao leite e chocolate branco",
       "Chocolate ao leite",
+      "Mista chocolate ao leite e chocolate branco",
       "Chocolate branco",
     ],
     textDetail:
