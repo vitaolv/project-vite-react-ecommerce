@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-import { Button } from "antd";
 export function ImageDetailProduct({ name, id }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -87,22 +86,12 @@ export function ImageDetailProduct({ name, id }) {
           </div>
           {shouldRenderArrows && (
             <>
-              <Button
-                color="black"
-                variant="outlined"
-                id="prev-slide-Detail"
-                onClick={prevSlide}
-              >
+              <button color="black" id="prev-slide-Detail" onClick={prevSlide}>
                 ❮
-              </Button>
-              <Button
-                color="black"
-                variant="outlined"
-                id="next-slide-Detail"
-                onClick={nextSlide}
-              >
+              </button>
+              <button color="black" id="next-slide-Detail" onClick={nextSlide}>
                 ❯
-              </Button>
+              </button>
             </>
           )}
         </div>
