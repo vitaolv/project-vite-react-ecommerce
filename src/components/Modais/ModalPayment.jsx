@@ -11,7 +11,6 @@ export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
-  const [validation, setValidation] = useState(false);
   const [formData, setFormData] = useState({
     //Personal
     nome: "",
@@ -40,12 +39,13 @@ export function ModalPayment() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const steps = getSteps(formData, handleChange, setValidation);
+  const steps = getSteps(formData, handleChange);
 
   const handleNextStep = () => {
-    if (!validation) {
-      return;
-    }
+    // Desativar temporariamente a validação para permitir avançar entre os passos
+    // if (!validation) {
+    //   return;
+    // }
     setActiveStep((prevStep) => prevStep + 1);
   };
   const handlePreviousStep = () => {
@@ -62,6 +62,7 @@ export function ModalPayment() {
         <Modal
           open={isPaymentOpen}
           onClose={handleClose}
+          closable={false}
           footer={null}
           centered
           width="md"

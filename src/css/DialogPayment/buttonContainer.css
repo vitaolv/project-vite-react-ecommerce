@@ -16,7 +16,7 @@
 }
 
 .btn-container Button:hover {
-  box-shadow: 0px 8px 20px rgba(400, 229, 157, 0.3);
+  box-shadow: 0px 8px 20px rgba(000, 000, 000, 0.24);
 }
 
 .btn-container {
@@ -33,6 +33,41 @@
   justify-content: center;
   gap: 0.8rem;
   transition: all 0.3s ease 0s;
+}
+
+#btn-next-payment,
+#btn-finalize-payment {
+  background-color: #e3d98d !important;
+  color: #252525 !important;
+  transition: 0.3s ease-in-out !important;
+}
+
+#btn-next-payment:hover,
+#btn-finalize-payment:hover {
+  background-color: transparent !important;
+  color: #252525 !important;
+  border-color: #252525 !important;
+  transition: 0.3s ease-in-out;
+}
+
+#btn-cancel-payment {
+  background-color: #453222 !important;
+  color: #e3d98d !important;
+  transition: 0.3s ease-in-out !important;
+}
+
+#btn-cancel-payment:hover {
+  background-color: transparent !important;
+  color: #252525 !important;
+  transition: 0.3s ease-in-out;
+  border-color: #252525 !important;
+}
+
+#btn-back-payment:hover {
+  background-color: transparent !important;
+  color: #252525 !important;
+  transition: 0.3s ease-in-out;
+  border-color: #252525 !important;
 }
 
 @media (max-width: 500px) {

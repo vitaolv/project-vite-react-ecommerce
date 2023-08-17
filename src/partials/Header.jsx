@@ -1,6 +1,4 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -9,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addToCartAction } from "../store/actions/ActionsCart";
+import { SearchHeader } from "../components/Search/SearchHeader";
 
 export default function Header() {
   const quantityTotal = useSelector((state) => state.cart.quantityTotal);
@@ -97,18 +96,7 @@ export default function Header() {
               />
             </svg>
           </button>
-
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Encontre aqui..."
-              className="me-2"
-              aria-label="Buscar"
-            />
-            <Button variant="warning" className="custom-search-button">
-              Buscar
-            </Button>
-          </Form>
+          <SearchHeader />
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -10,13 +10,23 @@ export function ButtonsPaymentContainerDialogComponent({
 }) {
   return (
     <div className="btn-container">
-      <Button onClick={handleClose}>Cancelar</Button>
+      <Button id="btn-cancel-payment" onClick={handleClose}>
+        Cancelar
+      </Button>
       <div className="button-back-and-next">
-        {activeStep > 0 && <Button onClick={handlePreviousStep}>Voltar</Button>}
+        {activeStep > 0 && (
+          <Button id="btn-back-payment" onClick={handlePreviousStep}>
+            Voltar
+          </Button>
+        )}
         {activeStep < steps.length - 1 ? (
-          <Button onClick={handleNextStep}>Próximo</Button>
+          <Button id="btn-next-payment" onClick={handleNextStep}>
+            Próximo
+          </Button>
         ) : (
-          <Button onClick={handleClose}>Finalizar Compra</Button>
+          <Button id="btn-finalize-payment" onClick={handleClose}>
+            Finalizar Compra
+          </Button>
         )}
       </div>
     </div>

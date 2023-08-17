@@ -11,9 +11,9 @@ export function ControlCarousel() {
           </Link>
         </Carousel.Item>
         <Carousel.Item>
-          <Link to="#">
-            <img src="/assets/sobre-empresa.png" alt="Second slide" />
-          </Link>
+          <a href="#section-about">
+            <img src="/assets/sobre-empresa.png" alt="Sobre a Empresa" />
+          </a>
         </Carousel.Item>
       </Carousel>
     </div>
