@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { ButtonsToHomeOrToBack } from "../components/Buttons/ButtonsToHomeOrToBack";
 
 export default function PageNotFound() {
   const currentLink = window.location.href;
@@ -12,19 +12,7 @@ export default function PageNotFound() {
       <p className="page-not-found-text-2">O endereço abaixo não existe</p>
       <p className="link-not-found">{currentLink}</p>
 
-      <div className="links-page-not-found">
-        <Link className="link-to-home" to="/">
-          Página inicial
-        </Link>
-
-        <Link
-          className="link-to-back"
-          to="#"
-          onClick={() => window.history.back()}
-        >
-          Voltar
-        </Link>
-      </div>
+      <ButtonsToHomeOrToBack />
     </div>
   );
 }

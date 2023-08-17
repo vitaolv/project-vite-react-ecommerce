@@ -1,0 +1,16 @@
+.not-found-in-search-result {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 1rem;
+}
+
+.not-found-in-search-result img {
+  width: 260px;
+  margin: 0 !important;
+}
