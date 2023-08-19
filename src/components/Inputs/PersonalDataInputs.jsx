@@ -9,9 +9,8 @@ import { handleDateChange } from "../../utils/formatteDate/HandleDateChange";
 import { FormDataPersonal } from "./forms/formDataPersonal";
 
 export function PersonalDataInputs({ formData, handleChange }) {
-  const dateFormat = "DD/MM/YYYY";
   const handleDateChangeWrapper = (date, dateString) => {
-    handleDateChange(date, dateString, dateFormat, handleChange);
+    handleDateChange(date, dateString, handleChange);
   };
 
   const [cpf, setCPF] = useState("");
@@ -40,7 +39,6 @@ export function PersonalDataInputs({ formData, handleChange }) {
   return (
     <FormDataPersonal
       formData={formData}
-      dateFormat={dateFormat}
       handleDateChangeWrapper={handleDateChangeWrapper}
       handleCPFChangeWrapper={handleCPFChangeWrapper}
       handleTelephoneChangeWrapper={handleTelephoneChangeWrapper}

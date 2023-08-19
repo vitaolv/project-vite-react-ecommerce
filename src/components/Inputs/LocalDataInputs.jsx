@@ -1,10 +1,35 @@
-import { Input, Form, Row, Col, Select } from "antd";
-
-import { getBrazilianStates } from "../../utils/estadosBrasileiros/states";
 import PropTypes from "prop-types";
 
+import { FormDataLocal } from "./forms/formDataLocal";
+
+import { handleCEPChange } from "../../utils/formatteDate/HandleCEPChange";
+import { handleAddressChange } from "../../utils/formatteDate/HandleAddressChange";
+import { HandleComplementoChange } from "../../utils/formatteDate/HandleComplementChange";
+import { handleNumberChange } from "../../utils/formatteDate/HandleNumberChange";
+import { handleCityChange } from "../../utils/formatteDate/HangleCityChange";
+
 export function LocalDataInputs({ formData, handleChange }) {
-  const handleDateChange = (date) => {
+  const handleCEPChangeWrapper = (e) => {
+    handleCEPChange(e.target.value, handleChange);
+  };
+
+  const handleAddressChangeWrapper = (e) => {
+    handleAddressChange(e.target.value, handleChange);
+  };
+
+  const handleNumberChangeWrapper = (e) => {
+    handleNumberChange(e.target.value, handleChange);
+  };
+
+  const handleComplementoChangeWrapper = (e) => {
+    HandleComplementoChange(e.target.value, handleChange);
+  };
+
+  const handleCidadeChangeWrapper = (e) => {
+    handleCityChange(e.target.value, handleChange);
+  };
+
+  const handleStateSelectedChangeWrapper = (date) => {
     handleChange({
       target: {
         name: "estado",
@@ -12,82 +37,18 @@ export function LocalDataInputs({ formData, handleChange }) {
       },
     });
   };
+
   return (
-    <Form layout="vertical">
-      <Row gutter={(16, 16)}>
-        <Col md={12} xs={12}>
-          <Form.Item label="CEP" required>
-            <Input
-              required
-              name="cep"
-              size="middle"
-              value={formData.cep}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={12}>
-          <Form.Item label="Endereço" required>
-            <Input
-              required
-              name="endereco"
-              size="middle"
-              value={formData.endereco}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={12}>
-          <Form.Item label="Número" required>
-            <Input
-              required
-              name="numero"
-              size="middle"
-              value={formData.numero}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={12}>
-          <Form.Item label="Complemento" required>
-            <Input
-              name="complemento"
-              size="middle"
-              value={formData.complemento}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={12}>
-          <Form.Item label="Cidade" required>
-            <Input
-              required
-              name="cidade"
-              size="middle"
-              value={formData.cidade}
-              onChange={handleChange}
-            />
-          </Form.Item>
-        </Col>
-        <Col xs={12}>
-          <Form.Item label="Estado" required>
-            <Select
-              required
-              name="estado"
-              size="middle"
-              value={formData.estado}
-              onChange={handleDateChange}
-            >
-              {getBrazilianStates.map((state) => (
-                <Select.Option key={state} value={state}>
-                  {state}
-                </Select.Option>
-              ))}
-            </Select>
-          </Form.Item>
-        </Col>
-      </Row>
-    </Form>
+    <FormDataLocal
+      formData={formData}
+      handleStateSelectedChange={handleStateSelectedChangeWrapper}
+      handleChange={handleChange}
+      handleCEPChange={handleCEPChangeWrapper}
+      handleAddressChange={handleAddressChangeWrapper}
+      handleNumberChange={handleNumberChangeWrapper}
+      handleComplementoChange={handleComplementoChangeWrapper}
+      handleCidadeChange={handleCidadeChangeWrapper}
+    />
   );
 }
 
