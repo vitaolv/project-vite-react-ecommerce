@@ -22,6 +22,12 @@ html {
   padding-top: 7%;
 }
 
+.center {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
 @media print {
   body {
     margin: 0;

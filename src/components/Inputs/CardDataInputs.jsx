@@ -26,8 +26,8 @@ export function CardDataInputs({ formData, handleChange }) {
 
   return (
     <div>
-      <h2>Formas de Pagamento</h2>
-
+      <h5 className="center">Formas de pagamento</h5>
+      <br />
       <FormCard
         formData={formData}
         handleChange={handleChange}

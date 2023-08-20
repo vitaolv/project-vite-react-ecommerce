@@ -39,16 +39,20 @@ export function LocalDataInputs({ formData, handleChange }) {
   };
 
   return (
-    <FormDataLocal
-      formData={formData}
-      handleStateSelectedChange={handleStateSelectedChangeWrapper}
-      handleChange={handleChange}
-      handleCEPChange={handleCEPChangeWrapper}
-      handleAddressChange={handleAddressChangeWrapper}
-      handleNumberChange={handleNumberChangeWrapper}
-      handleComplementoChange={handleComplementoChangeWrapper}
-      handleCidadeChange={handleCidadeChangeWrapper}
-    />
+    <div className="center">
+      <h5>Detalhes de entrega</h5>
+      <br />
+      <FormDataLocal
+        formData={formData}
+        handleChange={handleChange}
+        handleStateSelectedChange={handleStateSelectedChangeWrapper}
+        handleCEPChange={handleCEPChangeWrapper}
+        handleAddressChange={handleAddressChangeWrapper}
+        handleNumberChange={handleNumberChangeWrapper}
+        handleComplementoChange={handleComplementoChangeWrapper}
+        handleCidadeChange={handleCidadeChangeWrapper}
+      />
+    </div>
   );
 }
 

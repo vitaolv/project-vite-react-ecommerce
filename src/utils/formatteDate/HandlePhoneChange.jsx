@@ -1,4 +1,4 @@
-export const handlePhoneChange = (inputValue, setPhone, handleChange) => {
+export const handlePhoneChange = (inputValue, handleChange) => {
   const numericValue = inputValue.replace(/\D/g, "");
   let formattedValue = "";
 
@@ -16,7 +16,6 @@ export const handlePhoneChange = (inputValue, setPhone, handleChange) => {
     formattedValue += numericValue[i];
   }
 
-  setPhone(formattedValue);
   handleChange({
     target: {
       name: "celular",

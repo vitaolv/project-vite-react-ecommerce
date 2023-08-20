@@ -13,9 +13,8 @@ export function StepperToPayment({ activeStep, steps }) {
           content: step.content,
         }))}
       />
-      <br />
+
       <hr />
-      <br />
     </>
   );
 }
