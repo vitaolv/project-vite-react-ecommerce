@@ -27,9 +27,6 @@ const getSteps = (formData, handleChange) => [
   },
   {
     title: "Finalização da compra",
-    content: (
-      <PersonalDataInputs formData={formData} handleChange={handleChange} />
-    ),
   },
 ];
 

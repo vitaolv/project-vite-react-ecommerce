@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import { handleCPFChange } from "../../utils/formatteDate/HandleCPFChange";
 import { handleTelephoneChange } from "../../utils/formatteDate/HandleTelephoneChange";
@@ -9,24 +8,20 @@ import { handleDateChange } from "../../utils/formatteDate/HandleDateChange";
 import { FormDataPersonal } from "./forms/formDataPersonal";
 
 export function PersonalDataInputs({ formData, handleChange }) {
-  const dateFormat = "DD/MM/YYYY";
   const handleDateChangeWrapper = (date, dateString) => {
-    handleDateChange(date, dateString, dateFormat, handleChange);
+    handleDateChange(date, dateString, handleChange);
   };
 
-  const [cpf, setCPF] = useState("");
   const handleCPFChangeWrapper = (e) => {
-    handleCPFChange(e.target.value, setCPF, handleChange);
+    handleCPFChange(e.target.value, handleChange);
   };
 
-  const [telefone, setTelefone] = useState("");
   const handleTelephoneChangeWrapper = (e) => {
-    handleTelephoneChange(e.target.value, setTelefone, handleChange);
+    handleTelephoneChange(e.target.value, handleChange);
   };
 
-  const [phone, setPhone] = useState("");
   const handlePhoneChangeWrapper = (e) => {
-    handlePhoneChange(e.target.value, setPhone, handleChange);
+    handlePhoneChange(e.target.value, handleChange);
   };
 
   const handleNameChangeWrapper = (e) => {
@@ -38,16 +33,19 @@ export function PersonalDataInputs({ formData, handleChange }) {
   };
 
   return (
-    <FormDataPersonal
-      formData={formData}
-      dateFormat={dateFormat}
-      handleDateChangeWrapper={handleDateChangeWrapper}
-      handleCPFChangeWrapper={handleCPFChangeWrapper}
-      handleTelephoneChangeWrapper={handleTelephoneChangeWrapper}
-      handlePhoneChangeWrapper={handlePhoneChangeWrapper}
-      handleNameChangeWrapper={handleNameChangeWrapper}
-      handleEmailChangeWrapper={handleEmailChangeWrapper}
-    />
+    <div className="center">
+      <h5>Dados pessoais</h5>
+      <br />
+      <FormDataPersonal
+        formData={formData}
+        handleDateChangeWrapper={handleDateChangeWrapper}
+        handleCPFChangeWrapper={handleCPFChangeWrapper}
+        handleTelephoneChangeWrapper={handleTelephoneChangeWrapper}
+        handlePhoneChangeWrapper={handlePhoneChangeWrapper}
+        handleNameChangeWrapper={handleNameChangeWrapper}
+        handleEmailChangeWrapper={handleEmailChangeWrapper}
+      />
+    </div>
   );
 }
 

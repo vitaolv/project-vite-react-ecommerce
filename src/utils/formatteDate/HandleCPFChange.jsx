@@ -1,4 +1,4 @@
-export function handleCPFChange(inputValue, setCPF, handleChange) {
+export function handleCPFChange(inputValue, handleChange) {
   const numericValue = inputValue.replace(/\D/g, "");
   let formattedValue = "";
 
@@ -11,7 +11,6 @@ export function handleCPFChange(inputValue, setCPF, handleChange) {
     formattedValue += numericValue[i];
   }
 
-  setCPF(formattedValue);
   handleChange({
     target: {
       name: "cpf",

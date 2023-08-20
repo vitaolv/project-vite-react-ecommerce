@@ -6,7 +6,6 @@ export function ButtonsPaymentContainerDialogComponent({
   handleNextStep,
   handlePreviousStep,
   activeStep,
-  steps,
 }) {
   return (
     <div className="btn-container">
@@ -19,13 +18,16 @@ export function ButtonsPaymentContainerDialogComponent({
             Voltar
           </Button>
         )}
-        {activeStep < steps.length - 1 ? (
+
+        {activeStep < 3 && (
           <Button id="btn-next-payment" onClick={handleNextStep}>
             Próximo
           </Button>
-        ) : (
-          <Button id="btn-finalize-payment" onClick={handleClose}>
-            Finalizar Compra
+        )}
+
+        {activeStep === 3 && (
+          <Button id="btn-finalize-payment" onClick={handleNextStep}>
+            Finalizar o pedido
           </Button>
         )}
       </div>
@@ -38,5 +40,4 @@ ButtonsPaymentContainerDialogComponent.propTypes = {
   handleNextStep: PropTypes.func.isRequired,
   handlePreviousStep: PropTypes.func.isRequired,
   activeStep: PropTypes.number.isRequired,
-  steps: PropTypes.array.isRequired,
 };

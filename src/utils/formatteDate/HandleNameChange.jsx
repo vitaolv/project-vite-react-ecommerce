@@ -8,9 +8,6 @@ export const handleNameChange = (inputValue, handleChange) => {
     formattedValue = alphabetcValue;
   }
 
-  console.log(alphabetcValue.length);
-  console.log(formattedValue.length);
-
   handleChange({
     target: {
       name: "nome",

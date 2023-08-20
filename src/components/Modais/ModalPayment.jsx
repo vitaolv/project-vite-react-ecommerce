@@ -4,6 +4,7 @@ import { useState } from "react";
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
 import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
+import { ResultPayment } from "../../components/Result/ResultPayment";
 
 import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
@@ -31,7 +32,6 @@ export function ModalPayment() {
     nomeEscritoNoCartao: "",
     vencimento: "",
     cvv: "",
-    tipoDeCartao: "",
   });
 
   const handleChange = (event) => {
@@ -65,7 +65,8 @@ export function ModalPayment() {
           closable={false}
           footer={null}
           centered
-          width="md"
+          width="840px"
+          height="600px"
           title="Etapas de Finalização de Compra"
         >
           <StepperToPayment activeStep={activeStep} steps={steps} />
@@ -79,13 +80,19 @@ export function ModalPayment() {
             </div>
           ))}
 
-          <ButtonsPaymentContainerDialogComponent
-            handleClose={handleClose}
-            handleNextStep={handleNextStep}
-            handlePreviousStep={handlePreviousStep}
-            activeStep={activeStep}
-            steps={steps}
-          />
+          {activeStep === steps.length - 1 ? (
+            <div className="center">
+              <ResultPayment handleClose={handleClose} />
+            </div>
+          ) : (
+            <ButtonsPaymentContainerDialogComponent
+              handleClose={handleClose}
+              handleNextStep={handleNextStep}
+              handlePreviousStep={handlePreviousStep}
+              activeStep={activeStep}
+              steps={steps}
+            />
+          )}
         </Modal>
       )}
     </>

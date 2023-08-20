@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 
 export function FormDataPersonal({
   formData,
-  dateFormat,
   handleDateChangeWrapper,
   handleCPFChangeWrapper,
   handleTelephoneChangeWrapper,
@@ -12,6 +11,7 @@ export function FormDataPersonal({
   handleNameChangeWrapper,
   handleEmailChangeWrapper,
 }) {
+  const dateMaskPlaceHolder = "DD/MM/YYYY";
   const cpfMaskPlaceHolder = "___.___.___-__";
   const telephoneAndPhoneMaskPlaceHolder = "(__) _____-____";
   const namePlaceHolder = "Seu nome";
@@ -38,12 +38,12 @@ export function FormDataPersonal({
               name="dataNascimento"
               size="middle"
               style={{ width: "100%" }}
-              format={dateFormat}
+              format={dateMaskPlaceHolder}
               placeholder="DD/MM/AAAA"
               inputReadOnly
               value={
                 formData.dataNascimento
-                  ? dayjs(formData.dataNascimento, dateFormat)
+                  ? dayjs(formData.dataNascimento, dateMaskPlaceHolder)
                   : null
               }
               onChange={handleDateChangeWrapper}
@@ -115,11 +115,10 @@ FormDataPersonal.propTypes = {
     telefone: PropTypes.string.isRequired,
     celular: PropTypes.string,
   }).isRequired,
-  handleDateChangeWrapper: PropTypes.func.isRequired,
-  dateFormat: PropTypes.string.isRequired,
   handleCPFChangeWrapper: PropTypes.func.isRequired,
-  handleTelephoneChangeWrapper: PropTypes.func.isRequired, // Correção aqui
-  handlePhoneChangeWrapper: PropTypes.func.isRequired, // Correção aqui
+  handleDateChangeWrapper: PropTypes.func.isRequired,
+  handleTelephoneChangeWrapper: PropTypes.func.isRequired,
+  handlePhoneChangeWrapper: PropTypes.func.isRequired,
   handleNameChangeWrapper: PropTypes.func.isRequired,
   handleEmailChangeWrapper: PropTypes.func.isRequired,
 };
