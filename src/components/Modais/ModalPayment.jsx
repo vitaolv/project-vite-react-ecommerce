@@ -31,7 +31,6 @@ export function ModalPayment() {
     nomeEscritoNoCartao: "",
     vencimento: "",
     cvv: "",
-    tipoDeCartao: "",
   });
 
   const handleChange = (event) => {
