@@ -43,6 +43,6 @@ export function ResultPayment({ handleClose }) {
   );
 }
 
-ResultPayment.typesProp = {
+ResultPayment.propTypes = {
   handleClose: PropTypes.func.isRequired,
 };

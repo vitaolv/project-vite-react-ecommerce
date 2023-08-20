@@ -1,4 +1,4 @@
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
