@@ -13,7 +13,7 @@ export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
-  const [formData, setFormData] = useState({ initialFormData });
+  const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
