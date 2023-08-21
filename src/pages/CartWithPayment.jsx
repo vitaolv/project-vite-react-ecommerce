@@ -1,5 +1,5 @@
-import { ListCart } from "../components/pageCartWithPayment/ListCart";
-import { ResumeAside } from "../components/pageCartWithPayment/ResumeAside";
+import { ListCart } from "../components/Lists/ListCart";
+import { ResumeAside } from "../components/Asides/ResumeAside";
 import { ButtonClearCart } from "../components/Buttons/ButtonClearCart";
 import { ModalConfirmationToClearCart } from "../components/Modais/ModalConfirmationToClearCart";
 

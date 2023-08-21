@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Result, Space, Button } from "antd";
 import { Spinner } from "react-bootstrap";
+import { Alert } from "antd";
 
 import PropTypes from "prop-types";
 
-export function ResultPayment({ handleClose }) {
+export function ResultPayment({ handleClose, email }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,6 +37,11 @@ export function ResultPayment({ handleClose }) {
         title="Compra realizada com sucesso!"
         subTitle="Código da compra: 2017182818828182881"
       />
+      <Alert
+        type="success"
+        message={`Agradecemos por comprar com a gente! Em breve, você receberá um email no endereço ${email} com todos os detalhes do pedido.`}
+      />
+
       <Button className="center btnClose" onClick={handleClose}>
         Fechar
       </Button>
@@ -45,4 +51,5 @@ export function ResultPayment({ handleClose }) {
 
 ResultPayment.propTypes = {
   handleClose: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
 };

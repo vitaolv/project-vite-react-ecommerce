@@ -50,13 +50,6 @@ export function PersonalDataInputs({ formData, handleChange }) {
 }
 
 PersonalDataInputs.propTypes = {
-  formData: PropTypes.shape({
-    nome: PropTypes.string.isRequired,
-    dataNascimento: PropTypes.string.isRequired,
-    cpf: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    telefone: PropTypes.string.isRequired,
-    celular: PropTypes.string, // OPCIONAL
-  }).isRequired,
+  formData: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
