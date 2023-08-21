@@ -25,7 +25,7 @@ a.nav-link:hover {
   padding: 12px 12px 12px 12px;
   margin-right: 1rem;
   border: 1px solid #151515;
-  border-radius: 20px;
+  border-radius: 16px;
   font-weight: bold;
   margin: 10px;
   background-color: transparent;
@@ -35,14 +35,14 @@ a.nav-link:hover {
 
 #seucarrinho svg,
 #logar-conta svg {
-  width: 20px;
+  width: 22px;
   height: 20px;
 }
 
 #logar-conta {
   background-color: transparent;
   border: 1px solid #151515;
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 12px 12px 12px 12px;
   margin-right: 2rem;
   font-weight: bold;
