@@ -1,5 +1,5 @@
-import { SlickSliderListProduct } from "../components/pageHome/SlickSliderListProduct";
-import { ControlCarousel } from "../components/pageHome/controlCarousel";
+import { SlickSliderListProduct } from "../components/SlickSlider/SlickSliderListProduct";
+import { ControlCarousel } from "../components/Carousels/controlCarousel";
 
 export default function Home() {
   return (

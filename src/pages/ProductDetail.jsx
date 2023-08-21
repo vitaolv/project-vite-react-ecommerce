@@ -1,12 +1,12 @@
-import { RadioColor } from "../components/pageProductDetail/RadioColor";
+import { RadioColor } from "../components/Radios/RadioColor";
 import { ButtonToCartOrBuyNow } from "../components/Buttons/ButtonToCartOrBuyNow";
-import { ImageDetailProduct } from "../components/pageProductDetail/ImageDetailProduct";
-import { ValorDoProduto } from "../components/pageProductDetail/ValorDoProduto";
+import { ImageDetailProduct } from "../components/Imagens/ImageDetailProduct";
+import { ValorDoProduto } from "../components/Texts/ValorDoProduto";
 import { Contador } from "../components/Count/Contador";
-import { AdvantageInformationIcons } from "../components/pageProductDetail/AdvantageInformationIcons";
+import { AdvantageInformationIcons } from "../components/Texts/AdvantageInformationIcons";
 import { useProductContext } from "../context/ProductContext";
 import { useParams } from "react-router-dom";
-import { TextDetailProduct } from "../components/pageProductDetail/TextDetailProduct";
+import { TextDetailProduct } from "../components/Texts/TextDetailProduct";
 import { useDispatch } from "react-redux";
 import { addToCartAction } from "../store/actions/ActionsCart";
 import { useState } from "react";
