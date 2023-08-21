@@ -5,6 +5,7 @@ import { closeModalToPaymentAction } from "../../store/actions/ActionsModais";
 import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
 import { ResultPayment } from "../../components/Result/ResultPayment";
+import initialFormData from "../../utils/datasForPayment/initialFormData";
 
 import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
@@ -12,37 +13,22 @@ export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
-  const [formData, setFormData] = useState({
-    //Personal
-    nome: "",
-    dataNascimento: "",
-    cpf: "",
-    email: "",
-    telefone: "",
-    celular: "",
-    //Local
-    cep: "",
-    endereco: "",
-    numero: "",
-    complemento: "",
-    cidade: "",
-    estado: "",
-    //Payment card
-    numeroDoCartao: "",
-    nomeEscritoNoCartao: "",
-    vencimento: "",
-    cvv: "",
-  });
+  const [formData, setFormData] = useState({ initialFormData });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const resetAll = () => {
+    setActiveStep(0);
+    setFormData(initialFormData);
+  };
+
   const steps = getSteps(formData, handleChange);
 
   const handleNextStep = () => {
-    // Desativar temporariamente a validação para permitir avançar entre os passos
+    // Aqui a validação para permitir avançar entre os passos
     // if (!validation) {
     //   return;
     // }
@@ -53,6 +39,7 @@ export function ModalPayment() {
   };
 
   const handleClose = () => {
+    resetAll();
     dispatch(closeModalToPaymentAction());
   };
 
@@ -82,7 +69,7 @@ export function ModalPayment() {
 
           {activeStep === steps.length - 1 ? (
             <div className="center">
-              <ResultPayment handleClose={handleClose} />
+              <ResultPayment handleClose={handleClose} email={formData.email} />
             </div>
           ) : (
             <ButtonsPaymentContainerDialogComponent

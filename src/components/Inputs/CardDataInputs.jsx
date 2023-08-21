@@ -45,11 +45,6 @@ export function CardDataInputs({ formData, handleChange }) {
 }
 
 CardDataInputs.propTypes = {
-  formData: PropTypes.shape({
-    numeroDoCartao: PropTypes.string.isRequired,
-    nomeEscritoNoCartao: PropTypes.string.isRequired,
-    vencimento: PropTypes.string.isRequired,
-    cvv: PropTypes.string.isRequired,
-  }).isRequired,
+  formData: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
