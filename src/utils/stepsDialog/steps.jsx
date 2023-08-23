@@ -1,8 +1,7 @@
 import { PersonalDataInputs } from "../../components/Inputs/PersonalDataInputs";
 import { CardDataInputs } from "../../components/Inputs/CardDataInputs";
 import { LocalDataInputs } from "../../components/Inputs/LocalDataInputs";
-
-import { Teste } from "../../components/teste";
+import { RecipientDataReviewToPaymentModal } from "../../components/Table/RecipientDataReviewToPaymentModal";
 
 const getSteps = (formData, handleChange) => [
   {
@@ -23,7 +22,7 @@ const getSteps = (formData, handleChange) => [
   },
   {
     title: "Revisão da compra",
-    content: <Teste formData={formData} handleChange={handleChange} />,
+    content: <RecipientDataReviewToPaymentModal formData={formData} />,
   },
   {
     title: "Finalização da compra",

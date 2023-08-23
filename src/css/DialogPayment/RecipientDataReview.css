@@ -1,0 +1,12 @@
+.data-review-modal {
+  border: 1px solid #151515;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.ant-table {
+  border-radius: 15px !important;
+}
