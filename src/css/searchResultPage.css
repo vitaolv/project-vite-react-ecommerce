@@ -1,3 +1,11 @@
+.search-results-container {
+  width: 100%;
+  background-image: url("/assets/img-header.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  padding-top: 8%;
+}
+
 .not-found-in-search-result {
   padding-top: 4rem;
   padding-bottom: 2rem;
