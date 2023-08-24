@@ -1,0 +1,11 @@
+.boleto {
+  background-color: #ededed;
+  border: 1px solid black;
+  padding: 2px;
+  border-radius: 13px;
+}
+
+.boleto p {
+  margin: 10px;
+  padding: 2px;
+}

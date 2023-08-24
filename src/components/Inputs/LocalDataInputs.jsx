@@ -52,6 +52,9 @@ export function LocalDataInputs({ formData, handleChange }) {
         handleComplementoChange={handleComplementoChangeWrapper}
         handleCidadeChange={handleCidadeChangeWrapper}
       />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }

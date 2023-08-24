@@ -15,17 +15,9 @@
 }
 
 .button-clean-cart:hover {
-  background-color: #45322e;
-  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
-  color: #e3d98d !important;
-  border-color: #e3d98d !important;
-  transition: 0.3s ease-in-out;
-}
-
-.button-clean-cart:active {
-  background-color: #45322e;
-  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
-  color: #e3d98d !important;
-  border-color: #e3d98d !important;
+  background-color: #bca76e;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+  color: #252525 !important;
+  border-color: #bba66e !important;
   transition: 0.3s ease-in-out;
 }

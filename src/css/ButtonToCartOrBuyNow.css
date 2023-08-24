@@ -25,9 +25,11 @@
 
 .btn-BuyNow:hover,
 .btn-addToCart:hover {
-  background: #45322e;
-  color: #e3d98d !important;
-  border-color: #45322e !important;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: 0.3s ease-in-out !important;
+  background-color: #bba66e !important;
+  color: #252525 !important;
+  border-color: #ddd !important;
 }
 
 .btn-BuyNow:active,

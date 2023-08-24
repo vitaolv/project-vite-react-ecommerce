@@ -21,7 +21,7 @@ const getSteps = (formData, handleChange) => [
     content: <CardDataInputs formData={formData} handleChange={handleChange} />,
   },
   {
-    title: "Revisão da compra",
+    title: "Revisão do pedido",
     content: <RecipientDataReviewToPaymentModal formData={formData} />,
   },
   {
