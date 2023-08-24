@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { NotificationInfo } from "../Notifications/NotificationInfo";
 
-export function RadioColor({ availableColors, onFlavorChance, initFlavor }) {
+export function FlavorRadio({ availableColors, onFlavorChance, initFlavor }) {
   const [selected, setSelected] = useState(initFlavor);
 
   const handleColorSelecionada = (event) => {
@@ -46,7 +46,7 @@ export function RadioColor({ availableColors, onFlavorChance, initFlavor }) {
   );
 }
 
-RadioColor.propTypes = {
+FlavorRadio.propTypes = {
   availableColors: PropTypes.arrayOf(PropTypes.string),
   onFlavorChance: PropTypes.func.isRequired,
   initFlavor: PropTypes.string.isRequired,

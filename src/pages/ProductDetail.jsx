@@ -1,4 +1,4 @@
-import { RadioColor } from "../components/Radios/RadioColor";
+import { FlavorRadio } from "../components/Radios/FlavorRadio";
 import { ButtonToCartOrBuyNow } from "../components/Buttons/ButtonToCartOrBuyNow";
 import { ImageDetailProduct } from "../components/Imagens/ImageDetailProduct";
 import { ValorDoProduto } from "../components/Texts/ValorDoProduto";
@@ -70,7 +70,7 @@ export default function ProductDetail() {
             initQuantity={selectedQuantity}
           />
           <hr />
-          <RadioColor
+          <FlavorRadio
             availableColors={selectedProduct.availableColors}
             onFlavorChance={handleFlavorChange}
             initFlavor={selectedFlavor}

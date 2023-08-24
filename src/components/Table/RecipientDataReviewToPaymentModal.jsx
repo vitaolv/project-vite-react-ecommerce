@@ -95,5 +95,4 @@ RecipientDataReviewToPaymentModal.propTypes = {
     numero: PropTypes.string.isRequired,
     complemento: PropTypes.string.isRequired,
   }).isRequired,
-  handleChange: PropTypes.func.isRequired,
 };

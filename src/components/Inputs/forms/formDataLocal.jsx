@@ -17,7 +17,8 @@ export function FormDataLocal({
 
   return (
     <Form layout="vertical">
-      <Row gutter={(16, 16)}>
+      <br />
+      <Row gutter={(18, 18)}>
         <Col md={12} xs={12}>
           <Form.Item label="CEP" required>
             <Input

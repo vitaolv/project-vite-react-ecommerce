@@ -86,10 +86,9 @@
 #prev-slide-Detail:hover {
   box-shadow: 0px 15px 20px rgba(400, 229, 157, 0.3);
   transition: 0.2s linear;
-  color: #45322e !important;
-  background: #45322e !important;
-  color: #e3d98d !important;
-  border-color: #45322e !important;
+  background: #bba66e !important;
+  color: #252525 !important;
+  border-color: #bba66e !important;
   border: none !important;
 }
 

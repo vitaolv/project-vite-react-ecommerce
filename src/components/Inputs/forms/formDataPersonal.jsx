@@ -19,6 +19,7 @@ export function FormDataPersonal({
 
   return (
     <Form layout="vertical">
+      <br />
       <Row gutter={[16, 16]}>
         <Col xs={24} md={12}>
           <Form.Item label="Nome completo" required>
@@ -102,6 +103,7 @@ export function FormDataPersonal({
           </Form.Item>
         </Col>
       </Row>
+      <br /> <br />
     </Form>
   );
 }

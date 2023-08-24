@@ -88,8 +88,8 @@ button.slick-next:before {
 
 .card-body-action .card-link {
   background-color: rgb(255, 255, 255);
-  border: 1px solid #453222;
-  color: #252525;
+  border: 1px solid #ddd;
+  color: #45322e !important;
   width: 10rem;
   font-size: 15px;
   border-radius: 10px;
@@ -106,10 +106,10 @@ button.slick-next:before {
 .card-link:hover {
   transition: 0.24s ease-in-out;
   text-decoration: none;
-  background: #453222 !important;
-  color: #e3d98d !important;
-  border: 1px solid #453222 !important;
-  box-shadow: 0px 15px 20px rgba(416, 229, 157, 0.5);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1) !important;
+  background-color: #bba66e !important;
+  color: #252525 !important;
+  border-color: #bba66e !important;
 }
 
 .card-image-slick {

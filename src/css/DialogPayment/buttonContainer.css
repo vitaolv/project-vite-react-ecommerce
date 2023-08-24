@@ -3,10 +3,14 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 8px;
+  border-color: #453222 !important;
+  outline-color: #453222 !important;
 }
 
 .btn-container Button {
   border-radius: 8px !important;
+  border-color: #453222 !important;
+  outline-color: #453222 !important;
 }
 
 .custom-dialog-actions {
@@ -16,7 +20,9 @@
 }
 
 .btn-container Button:hover {
-  box-shadow: 0px 8px 20px rgba(000, 000, 000, 0.24);
+  box-shadow: 0px 4px 20px rgba(000, 000, 000, 0.24);
+  border-color: #453222 !important;
+  outline-color: #453222 !important;
 }
 
 .btn-container {
@@ -26,6 +32,8 @@
   gap: 1rem;
   padding: 0.8rem;
   flex-grow: 1;
+  border-color: #453222 !important;
+  outline-color: #453222 !important;
 }
 
 .button-back-and-next {
@@ -39,35 +47,44 @@
 #btn-finalize-payment {
   background-color: #e3d98d !important;
   color: #252525 !important;
-  transition: 0.3s ease-in-out !important;
+  transition: 0.3s ease-in-out;
+  border-color: #e3d98d !important;
 }
 
 #btn-next-payment:hover,
 #btn-finalize-payment:hover {
-  background-color: transparent !important;
+  background-color: #bba66e !important;
   color: #252525 !important;
-  border-color: #252525 !important;
+  border-color: #bba66e !important;
   transition: 0.3s ease-in-out;
 }
 
 #btn-cancel-payment {
-  background-color: #453222 !important;
+  background-color: #252525 !important;
+  border-color: #252525 !important;
   color: #e3d98d !important;
   transition: 0.3s ease-in-out !important;
 }
 
 #btn-cancel-payment:hover {
-  background-color: transparent !important;
+  background-color: #bba66e !important;
   color: #252525 !important;
   transition: 0.3s ease-in-out;
+  border-color: #bba66e !important;
+}
+
+#btn-back-payment {
+  background-color: transparent !important;
+  color: #252525 !important;
+  transition: 0.3s ease-in-out !important;
   border-color: #252525 !important;
 }
 
 #btn-back-payment:hover {
-  background-color: transparent !important;
+  background-color: #bba66e !important;
   color: #252525 !important;
   transition: 0.3s ease-in-out;
-  border-color: #252525 !important;
+  border-color: #bba66e !important;
 }
 
 @media (max-width: 500px) {
