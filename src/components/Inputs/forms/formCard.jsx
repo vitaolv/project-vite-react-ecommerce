@@ -78,6 +78,7 @@ FormCard.propTypes = {
     vencimento: PropTypes.string.isRequired,
     complemento: PropTypes.string.isRequired,
     cvv: PropTypes.string.isRequired,
+    opcoesDeParcelamento: PropTypes.string.isRequired,
   }).isRequired,
   handleChange: PropTypes.func.isRequired,
   handleCardNameChangeWrapper: PropTypes.func.isRequired,

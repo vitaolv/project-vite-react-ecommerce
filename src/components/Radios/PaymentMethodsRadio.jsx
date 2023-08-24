@@ -3,9 +3,17 @@ import { BarcodeOutlined, CreditCardOutlined } from "@ant-design/icons";
 
 import PropTypes from "prop-types";
 
-export function PaymentMethodsRadio({ setSelectedOption }) {
+export function PaymentMethodsRadio({ setSelectedOption, handleChange }) {
   const handleSelectedOption = (e) => {
-    setSelectedOption(e.target.value);
+    let valueOption = e.target.value;
+    setSelectedOption(valueOption);
+
+    handleChange({
+      target: {
+        name: "formasDePagamento",
+        value: valueOption,
+      },
+    });
   };
 
   const PaymentOptions = [
@@ -40,4 +48,5 @@ export function PaymentMethodsRadio({ setSelectedOption }) {
 
 PaymentMethodsRadio.propTypes = {
   setSelectedOption: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };

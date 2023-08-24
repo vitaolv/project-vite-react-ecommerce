@@ -32,7 +32,10 @@ export function CardDataInputs({ formData, handleChange }) {
     <div>
       <h5 className="center">Formas de pagamento</h5>
       <br />
-      <PaymentMethodsRadio setSelectedOption={setSelectedOption} />
+      <PaymentMethodsRadio
+        setSelectedOption={setSelectedOption}
+        handleChange={handleChange}
+      />
       <br />
       {selectedOption === "Boleto" ? (
         <SelectedPaymentIsBoleto />
