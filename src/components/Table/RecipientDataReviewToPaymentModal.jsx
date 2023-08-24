@@ -53,19 +53,35 @@ export function RecipientDataReviewToPaymentModal({ formData }) {
       <h5 className="center">Resumo da compra</h5>
       <div className="data-review-modal">
         <div className="data-row">
-          <p>Nome: {formData.nome}</p>
-          <p>CPF: {formData.cpf}</p>
-          <p>Formas de pagamento: {formData.formasDePagamento}</p>
+          <p>
+            <strong>Nome: </strong>
+            {formData.nome}
+          </p>
+          <p>
+            <strong>CPF: </strong>
+            {formData.cpf}
+          </p>
+          <p>
+            <strong>Forma de pagamento: </strong>
+            {formData.formasDePagamento}
+          </p>
         </div>
         <div className="data-row">
-          <p>E-mail: {formData.email}</p>
           <p>
-            Endereço: {formData.endereco}, {formData.numero}
+            <strong>E-mail: </strong>
+            {formData.email}
           </p>
-          <p>Complemento: {formData.complemento} </p>
+          <p>
+            <strong>Endereço: </strong>
+            {formData.endereco} - {formData.numero}
+          </p>
+          <p>
+            <strong>Complemento: </strong>
+            {formData.complemento}
+          </p>
         </div>
       </div>
-      <hr />
+      <br />
       <Table
         size="small"
         columns={columns}

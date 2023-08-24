@@ -28,6 +28,12 @@ html {
   justify-content: center;
 }
 
+.left {
+  align-items: left;
+  text-align: left;
+  justify-content: left;
+}
+
 @media print {
   body {
     margin: 0;

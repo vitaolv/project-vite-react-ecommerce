@@ -1,8 +1,7 @@
-import { Input, Form, Row, Col, Select } from "antd";
-
+import { Input, Form, Row, Col } from "antd";
 import PropTypes from "prop-types";
 
-import { getBrazilianStates } from "../../../utils/estadosBrasileiros/states";
+import { BrazilianStatesOptionSelect } from "../../Selects/BrazilianStatesOptionSelect";
 
 export function FormDataLocal({
   formData,
@@ -80,19 +79,10 @@ export function FormDataLocal({
         </Col>
         <Col xs={12}>
           <Form.Item label="Estado" required>
-            <Select
-              required
-              name="estado"
-              size="middle"
-              value={formData.estado}
-              onChange={handleStateSelectedChange}
-            >
-              {getBrazilianStates.map((state) => (
-                <Select.Option key={state} value={state}>
-                  {state}
-                </Select.Option>
-              ))}
-            </Select>
+            <BrazilianStatesOptionSelect
+              formData={formData}
+              handleStateSelectedChange={handleStateSelectedChange}
+            />
           </Form.Item>
         </Col>
       </Row>
