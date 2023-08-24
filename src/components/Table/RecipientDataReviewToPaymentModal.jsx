@@ -55,7 +55,7 @@ export function RecipientDataReviewToPaymentModal({ formData }) {
         <div className="data-row">
           <p>Nome: {formData.nome}</p>
           <p>CPF: {formData.cpf}</p>
-          <p>Formas de pagamento: {formData.telefone}</p>
+          <p>Formas de pagamento: {formData.formasDePagamento}</p>
         </div>
         <div className="data-row">
           <p>E-mail: {formData.email}</p>
@@ -94,5 +94,6 @@ RecipientDataReviewToPaymentModal.propTypes = {
     endereco: PropTypes.string.isRequired,
     numero: PropTypes.string.isRequired,
     complemento: PropTypes.string.isRequired,
+    formasDePagamento: PropTypes.string.isRequired,
   }).isRequired,
 };

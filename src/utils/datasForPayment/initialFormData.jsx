@@ -18,6 +18,9 @@ const initialFormData = {
   nomeEscritoNoCartao: "",
   vencimento: "",
   cvv: "",
+  //Formas de pagamento
+  formasDePagamento: "Boleto",
+  opcoesDeParcelamento: "",
 };
 
 export default initialFormData;
