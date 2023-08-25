@@ -3,15 +3,20 @@ import { Result, Space, Button } from "antd";
 import { Spinner } from "react-bootstrap";
 import { Alert } from "antd";
 
+import { useDispatch } from "react-redux";
+
 import PropTypes from "prop-types";
+import { resetCart } from "../../store/actions/ActionsCart";
 
 export function ResultPayment({ handleClose, email }) {
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const delay = 2500;
     setTimeout(() => {
       setIsLoading(false);
+      dispatch(resetCart());
     }, delay);
   }, []);
 

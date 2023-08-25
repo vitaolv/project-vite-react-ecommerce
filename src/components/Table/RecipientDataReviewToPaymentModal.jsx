@@ -91,9 +91,19 @@ export function RecipientDataReviewToPaymentModal({ formData }) {
           pageSize: 3,
         }}
       />
-      <p>
-        <strong>Valor a pagar: {formData.opcoesDeParcelamento}</strong>
-      </p>
+
+      {!formData.opcoesDeParcelamento ? (
+        <p>
+          <strong>
+            Valor a pagar: {getFormattedPriceValue(totalPrice)} à vista via
+            boleto
+          </strong>
+        </p>
+      ) : (
+        <p>
+          <strong>Valor a pagar: {formData.opcoesDeParcelamento}</strong>
+        </p>
+      )}
       <p>
         <strong>Preço final: {getFormattedPriceValue(totalPrice)}</strong>
       </p>
@@ -112,6 +122,6 @@ RecipientDataReviewToPaymentModal.propTypes = {
     numero: PropTypes.string.isRequired,
     complemento: PropTypes.string.isRequired,
     formasDePagamento: PropTypes.string.isRequired,
-    opcoesDeParcelamento: PropTypes.number.isRequired,
+    opcoesDeParcelamento: PropTypes.string.isRequired,
   }).isRequired,
 };

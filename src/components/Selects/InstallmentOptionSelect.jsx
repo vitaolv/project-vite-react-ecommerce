@@ -1,6 +1,6 @@
 import { Select } from "antd";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import { getInstallmentOptions } from "../../utils/InstallmentOptions/getInstallmentOptions";
@@ -21,14 +21,16 @@ export function InstallmentOptionSelect({ formData, handleChange }) {
     });
   };
 
-  if (!formData.opcoesDeParcelamento) {
-    handleChange({
-      target: {
-        name: "opcoesDeParcelamento",
-        value: options[0],
-      },
-    });
-  }
+  useEffect(() => {
+    if (!formData.opcoesDeParcelamento) {
+      handleChange({
+        target: {
+          name: "opcoesDeParcelamento",
+          value: options[0],
+        },
+      });
+    }
+  }, [formData.opcoesDeParcelamento, options, handleChange]);
 
   return (
     <>

@@ -23,3 +23,6 @@ export const CLOSE_MODAL_TO_PAYMENT = "CLOSE_MODAL_TO_PAYMENT";
 
 //inputs for payment
 export const UPDATE_FIELD = "UPDATE_FIELD";
+
+//reset
+export const RESET_ALL = "RESET_ALL";

@@ -99,3 +99,9 @@ export const updatePriceTotalAction = () => {
     });
   };
 };
+
+export const resetCart = () => {
+  return {
+    type: types.RESET_ALL,
+  };
+};
