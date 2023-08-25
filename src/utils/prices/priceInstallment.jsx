@@ -1,11 +1,7 @@
-export function getFormattedFinalPriceInstallmente(totalPrice) {
-  const installmentOptions = [
-    { maxValue: 180, numInstallments: 3 },
-    { maxValue: 300, numInstallments: 4 },
-    { maxValue: 400, numInstallments: 6 },
-  ];
+import { installmentOptions } from "../InstallmentOptions/installmentConfig";
 
-  let numInstallments = 10; // Valor padrão para mais de 400 (caso não atenda nenhuma opção anterior)
+export function getFormattedFinalPriceInstallmente(totalPrice) {
+  let numInstallments = 12; // Valor padrão para mais de 645 (caso não atenda nenhuma opção anterior)
 
   for (const option of installmentOptions) {
     if (totalPrice <= option.maxValue) {

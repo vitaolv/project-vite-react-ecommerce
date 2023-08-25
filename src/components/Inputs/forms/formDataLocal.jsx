@@ -18,7 +18,7 @@ export function FormDataLocal({
     <Form layout="vertical">
       <br />
       <Row gutter={(18, 18)}>
-        <Col md={12} xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="CEP" required>
             <Input
               required
@@ -30,7 +30,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Endereço" required>
             <Input
               required
@@ -42,7 +42,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Número" required>
             <Input
               required
@@ -54,7 +54,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Complemento (OPCIONAL)">
             <Input
               name="complemento"
@@ -65,7 +65,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Cidade" required>
             <Input
               required
@@ -77,7 +77,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Estado" required>
             <BrazilianStatesOptionSelect
               formData={formData}

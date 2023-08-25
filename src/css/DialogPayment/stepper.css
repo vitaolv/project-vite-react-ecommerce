@@ -18,3 +18,8 @@
 .ant-steps .ant-steps-item.ant-steps-item-finish .ant-steps-item-tail::after {
   background-color: #e3d98d !important;
 }
+
+.ant-steps,
+.ant-steps-horizontal {
+  overflow: scroll !important;
+}

@@ -1,5 +1,20 @@
 import { Select } from "antd";
-export function InstallmentOptionSelect() {
+import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
+
+import { getInstallmentOptions } from "../../utils/InstallmentOptions/getInstallmentOptions";
+
+export function InstallmentOptionSelect({ formData, handleChange }) {
+  const value = useSelector((state) => state.cart.priceTotal);
+
+  const handleCardInstallmentOptionChange = (e) => {
+    handleChange({
+      target: {
+        name: "opcoesDeParcelamento",
+        value: e,
+      },
+    });
+  };
   return (
     <>
       <Select
@@ -7,14 +22,21 @@ export function InstallmentOptionSelect() {
         name="opcoesDeParcelamento"
         size="middle"
         value={formData.opcoesDeParcelamento}
-        onChange={handleStateSelectedChange}
+        onChange={handleCardInstallmentOptionChange}
       >
-        {getBrazilianStates.map((state) => (
-          <Select.Option key={state} value={state}>
-            {state}
+        {getInstallmentOptions(value).map((option) => (
+          <Select.Option key={option} value={option}>
+            {option}
           </Select.Option>
         ))}
       </Select>
     </>
   );
 }
+
+InstallmentOptionSelect.propTypes = {
+  formData: PropTypes.shape({
+    opcoesDeParcelamento: PropTypes.string.isRequired,
+  }),
+  handleChange: PropTypes.func.isRequired,
+};
