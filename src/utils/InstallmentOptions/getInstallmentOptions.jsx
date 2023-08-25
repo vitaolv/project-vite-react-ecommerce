@@ -12,6 +12,7 @@ export const getInstallmentOptions = (value) => {
   }
 
   const formattedOptions = [];
+
   formattedOptions.push(`1x de ${getFormattedPriceValue(value)} à vista`);
 
   if (numInstallments > 1) {
@@ -24,6 +25,6 @@ export const getInstallmentOptions = (value) => {
 
     return formattedOptions;
   } else {
-    return [];
+    return [formattedOptions[0]];
   }
 };

@@ -92,9 +92,10 @@ export function RecipientDataReviewToPaymentModal({ formData }) {
         }}
       />
       <p>
-        <strong>
-          Preço total a pagar: {getFormattedPriceValue(totalPrice)}
-        </strong>
+        <strong>Valor a pagar: {formData.opcoesDeParcelamento}</strong>
+      </p>
+      <p>
+        <strong>Preço final: {getFormattedPriceValue(totalPrice)}</strong>
       </p>
     </div>
   );
@@ -111,5 +112,6 @@ RecipientDataReviewToPaymentModal.propTypes = {
     numero: PropTypes.string.isRequired,
     complemento: PropTypes.string.isRequired,
     formasDePagamento: PropTypes.string.isRequired,
+    opcoesDeParcelamento: PropTypes.number.isRequired,
   }).isRequired,
 };
