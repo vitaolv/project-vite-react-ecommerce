@@ -87,6 +87,16 @@ export function clearCartAction() {
   };
 }
 
+export function resetCart() {
+  return (dispatch) => {
+    dispatch({
+      type: types.RESET_ALL,
+    });
+
+    dispatch(updatePriceTotalAction());
+  };
+}
+
 export const updatePriceTotalAction = () => {
   return (dispatch, getState) => {
     const state = getState().cart;
@@ -97,11 +107,5 @@ export const updatePriceTotalAction = () => {
       type: types.UPDATE_PRICE_TOTAL,
       payload: totalPrice,
     });
-  };
-};
-
-export const resetCart = () => {
-  return {
-    type: types.RESET_ALL,
   };
 };

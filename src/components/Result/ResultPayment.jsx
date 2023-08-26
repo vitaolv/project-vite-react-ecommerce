@@ -6,9 +6,8 @@ import { Alert } from "antd";
 import { useDispatch } from "react-redux";
 
 import PropTypes from "prop-types";
-import { resetCart } from "../../store/actions/ActionsCart";
 
-export function ResultPayment({ handleClose, email }) {
+export function ResultPayment({ handlePurchaseMadeAndClose, email }) {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,9 +15,8 @@ export function ResultPayment({ handleClose, email }) {
     const delay = 2500;
     setTimeout(() => {
       setIsLoading(false);
-      dispatch(resetCart());
     }, delay);
-  }, []);
+  }, [dispatch, isLoading, setIsLoading]);
 
   if (isLoading) {
     return (
@@ -47,7 +45,7 @@ export function ResultPayment({ handleClose, email }) {
         message={`Agradecemos por comprar com a gente! Em breve, você receberá um email no endereço ${email} com todos os detalhes do pedido.`}
       />
 
-      <Button className="center btnClose" onClick={handleClose}>
+      <Button className="center btnClose" onClick={handlePurchaseMadeAndClose}>
         Fechar
       </Button>
     </div>
@@ -55,6 +53,6 @@ export function ResultPayment({ handleClose, email }) {
 }
 
 ResultPayment.propTypes = {
-  handleClose: PropTypes.func.isRequired,
+  handlePurchaseMadeAndClose: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
 };
