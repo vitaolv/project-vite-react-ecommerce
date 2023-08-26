@@ -19,6 +19,8 @@
   background-color: #e3d98d !important;
 }
 
+
+@media (max-width: 768px) {
 .ant-steps,
 .ant-steps-horizontal {
   overflow: scroll !important;
