@@ -11,3 +11,17 @@
 .ant-table {
   border-radius: 15px !important;
 }
+
+@media (max-width: 768px) {
+  .ant-table {
+    overflow: auto;
+  }
+
+  .data-review-modal {
+    padding: 0;
+  }
+
+  .data-review-modal p {
+    margin: 10px;
+  }
+}

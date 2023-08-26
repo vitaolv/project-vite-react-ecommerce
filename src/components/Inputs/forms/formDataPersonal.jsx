@@ -21,7 +21,7 @@ export function FormDataPersonal({
     <Form layout="vertical">
       <br />
       <Row gutter={[18, 18]}>
-        <Col xs={28} md={28}>
+        <Col xs={24} md={28}>
           <Form.Item label="Nome completo" required>
             <Input
               name="nome"
