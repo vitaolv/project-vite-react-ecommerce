@@ -28,6 +28,11 @@ export function CardDataInputs({ formData, handleChange }) {
 
   const [selectedOption, setSelectedOption] = useState("Boleto");
 
+  const handleRecaptchaVerify = (token) => {
+    console.log("reCAPTCHA Token:", token);
+    // Aqui você pode usar o token como quiser, por exemplo, enviá-lo para uma API
+  };
+
   return (
     <div>
       <h5 className="center">Formas de pagamento</h5>
@@ -51,8 +56,8 @@ export function CardDataInputs({ formData, handleChange }) {
             }
             handleCardCVVChangeWrapper={handleCardCVVChangeWrapper}
           />
-          <div style={{ margin: "2rem" }}>
-            <ReCAPTCHA sitekey="SUA_CHAVE_PUBLICA_DO_RECAPTCHA" />
+          <div style={{ margin: "0.5rem" }}>
+            <ReCAPTCHA sitekey="chave aqui" onChange={handleRecaptchaVerify} />
           </div>
         </>
       )}
@@ -62,5 +67,6 @@ export function CardDataInputs({ formData, handleChange }) {
 
 CardDataInputs.propTypes = {
   formData: PropTypes.object.isRequired,
+  recaptchaRef: PropTypes.object,
   handleChange: PropTypes.func.isRequired,
 };

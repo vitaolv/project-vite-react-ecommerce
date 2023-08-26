@@ -30,13 +30,14 @@ export function ModalPayment() {
 
   const steps = getSteps(formData, handleChange);
 
-  const handleNextStep = () => {
+  const handleNextStep = async () => {
     // Aqui a validação para permitir avançar entre os passos
     // if (!validation) {
     //   return;
     // }
     setActiveStep((prevStep) => prevStep + 1);
   };
+
   const handlePreviousStep = () => {
     setActiveStep((prevStep) => prevStep - 1);
   };
