@@ -37,6 +37,15 @@ export function cartReducer(state = initialState, action) {
       };
     }
 
+    case types.RESET_ALL: {
+      return {
+        ...state,
+        productInCart: [],
+        quantityTotal: 0,
+        priceTotal: 0,
+      };
+    }
+
     default:
       return state;
   }

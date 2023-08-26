@@ -28,6 +28,23 @@ html {
   justify-content: center;
 }
 
+.left {
+  align-items: left;
+  text-align: left;
+  justify-content: left;
+}
+
+.responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .responsive {
+    grid-template-columns: repeat(1, minmax(222px, 1fr));
+  }
+}
+
 @media print {
   body {
     margin: 0;

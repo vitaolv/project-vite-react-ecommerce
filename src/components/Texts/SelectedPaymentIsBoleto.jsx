@@ -3,6 +3,7 @@ import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 
 export function SelectedPaymentIsBoleto() {
   const value = useSelector((state) => state.cart.priceTotal);
+
   return (
     <>
       <div className="boleto center">

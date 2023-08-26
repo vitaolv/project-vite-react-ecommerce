@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Form from "antd/es/form/Form";
 import { Row, Col, Input } from "antd";
+import { InstallmentOptionSelect } from "../../Selects/installmentOptionSelect";
 
 export function FormCard({
   formData,
@@ -12,9 +13,9 @@ export function FormCard({
 }) {
   const cardMaskPlaceholder = "XXXX.XXXX.XXXX.XXXX";
   return (
-    <Form layout="vertical" onSubmit={handleChange}>
-      <Row gutter={[16, 16]}>
-        <Col md={12} xs={12}>
+    <Form className="left" layout="vertical" onSubmit={handleChange}>
+      <Row gutter={[60, 16]}>
+        <Col md={12} xs={25}>
           <Form.Item label="Número de cartão" required>
             <Input
               required
@@ -31,7 +32,7 @@ export function FormCard({
             />
           </Form.Item>
         </Col>
-        <Col md={12} xs={12}>
+        <Col md={12} xs={25}>
           <Form.Item label="Nome escrito no cartão" required>
             <Input
               required
@@ -43,8 +44,8 @@ export function FormCard({
             />
           </Form.Item>
         </Col>
-        <Col md={12} xs={12}>
-          <Form.Item label="Data de vencimento" required>
+        <Col md={12} xs={18}>
+          <Form.Item label="Data de validade" required>
             <Input
               required
               name="vencimento"
@@ -54,7 +55,7 @@ export function FormCard({
             />
           </Form.Item>
         </Col>
-        <Col md={12} xs={12}>
+        <Col md={8} xs={11}>
           <Form.Item label="CVV" required>
             <Input
               required
@@ -63,6 +64,14 @@ export function FormCard({
               onChange={handleCardCVVChangeWrapper}
               placeholder="XXX"
               style={{ width: "100%", maxWidth: "100px" }}
+            />
+          </Form.Item>
+        </Col>
+        <Col md={14} xs={25}>
+          <Form.Item label="Opções de parcelamento" required>
+            <InstallmentOptionSelect
+              formData={formData}
+              handleChange={handleChange}
             />
           </Form.Item>
         </Col>

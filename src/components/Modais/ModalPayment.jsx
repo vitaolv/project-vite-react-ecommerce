@@ -6,6 +6,9 @@ import getSteps from "../../utils/stepsDialog/steps";
 import { StepperToPayment } from "../Stepper/StepperToPayment";
 import { ResultPayment } from "../../components/Result/ResultPayment";
 import initialFormData from "../../utils/datasForPayment/initialFormData";
+import { showNotification } from "../../store/actions/ActionsNotification";
+
+import { resetCart } from "../../store/actions/ActionsCart";
 
 import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
@@ -43,6 +46,12 @@ export function ModalPayment() {
     dispatch(closeModalToPaymentAction());
   };
 
+  const handlePurchaseMadeAndClose = () => {
+    dispatch(resetCart());
+    dispatch(showNotification("A compra foi realizada!", "success"));
+    handleClose();
+  };
+
   return (
     <>
       {isPaymentOpen && (
@@ -69,7 +78,10 @@ export function ModalPayment() {
 
           {activeStep === steps.length - 1 ? (
             <div className="center">
-              <ResultPayment handleClose={handleClose} email={formData.email} />
+              <ResultPayment
+                handlePurchaseMadeAndClose={handlePurchaseMadeAndClose}
+                email={formData.email}
+              />
             </div>
           ) : (
             <ButtonsPaymentContainerDialogComponent

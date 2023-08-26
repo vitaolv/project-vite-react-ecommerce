@@ -3,9 +3,12 @@ import { Result, Space, Button } from "antd";
 import { Spinner } from "react-bootstrap";
 import { Alert } from "antd";
 
+import { useDispatch } from "react-redux";
+
 import PropTypes from "prop-types";
 
-export function ResultPayment({ handleClose, email }) {
+export function ResultPayment({ handlePurchaseMadeAndClose, email }) {
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -13,7 +16,7 @@ export function ResultPayment({ handleClose, email }) {
     setTimeout(() => {
       setIsLoading(false);
     }, delay);
-  }, []);
+  }, [dispatch, isLoading, setIsLoading]);
 
   if (isLoading) {
     return (
@@ -42,7 +45,7 @@ export function ResultPayment({ handleClose, email }) {
         message={`Agradecemos por comprar com a gente! Em breve, você receberá um email no endereço ${email} com todos os detalhes do pedido.`}
       />
 
-      <Button className="center btnClose" onClick={handleClose}>
+      <Button className="center btnClose" onClick={handlePurchaseMadeAndClose}>
         Fechar
       </Button>
     </div>
@@ -50,6 +53,6 @@ export function ResultPayment({ handleClose, email }) {
 }
 
 ResultPayment.propTypes = {
-  handleClose: PropTypes.func.isRequired,
+  handlePurchaseMadeAndClose: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
 };

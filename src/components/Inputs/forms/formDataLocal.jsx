@@ -1,8 +1,7 @@
-import { Input, Form, Row, Col, Select } from "antd";
-
+import { Input, Form, Row, Col } from "antd";
 import PropTypes from "prop-types";
 
-import { getBrazilianStates } from "../../../utils/estadosBrasileiros/states";
+import { BrazilianStatesOptionSelect } from "../../Selects/BrazilianStatesOptionSelect";
 
 export function FormDataLocal({
   formData,
@@ -19,7 +18,7 @@ export function FormDataLocal({
     <Form layout="vertical">
       <br />
       <Row gutter={(18, 18)}>
-        <Col md={12} xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="CEP" required>
             <Input
               required
@@ -31,7 +30,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Endereço" required>
             <Input
               required
@@ -43,7 +42,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Número" required>
             <Input
               required
@@ -55,7 +54,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Complemento (OPCIONAL)">
             <Input
               name="complemento"
@@ -66,7 +65,7 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Cidade" required>
             <Input
               required
@@ -78,21 +77,12 @@ export function FormDataLocal({
             />
           </Form.Item>
         </Col>
-        <Col xs={12}>
+        <Col md={12} xs={22}>
           <Form.Item label="Estado" required>
-            <Select
-              required
-              name="estado"
-              size="middle"
-              value={formData.estado}
-              onChange={handleStateSelectedChange}
-            >
-              {getBrazilianStates.map((state) => (
-                <Select.Option key={state} value={state}>
-                  {state}
-                </Select.Option>
-              ))}
-            </Select>
+            <BrazilianStatesOptionSelect
+              formData={formData}
+              handleStateSelectedChange={handleStateSelectedChange}
+            />
           </Form.Item>
         </Col>
       </Row>
