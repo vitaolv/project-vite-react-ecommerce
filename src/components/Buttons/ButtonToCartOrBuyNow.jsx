@@ -20,6 +20,7 @@ export function ButtonToCartOrBuyNow({ onClick }) {
   };
 
   const handleBuyNow = () => {
+    handleAddToCart();
     navigate("/carrinho-e-pagamento");
   };
 
