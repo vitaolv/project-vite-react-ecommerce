@@ -1,5 +1,6 @@
 import { SlickSliderListProduct } from "../components/SlickSlider/SlickSliderListProduct";
-import { ControlCarousel } from "../components/Carousels/controlCarousel";
+
+import { ControlCarousel } from "../components/Carousels/ControlCarousel";
 import { TextAboutHome } from "../components/Texts/TextAboutHome";
 import { SubTextAboutHome } from "../components/Texts/SubTextAboutHome";
 
