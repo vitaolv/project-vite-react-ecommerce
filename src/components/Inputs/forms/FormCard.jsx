@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Form from "antd/es/form/Form";
 import { Row, Col, Input } from "antd";
-import { InstallmentOptionSelect } from "../../Selects/installmentOptionSelect";
+import { InstallmentOptionSelect } from "../../Selects/InstallmentOptionSelect";
 
 export function FormCard({
   formData,
