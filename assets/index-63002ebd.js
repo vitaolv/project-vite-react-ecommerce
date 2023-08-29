@@ -140,7 +140,7 @@ A caixa de 25 Bombons Gourmet simboliza a arte de misturar sabores, aperfeiçoar
 Ingredientes    
 Chocolate negro (min. 54,5% e 60% de cacau), pasta de cacau, açúcar, manteiga de cacau, emulsionantes (lecitina de SOJA), aroma natural de baunilha     <1%. Recheio: água, açúcar invertido, NATAS, xarope de glucose, sorbitol, chocolate de LEITE 34% de cacau, chocolate branco 28% de cacau, mel, ouro,     azeite virgem extra (Terras Dazibo Anfora​)​, queijo de cabra curado ​(Martins&Rebello) ​, vinho do Porto, amêndoas, flor de sal     
 
-Pode conter vestígios de GLÚTEN, OVOS, LEITE e frutos de casca rija.`,availableColors:[]},{id:4,name:"Bombonier Chocolates",priceBefore:164.9,price:128,cover:["/assets/product4-choco.png","/assets/product4-mista.png","/assets/product4-meioamargo.png"],availableColors:["Chocolate ao leite","Chocolate meio amargo","Mista chocolate ao leite e chocolate branco"],textDetail:`O sabor do chocolate puro e das clássicas drágeas em uma bombonier recheada de sabor.         
+Pode conter vestígios de GLÚTEN, OVOS, LEITE e frutos de casca rija.`,availableColors:[]},{id:4,name:"Bombonier Chocolates",priceBefore:164.9,price:128,cover:["assets/product4-choco.png","assets/product4-mista.png","assets/product4-meioamargo.png"],availableColors:["Chocolate ao leite","Chocolate meio amargo","Mista chocolate ao leite e chocolate branco"],textDetail:`O sabor do chocolate puro e das clássicas drágeas em uma bombonier recheada de sabor.         
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.         
 
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.        Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
@@ -150,7 +150,7 @@ Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA C
 
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.       
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.      Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
-`,cover:["/assets/product5.jpg"]},{id:6,name:"Cookies sortidos",priceBefore:79.9,price:62,textDetail:`Cookie crocante por fora e macio por dentro com muitas gotas de chocolate, com 35 gramas cada e aproximadamente 5 a 6 centimetro de diametro.
+`,cover:["assets/product5.jpg"]},{id:6,name:"Cookies sortidos",priceBefore:79.9,price:62,textDetail:`Cookie crocante por fora e macio por dentro com muitas gotas de chocolate, com 35 gramas cada e aproximadamente 5 a 6 centimetro de diametro.
       
 Validade:
       15 dias em geladeira 5°
@@ -158,14 +158,14 @@ Validade:
 
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.       
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.      Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
-`,availableColors:[],cover:["/assets/product6.png"]},{id:7,name:"Ovo com brinde surpresa - 2 unidades",priceBefore:21.39,price:15.79,availableColors:["Chocolate ao leite","Mista chocolate ao leite e chocolate branco","Chocolate branco"],textDetail:`Características:
+`,availableColors:[],cover:["assets/product6.png"]},{id:7,name:"Ovo com brinde surpresa - 2 unidades",priceBefore:21.39,price:15.79,availableColors:["Chocolate ao leite","Mista chocolate ao leite e chocolate branco","Chocolate branco"],textDetail:`Características:
       A textura macia do marshmallow tradicional coberto com chocolate ao leite, chocolate branco ou chocolate Mista chocolate ao leite e chocolate branco (branco e preto).
       - Porção de 38g (2 unidades) 
     
 
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.     
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.    Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
-`,cover:["/assets/product7.png"]},{id:8,name:"Caneca com trufas",priceBefore:78,price:64.2,availableColors:["Chocolate ao leite","Chocolate branco","Mista chocolate ao leite e chocolate branco"],textDetail:`Uma caneca com bombons (por 30G), uma lembrança perfeita para a pessoa que você ama.
+`,cover:["assets/product7.png"]},{id:8,name:"Caneca com trufas",priceBefore:78,price:64.2,availableColors:["Chocolate ao leite","Chocolate branco","Mista chocolate ao leite e chocolate branco"],textDetail:`Uma caneca com bombons (por 30G), uma lembrança perfeita para a pessoa que você ama.
     
 Ingredientes:
     Açúcar, manteiga de cacau, leite desnatado em pó, pasta de cacau, soro de leite em pó,     matéria gorda láctea, leite gordo em pó, emulsionante: lecitina de soja, aroma natural de baunilha, aroma.
@@ -174,7 +174,7 @@ Ingredientes:
 
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.     
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.    Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
-`,cover:["/assets/product8.png"]},{id:9,name:"Barra de chocolate Ruby com fruta vermelha",priceBefore:22,price:18.2,availableColors:["Chocolate ruby"],textDetail:`O Ruby é um chocolate produzido com grãos de cacau especiais que possuem um tom rosa claro natural.
+`,cover:["assets/product8.png"]},{id:9,name:"Barra de chocolate Ruby com fruta vermelha",priceBefore:22,price:18.2,availableColors:["Chocolate ruby"],textDetail:`O Ruby é um chocolate produzido com grãos de cacau especiais que possuem um tom rosa claro natural.
 E muito diferente dos demais tipos de chocolate, é frutado, predominantemente de frutas vermelhas.
 
 
@@ -182,7 +182,7 @@ E muito diferente dos demais tipos de chocolate, é frutado, predominantemente d
 Alergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA.     
  *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.
 Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.
-`,cover:["/assets/product9.png"]},{id:10,name:"Barra de chocolate",priceBefore:18.9,price:15.4,cover:["/assets/product10.png","/assets/product10-white.png","/assets/product10-mista.png","/assets/product10-meio-amargo.png"],availableColors:["Chocolate ao leite","Chocolate branco","Mista chocolate ao leite e chocolate branco","Chocolate meio amargo"],textDetail:`Chocolate ao leite: A barra 70% é rica em antioxidantes e com maior concentração de derivados de cacau.
+`,cover:["assets/product9.png"]},{id:10,name:"Barra de chocolate",priceBefore:18.9,price:15.4,cover:["assets/product10.png","assets/product10-white.png","assets/product10-mista.png","assets/product10-meio-amargo.png"],availableColors:["Chocolate ao leite","Chocolate branco","Mista chocolate ao leite e chocolate branco","Chocolate meio amargo"],textDetail:`Chocolate ao leite: A barra 70% é rica em antioxidantes e com maior concentração de derivados de cacau.
 Não contém gordura trans e é benéfico para a saúde do coração.
 Ingredientes:Massa de cacau, açúcar, manteiga de cacau, leite em pó integral, avelã, cacau em pó, xarope de glicose, castanha do pará,
 sal, conservante sorbato de potássio (INS 202), emulsificantes lecitina de soja (INS 322) e poliglicerol poliricinoleato (INS 476),
