@@ -14,7 +14,7 @@ import "./App.css";
 
 import { ProductProvider } from "./context/ProductContext";
 
-import StoreProvider from "./store/index";
+import StoreProvider from "./store/Index";
 
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
