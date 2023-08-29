@@ -22,10 +22,14 @@ export function SlickSliderListProduct() {
         {filteredProducts1.map((product) => (
           <Link
             key={product.id}
-            to={`/produto/${encodeURIComponent(product.name)}/${product.id}`}
+            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
+              product.name
+            )}/${product.id}`}
             className={`card-hover ${
               location.pathname ===
-              `/produto/${encodeURIComponent(product.name)}/${product.id}`
+              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
+                product.name
+              )}/${product.id}`
                 ? "active"
                 : ""
             }`}
@@ -60,10 +64,14 @@ export function SlickSliderListProduct() {
         {filteredProducts2.map((product) => (
           <Link
             key={product.id}
-            to={`/produto/${encodeURIComponent(product.name)}/${product.id}`}
+            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
+              product.name
+            )}/${product.id}`}
             className={`card-hover ${
               location.pathname ===
-              `/produto/${encodeURIComponent(product.name)}/${product.id}`
+              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
+                product.name
+              )}/${product.id}`
                 ? "active"
                 : ""
             }`}
