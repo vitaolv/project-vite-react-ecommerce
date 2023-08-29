@@ -64,9 +64,9 @@ export const products = [
     priceBefore: 164.9,
     price: 128.0,
     cover: [
-      "/assets/product4-choco.png",
-      "/assets/product4-mista.png",
-      "/assets/product4-meioamargo.png",
+      "assets/product4-choco.png",
+      "assets/product4-mista.png",
+      "assets/product4-meioamargo.png",
     ],
     availableColors: [
       "Chocolate ao leite",
@@ -96,7 +96,7 @@ export const products = [
       \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
       \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
       Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product5.jpg"],
+    cover: ["assets/product5.jpg"],
   },
   {
     id: 6,
@@ -112,7 +112,7 @@ export const products = [
       \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
       Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
     availableColors: [],
-    cover: ["/assets/product6.png"],
+    cover: ["assets/product6.png"],
   },
   {
     id: 7,
@@ -131,7 +131,7 @@ export const products = [
     \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
     Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product7.png"],
+    cover: ["assets/product7.png"],
   },
   {
     id: 8,
@@ -152,7 +152,7 @@ export const products = [
     \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
     Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product8.png"],
+    cover: ["assets/product8.png"],
   },
   {
     id: 9,
@@ -166,7 +166,7 @@ export const products = [
       "\n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\n" +
       "Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product9.png"],
+    cover: ["assets/product9.png"],
   },
   {
     id: 10,
@@ -174,10 +174,10 @@ export const products = [
     priceBefore: 18.9,
     price: 15.4,
     cover: [
-      "/assets/product10.png",
-      "/assets/product10-white.png",
-      "/assets/product10-mista.png",
-      "/assets/product10-meio-amargo.png",
+      "assets/product10.png",
+      "assets/product10-white.png",
+      "assets/product10-mista.png",
+      "assets/product10-meio-amargo.png",
     ],
     availableColors: [
       "Chocolate ao leite",
