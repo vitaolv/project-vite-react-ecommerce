@@ -7,7 +7,7 @@ import { ButtonRemove } from "../Buttons/ButtonRemove";
 import { Contador } from "../Count/Contador";
 import { updateQuantityAction } from "../../store/actions/ActionsCart";
 import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
-import { ModalConfirmationToRemove } from "../Modais/modalConfirmationToRemove";
+import { ModalConfirmationToRemove } from "../Modais/ModalConfirmationToRemove";
 
 export function ListCart() {
   const cart = useSelector((state) => state.cart.productInCart);

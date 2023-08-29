@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { FormDataLocal } from "./forms/formDataLocal";
+import { FormDataLocal } from "./forms/FormDataLocal";
 
 import { handleCEPChange } from "../../utils/formatteDate/HandleCEPChange";
 import { handleAddressChange } from "../../utils/formatteDate/HandleAddressChange";
