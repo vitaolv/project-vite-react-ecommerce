@@ -4,7 +4,7 @@ export const products = [
     name: "Cesta sonho dos chocólatras",
     priceBefore: 139.89,
     price: 129.99,
-    cover: ["/assets/product1.jpg"],
+    cover: ["assets/product1.jpg"],
     availableColors: [],
     textDetail:
       " Seja feliz com esta cesta linda! \n \
@@ -26,7 +26,7 @@ export const products = [
     name: "Caixa de doce - 4 unidades",
     priceBefore: 41.2,
     price: 30.99,
-    cover: ["/assets/product2.png"],
+    cover: ["assets/product2.png"],
     textDetail:
       "Caixa de doce - 4 unidades: é uma caixa de doces artesanais com os sabores diferentes mais aguardados do ano, com a grande fama e cheio de personalidade.\n\
       \n A caixa de doce contém: \n\
@@ -42,7 +42,7 @@ export const products = [
     name: "Caixa de bombons sortidos",
     priceBefore: 49.9,
     price: 24.9,
-    cover: ["/assets/product3.jpg", "/assets/product3-Detail.jpg"],
+    cover: ["assets/product3.jpg", "assets/product3-Detail.jpg"],
     textDetail:
       "Esta Caixa Gourmet inclui 25 bombons de chocolate negro (min. 54% de cacau) com recheios pensados em colaboração com alguns parceiros:\
     \n5 Bombons de Azeite \
@@ -64,9 +64,9 @@ export const products = [
     priceBefore: 164.9,
     price: 128.0,
     cover: [
-      "/assets/product4-choco.png",
-      "/assets/product4-mista.png",
-      "/assets/product4-meioamargo.png",
+      "assets/product4-choco.png",
+      "assets/product4-mista.png",
+      "assets/product4-meioamargo.png",
     ],
     availableColors: [
       "Chocolate ao leite",
@@ -96,7 +96,7 @@ export const products = [
       \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
       \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
       Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product5.jpg"],
+    cover: ["assets/product5.jpg"],
   },
   {
     id: 6,
@@ -112,7 +112,7 @@ export const products = [
       \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
       Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
     availableColors: [],
-    cover: ["/assets/product6.png"],
+    cover: ["assets/product6.png"],
   },
   {
     id: 7,
@@ -131,7 +131,7 @@ export const products = [
     \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
     Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product7.png"],
+    cover: ["assets/product7.png"],
   },
   {
     id: 8,
@@ -152,7 +152,7 @@ export const products = [
     \n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\
     Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product8.png"],
+    cover: ["assets/product8.png"],
   },
   {
     id: 9,
@@ -166,7 +166,7 @@ export const products = [
       "\n\nAlergênicos: CONTÉM GLÚTEN. CONTÉM LACTOSE. CONTÉM DERIVADOS DE LEITE, DA CEVADA E DE SOJA. \
     \n *% Valores Diários de referência com base em uma dieta de 2.000 kcal ou 8.400 kJ.\n" +
       "Seus valores diários podem ser maiores ou menores dependendo de suas necessidades.\n",
-    cover: ["/assets/product9.png"],
+    cover: ["assets/product9.png"],
   },
   {
     id: 10,
@@ -174,10 +174,10 @@ export const products = [
     priceBefore: 18.9,
     price: 15.4,
     cover: [
-      "/assets/product10.png",
-      "/assets/product10-white.png",
-      "/assets/product10-mista.png",
-      "/assets/product10-meio-amargo.png",
+      "assets/product10.png",
+      "assets/product10-white.png",
+      "assets/product10-mista.png",
+      "assets/product10-meio-amargo.png",
     ],
     availableColors: [
       "Chocolate ao leite",
@@ -213,7 +213,7 @@ export const products = [
       "CONTÉM GLÚTEN. CONTÉM LACTOSE. \n\n" +
       "ALÉRGICOS: CONTÉM LEITE E DERIVADO DA SOJA E DO LEITE. PODE CONTER AMENDOIM, AVELÃS, AMÊNDOAS, MACADÂMIAS, PECÃS, PISTACHES, OVOS, \
     TRIGO, AVEIA, CENTEIO, CEVADA, CASTANHA-DO-PARÁ E CASTANHA-DE-CAJU.",
-    cover: ["/assets/product11.png", "/assets/product11-white.png"],
+    cover: ["assets/product11.png", "assets/product11-white.png"],
   },
   {
     id: 12,
@@ -221,7 +221,7 @@ export const products = [
     priceBefore: 14.9,
     price: 12.4,
     availableColors: ["Chocolate ao leite", "Chocolate branco"],
-    cover: ["/assets/product12.jpg", "/assets/product12-white.jpg"],
+    cover: ["assets/product12.jpg", "assets/product12-white.jpg"],
     textDetail:
       "Barrinha de chocolate com recheio e brownie \
       \nDoce de leite argentino: Barrinha de chocolate meio amargo, com brownie e doce de leite argentino \

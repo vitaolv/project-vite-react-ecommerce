@@ -29,7 +29,7 @@ export default function CartWithPayment() {
           <>
             <div className="cart-without-products">
               <img
-                src="/assets/cart-without-products.png"
+                src="assets/cart-without-products.png"
                 alt="Carrinho vazio"
               />
               <h4>Seu carrinho de compras está vazio.</h4>
