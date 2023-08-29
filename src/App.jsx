@@ -10,8 +10,6 @@ import SearchResultsPage from "./pages/SearchResultsPage";
 
 import Notification from "./components/Notifications/Notification";
 
-import "./App.css";
-
 import { ProductProvider } from "./context/ProductContext";
 
 import StoreProvider from "./store/Index";
