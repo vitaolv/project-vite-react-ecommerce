@@ -21,7 +21,8 @@
 
 
 @media (max-width: 768px) {
-.ant-steps,
-.ant-steps-horizontal {
-  overflow: scroll !important;
+  .ant-steps,
+  .ant-steps-horizontal {
+    overflow: scroll !important;
+  }
 }
