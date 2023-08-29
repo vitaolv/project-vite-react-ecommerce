@@ -1,90 +1,110 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap");
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-.color-nav {
-  background-color: #e3d98d;
-  box-shadow: 0px 0px 20px 0px #252525;
-}
+import { Link } from "react-router-dom";
 
-a.nav-link {
-  color: #151515;
-  transition: 0.8s;
-}
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addToCartAction } from "../store/actions/ActionsCart";
+import { SearchHeader } from "../components/Search/SearchHeader";
 
-a.nav-link:hover {
-  box-shadow: 0 2px 0 #252525;
-}
+export default function Header() {
+  const quantityTotal = useSelector((state) => state.cart.quantityTotal);
+  const productInCart = useSelector((state) => state.cart.productInCart);
+  const dispatch = useDispatch();
 
-.logo {
-  font-family: "Libre Barcode 39 Text", cursive;
-  font-size: 34px !important;
-  font-weight: bold;
-  color: #212529 !important;
-}
+  useEffect(() => {
+    const cartItemCountFromStorage = localStorage.getItem("productInCart");
+    if (cartItemCountFromStorage) {
+      try {
+        const cartItems = JSON.parse(cartItemCountFromStorage);
+        if (Array.isArray(cartItems)) {
+          cartItems.forEach((item) => {
+            dispatch(addToCartAction(item));
+          });
+        }
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+      }
+    }
+  }, [dispatch]);
 
-#seucarrinho {
-  padding: 12px 12px 12px 12px;
-  margin-right: 1rem;
-  border: 1px solid #151515;
-  border-radius: 16px;
-  font-weight: bold;
-  margin: 10px;
-  background-color: transparent;
-  position: relative;
-  color: #252525;
-}
+  useEffect(() => {
+    console.log("Cart Item Count:", productInCart?.length);
+    console.log("Carrinho:", productInCart);
+    console.log("Total Item Count:", quantityTotal);
+  }, [productInCart, quantityTotal]);
 
-#seucarrinho svg,
-#logar-conta svg {
-  width: 22px;
-  height: 20px;
-}
+  return (
+    <Navbar variant="light" className="color-nav" expand="lg">
+      <Container fluid>
+        <Navbar.Brand className="logo" href="/">
+          ToSweeten
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="my-lg-0 my-2 me-auto"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link href="/project-vite-react-ecommerce/">Home</Nav.Link>
+            <Nav.Link href="/project-vite-react-ecommerce/#slider-container">
+              Nossos produtos
+            </Nav.Link>
+            <Nav.Link href="/project-vite-react-ecommerce/#content-card-about">
+              Sobre nós
+            </Nav.Link>
+          </Nav>
 
-#logar-conta {
-  background-color: transparent;
-  border: 1px solid #151515;
-  border-radius: 16px;
-  padding: 12px 12px 12px 12px;
-  margin-right: 2rem;
-  font-weight: bold;
-  margin: 10px;
-}
+          <div className="agrupamento-direita">
+            <Link
+              to="/project-vite-react-ecommerce/carrinho-e-pagamento"
+              id="seucarrinho"
+              aria-label="Seu carrinho"
+              title="Seu carrinho"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-cart"
+                viewBox="0 0 16 16"
+              >
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              </svg>
+              {productInCart?.length > 0 && quantityTotal > 0 && (
+                <span className="cart-counter">{quantityTotal}</span>
+              )}
+            </Link>
 
-#seucarrinho:hover,
-#logar-conta:hover {
-  background-color: #382a21;
-  color: #e3d98d;
-  transition: 0.24s ease-in-out;
-}
-
-.btn-outline-dark {
-  border-radius: 2rem;
-}
-
-.custom-search-button {
-  background-color: #e3d98d !important;
-  border-color: #e3d98d !important;
-  color: #151515 !important;
-  border-radius: 12px !important;
-  border: 1px solid #151515 !important;
-}
-
-.custom-search-button:hover {
-  background-color: #382a21 !important;
-  color: #e3d98d !important;
-}
-
-.cart-counter {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #382a21;
-  color: #e3d98d;
-  font-size: 12px;
-  font-weight: bold;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+            <button
+              id="logar-conta"
+              aria-label="Entre ou cadastre-se"
+              title="Entre ou cadastre-se"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                alt="Entre ou cadastre-se"
+                className="bi bi-person-circle"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path
+                  fillRule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                />
+              </svg>
+            </button>
+            <SearchHeader />
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
