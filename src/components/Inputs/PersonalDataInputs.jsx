@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 import { handleCPFChange } from "../../utils/formatteDate/HandleCPFChange";
 import { handleTelephoneChange } from "../../utils/formatteDate/HandleTelephoneChange";
 import { handlePhoneChange } from "../../utils/formatteDate/HandlePhoneChange";
-import { handleNameChange } from "../../utils/formatteDate/HandleNameCHange";
+import { handleNameChange } from "../../utils/formatteDate/HandleNameChange";
 import { handleEmailChange } from "../../utils/formatteDate/HandleEmailChange";
 import { handleDateChange } from "../../utils/formatteDate/HandleDateChange";
-import { FormDataPersonal } from "./forms/formDataPersonal";
+import { FormDataPersonal } from "./forms/FormDataPersonal";
 
 export function PersonalDataInputs({ formData, handleChange }) {
   const handleDateChangeWrapper = (date, dateString) => {

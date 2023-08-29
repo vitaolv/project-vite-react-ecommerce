@@ -1,6 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import PropTypes from "prop-types";
-import { FormCard } from "./forms/formCard";
+import { FormCard } from "./forms/FormCard";
 import { handleCardNameChange } from "../../utils/formatteDate/HandleCardNameChange";
 import { HandleCardNumberChange } from "../../utils/formatteDate/HandleCardNumberChange";
 import { HandleCardExpirationChange } from "../../utils/formatteDate/HandleVencimento";
