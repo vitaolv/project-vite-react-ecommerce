@@ -13,7 +13,7 @@ export function SearchHeader() {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    navigate(`/resultado-da-busca/${searchTerm}`);
+    navigate(`/project-vite-react-ecommerce/resultado-da-busca/${searchTerm}`);
   };
 
   return (

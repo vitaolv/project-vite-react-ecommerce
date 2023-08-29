@@ -21,7 +21,7 @@ export function ButtonToCartOrBuyNow({ onClick }) {
 
   const handleBuyNow = () => {
     handleAddToCart();
-    navigate("/carrinho-e-pagamento");
+    navigate("/project-vite-react-ecommerce/carrinho-e-pagamento");
   };
 
   return (

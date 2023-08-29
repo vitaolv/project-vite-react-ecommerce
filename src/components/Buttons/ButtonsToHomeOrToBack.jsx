@@ -4,7 +4,7 @@ export function ButtonsToHomeOrToBack() {
   return (
     <>
       <div className="links-page-not-found">
-        <Link className="link-to-home" to="/">
+        <Link className="link-to-home" to="/project-vite-react-ecommerce/">
           Página inicial
         </Link>
 

@@ -28,9 +28,9 @@ export default function SearchResultsPage() {
             {filteredProducts.map((product) => (
               <Link
                 key={product.objID}
-                to={`/produto/${encodeURIComponent(product.name)}/${
-                  product.id
-                }`}
+                to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
+                  product.name
+                )}/${product.id}`}
                 className={"card-in-searchResults"}
               >
                 <li key={product.id} className="search-result-item">

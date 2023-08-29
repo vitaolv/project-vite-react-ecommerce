@@ -49,13 +49,17 @@ export default function Header() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/#slider-container">Nossos produtos</Nav.Link>
-            <Nav.Link href="/#content-card-about">Sobre nós</Nav.Link>
+            <Nav.Link href="/project-vite-react-ecommerce/">Home</Nav.Link>
+            <Nav.Link href="/project-vite-react-ecommerce/#slider-container">
+              Nossos produtos
+            </Nav.Link>
+            <Nav.Link href="/project-vite-react-ecommerce/#content-card-about">
+              Sobre nós
+            </Nav.Link>
           </Nav>
 
           <Link
-            to="/carrinho-e-pagamento"
+            to="/project-vite-react-ecommerce/carrinho-e-pagamento"
             id="seucarrinho"
             aria-label="Seu carrinho"
             title="Seu carrinho"
