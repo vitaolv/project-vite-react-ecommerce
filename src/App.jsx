@@ -32,14 +32,17 @@ function App() {
           <Routes>
             <Route path="/project-vite-react-ecommerce/" element={<Home />} />
             <Route
-              path="/project-vite-react-ecommerce/produto-:nome-:id"
+              path="/project-vite-react-ecommerce/produto/:nome/:id"
               element={<ProductDetail />}
             />
             <Route
               path="/project-vite-react-ecommerce/carrinho-e-pagamento"
               element={<CartWithPayment />}
             />
-            <Route path="/project-vite-react-ecommerce/*" element={<PageNotFound />} />
+            <Route
+              path="/project-vite-react-ecommerce/*"
+              element={<PageNotFound />}
+            />
             <Route
               path="/project-vite-react-ecommerce/resultado-da-busca/:term"
               element={<SearchResultsPage />}
