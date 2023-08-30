@@ -27,12 +27,6 @@
   transition: all 0.2s ease-in-out;
 }
 
-.product-card:hover {
-  color: #252525;
-  text-decoration: none;
-}
-
-
 button.slick-prev:before,
 button.slick-next:before {
   color: #000 !important;
@@ -78,6 +72,11 @@ button.slick-next:before {
 .card-hover {
   text-decoration: none;
   color: #252525;
+}
+
+.card-hover:hover {
+  text-decoration: none;
+  color: #45322e;
 }
 
 .card-body-action {
