@@ -4,6 +4,10 @@ import App from "./App";
 import Modal from "react-modal";
 import StoreProvider from "./store/Index";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 Modal.setAppElement("#root"); // Definir o elemento de aplicativo
 
 ReactDOM.createRoot(document.getElementById("root")).render(
