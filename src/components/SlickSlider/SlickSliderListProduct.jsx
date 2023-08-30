@@ -22,14 +22,14 @@ export function SlickSliderListProduct() {
         {filteredProducts1.map((product) => (
           <Link
             key={product.id}
-            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
+            to={`/project-vite-react-ecommerce/produto-${encodeURIComponent(
               product.name
-            )}/${product.id}`}
+            )}-${product.id}`}
             className={`card-hover ${
               location.pathname ===
-              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
+              `/project-vite-react-ecommerce/produto-${encodeURIComponent(
                 product.name
-              )}/${product.id}`
+              )}-${product.id}`
                 ? "active"
                 : ""
             }`}
@@ -64,14 +64,14 @@ export function SlickSliderListProduct() {
         {filteredProducts2.map((product) => (
           <Link
             key={product.id}
-            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
+            to={`/project-vite-react-ecommerce/produto-${encodeURIComponent(
               product.name
-            )}/${product.id}`}
+            )}-${product.id}`}
             className={`card-hover ${
               location.pathname ===
-              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
+              `/project-vite-react-ecommerce/produto-${encodeURIComponent(
                 product.name
-              )}/${product.id}`
+              )}-${product.id}`
                 ? "active"
                 : ""
             }`}
