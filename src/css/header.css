@@ -9,14 +9,32 @@
   justify-content: space-between !important;
 }
 
+.main-nav {
+  margin: 0 10px 0 5px !important;
+}
+
 .navbar-light .navbar-nav .nav-link {
-    color: #252525 !important;
+  color: #252525 !important;
 }
 
 .agrupamento-direita {
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+@media (max-width: 991px) {
+  .agrupamento-direita {
+    justify-content: center;
+    border-top: 1px solid #252525;
+  }
+}
+
+@media (max-width: 400px) {
+  .agrupamento-direita {
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .custom-search-button {
@@ -26,6 +44,8 @@
 a.nav-link {
   color: #151515;
   transition: 0.8s;
+  align-items: center;
+  text-align: center;
 }
 
 a.nav-link:hover {
@@ -37,6 +57,7 @@ a.nav-link:hover {
   font-size: 34px !important;
   font-weight: bold;
   color: #212529 !important;
+  margin-left: 18px !important;
 }
 
 #seucarrinho {
