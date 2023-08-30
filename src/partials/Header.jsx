@@ -39,9 +39,11 @@ export default function Header() {
   return (
     <Navbar variant="light" className="color-nav" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="logo" href="/project-vite-react-ecommerce/">
-          ToSweeten
-        </Navbar.Brand>
+        <a  href="/project-vite-react-ecommerce/">
+          <Navbar.Brand className="logo">
+            ToSweeten
+          </Navbar.Brand>
+        </a>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
