@@ -63,7 +63,6 @@ export default function SearchResultsPage() {
             Verifique se a palavra foi digitada corretamente ou tente novamente
             com outro termo para busca.{" "}
           </p>
-
           <ButtonsToHomeOrToBack />
         </div>
       )}
