@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addToCartAction } from "../store/actions/ActionsCart";
-import { SearchHeader } from "../components/Search/SearchHeader";
+import SearchResultsPage from "../pages/SearchResultsPage";
 
 export default function Header() {
   const quantityTotal = useSelector((state) => state.cart.quantityTotal);
@@ -39,9 +39,9 @@ export default function Header() {
   return (
     <Navbar variant="light" className="color-nav" expand="lg">
       <Container fluid>
-          <Navbar.Brand className="logo"  href="/project-vite-react-ecommerce/">
-            ToSweeten
-          </Navbar.Brand>
+        <Navbar.Brand className="logo" href="/project-vite-react-ecommerce/">
+          ToSweeten
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -101,7 +101,7 @@ export default function Header() {
                 />
               </svg>
             </button>
-            <SearchHeader />
+            <SearchResultsPage />
           </div>
         </Navbar.Collapse>
       </Container>
