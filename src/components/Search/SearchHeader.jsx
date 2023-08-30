@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ButtonsToHomeOrToBack } from "../Buttons/ButtonsToHomeOrToBack";
 
-export default function SearchResultsPage() {
+export default function SearchHeader() {
   const { term } = useParams();
   const products = useProductContext();
 
