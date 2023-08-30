@@ -1,18 +1,10 @@
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
 export function ImageDetailProduct({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-  const products = useProductContext();
-
-const selectedProduct = product.find(
-  (products) =>
-    products.id === parseInt(product.id) &&
-    products.name.toLowerCase() === product.name.toLowerCase()
-);
-
+  const selectedProduct = product;
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
@@ -26,6 +18,12 @@ const selectedProduct = product.find(
         return prevIndex - 1;
       }
     });
+
+    const listPhotosElement = document.querySelector(".list-photos");
+    listPhotosElement.scrollTo({
+      left: listPhotosElement.scrollLeft - 20,
+      behavior: "smooth",
+    });
   };
 
   const nextSlide = () => {
@@ -36,52 +34,56 @@ const selectedProduct = product.find(
         return prevIndex + 1;
       }
     });
+
+    const listPhotosElement = document.querySelector(".list-photos");
+    listPhotosElement.scrollTo({
+      left: listPhotosElement.scrollLeft + 20,
+      behavior: "smooth",
+    });
   };
 
   const shouldRenderArrows = selectedProduct.cover.length > 3;
+  const listPhotosRef = useRef(null);
+
+  const renderPhotos = () => {
+    return selectedProduct.cover.map((cover, index) => (
+      <img
+        key={index}
+        src={cover}
+        alt={`${selectedProduct.name}-${index}`}
+        className={`slide-photo ${index === selectedImageIndex ? "active" : ""}`}
+        onClick={() => handleImageClick(index)}
+      />
+    ));
+  };
 
   return (
-    <>
+    <div>
       <br />
-      <div className="section-info-product">
-        <div className="main-image-container">
-          <div className="main-image-wrapper">
+      <div>
+        <div>
+          <div>
             <img
               src={selectedProduct.cover[selectedImageIndex]}
               alt={`${selectedProduct.name}-${selectedImageIndex}`}
-              className="main-image"
             />
           </div>
         </div>
-        <div className="slide-photos-container">
-          <div className="section-slide">
-            <div className="list-photos">
-              {selectedProduct.cover.map((cover, index) => (
-                <img
-                  key={index}
-                  src={cover}
-                  alt={`${selectedProduct.name}-${index}`}
-                  className={`slide-photo ${
-                    index === selectedImageIndex ? "active" : ""
-                  }`}
-                  onClick={() => handleImageClick(index)}
-                />
-              ))}
+        <div>
+          <div>
+            <div>
+              <div ref={listPhotosRef}>{renderPhotos()}</div>
             </div>
+            {shouldRenderArrows && (
+              <div>
+                <button onClick={prevSlide}>❮</button>
+                <button onClick={nextSlide}>❯</button>
+              </div>
+            )}
           </div>
-          {shouldRenderArrows && (
-            <>
-              <button color="black" id="prev-slide-Detail" onClick={prevSlide}>
-                ❮
-              </button>
-              <button color="black" id="next-slide-Detail" onClick={nextSlide}>
-                ❯
-              </button>
-            </>
-          )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
