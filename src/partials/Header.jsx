@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { addToCartAction } from "../store/actions/ActionsCart";
-import SearchResultsPage from "../pages/SearchResultsPage";
+import { SearchHeader } from "../components/Search/SearchHeader";
 
 export default function Header() {
   const quantityTotal = useSelector((state) => state.cart.quantityTotal);
@@ -101,7 +101,7 @@ export default function Header() {
                 />
               </svg>
             </button>
-            <SearchResultsPage />
+            <SearchHeader />
           </div>
         </Navbar.Collapse>
       </Container>
