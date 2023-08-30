@@ -46,12 +46,14 @@ export function ImageDetailProduct({ product }) {
   const listPhotosRef = useRef(null);
 
   const renderPhotos = () => {
-    return selectedProduct.cover.map((cover, index) => (
+    return selectedProduct.cover.map((index) => (
       <img
-        key={index}
-        src={cover}
-        alt={`${selectedProduct.name}-${index}`}
-        className={`slide-photo ${index === selectedImageIndex ? "active" : ""}`}
+        key={index.objID}
+        src={index.cover}
+        alt={`${index.name}-${index.id}`}
+        className={`slide-photo ${
+          index === selectedImageIndex ? "active" : ""
+        }`}
         onClick={() => handleImageClick(index)}
       />
     ));
