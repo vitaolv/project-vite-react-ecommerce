@@ -38,7 +38,7 @@ export default function Header() {
 
   return (
     <Navbar variant="light" className="color-nav" expand="lg">
-      <Container fluid>
+      <Container fluid className="main-nav">
         <Navbar.Brand className="logo" href="/project-vite-react-ecommerce/">
           ToSweeten
         </Navbar.Brand>
