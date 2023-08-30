@@ -39,7 +39,7 @@ function App() {
               path="/project-vite-react-ecommerce/carrinho-e-pagamento"
               element={<CartWithPayment />}
             />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/project-vite-react-ecommerce/*" element={<PageNotFound />} />
             <Route
               path="/project-vite-react-ecommerce/resultado-da-busca/:term"
               element={<SearchResultsPage />}
