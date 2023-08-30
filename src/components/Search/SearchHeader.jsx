@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../context/ProductContext";
 import { Link } from "react-router-dom";
-import { getFormattedPriceValue } from "../utils/prices/priceUtils";
-import { ButtonsToHomeOrToBack } from "../components/Buttons/ButtonsToHomeOrToBack";
+import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
+import { ButtonsToHomeOrToBack } from "../Buttons/ButtonsToHomeOrToBack";
 
 export default function SearchResultsPage() {
   const { term } = useParams();
