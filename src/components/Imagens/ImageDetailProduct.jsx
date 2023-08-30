@@ -7,11 +7,12 @@ export function ImageDetailProduct({ product }) {
 
   const products = useProductContext();
 
-  const selectedProduct = products.find(
-    (prod) =>
-      prod.id === parseInt(product.id) &&
-      prod.name.toLowerCase() === product.name.toLowerCase()
-  );
+const selectedProduct = product.find(
+  (products) =>
+    products.id === parseInt(product.id) &&
+    products.name.toLowerCase() === product.name.toLowerCase()
+);
+
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
