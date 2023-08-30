@@ -1,16 +1,16 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { useProductContext } from "../../context/ProductContext";
 
-export function ImageDetailProduct({ name, id }) {
+export function ImageDetailProduct({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const product = useProductContext();
+  const products = useProductContext();
 
-  const selectedProduct = product.find(
-    (product) =>
-      product.id === parseInt(id) &&
-      product.name.toLowerCase() === name.toLowerCase()
+  const selectedProduct = products.find(
+    (prod) =>
+      prod.id === parseInt(product.id) &&
+      prod.name.toLowerCase() === product.name.toLowerCase()
   );
 
   const handleImageClick = (index) => {
@@ -25,12 +25,6 @@ export function ImageDetailProduct({ name, id }) {
         return prevIndex - 1;
       }
     });
-
-    const listPhotosElement = document.querySelector(".list-photos");
-    listPhotosElement.scrollTo({
-      left: listPhotosElement.scrollLeft - 20, // Valor do deslocamento em pixels
-      behavior: "smooth", // Deslocamento suave
-    });
   };
 
   const nextSlide = () => {
@@ -41,29 +35,9 @@ export function ImageDetailProduct({ name, id }) {
         return prevIndex + 1;
       }
     });
-
-    const listPhotosElement = document.querySelector(".list-photos");
-    listPhotosElement.scrollTo({
-      left: listPhotosElement.scrollLeft + 20, // Valor do deslocamento em pixels
-      behavior: "smooth", // Deslocamento suave
-    });
   };
 
   const shouldRenderArrows = selectedProduct.cover.length > 3;
-  const listPhotosRef = useRef(null);
-  const renderPhotos = () => {
-    return selectedProduct.cover.map((cover, index) => (
-      <img
-        key={index}
-        src={cover}
-        alt={`${selectedProduct.name}-${index}`}
-        className={`slide-photo ${
-          index === selectedImageIndex ? "active" : ""
-        }`}
-        onClick={() => handleImageClick(index)}
-      />
-    ));
-  };
 
   return (
     <>
@@ -80,8 +54,18 @@ export function ImageDetailProduct({ name, id }) {
         </div>
         <div className="slide-photos-container">
           <div className="section-slide">
-            <div className="list-photos" ref={listPhotosRef}>
-              {renderPhotos()}
+            <div className="list-photos">
+              {selectedProduct.cover.map((cover, index) => (
+                <img
+                  key={index}
+                  src={cover}
+                  alt={`${selectedProduct.name}-${index}`}
+                  className={`slide-photo ${
+                    index === selectedImageIndex ? "active" : ""
+                  }`}
+                  onClick={() => handleImageClick(index)}
+                />
+              ))}
             </div>
           </div>
           {shouldRenderArrows && (
@@ -101,6 +85,5 @@ export function ImageDetailProduct({ name, id }) {
 }
 
 ImageDetailProduct.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  product: PropTypes.object.isRequired,
 };
