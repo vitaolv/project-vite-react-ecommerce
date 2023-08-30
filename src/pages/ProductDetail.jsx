@@ -57,8 +57,7 @@ export default function ProductDetail() {
       <div className="content-detalhe-produto">
         <div className="info-produto-com-foto">
           <ImageDetailProduct
-            name={selectedProduct.name}
-            id={selectedProduct.id}
+            product={selectedProduct}
           />
         </div>
         <aside className="lateral-detalhe-produto">
