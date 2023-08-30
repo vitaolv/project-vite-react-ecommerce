@@ -27,6 +27,12 @@
   transition: all 0.2s ease-in-out;
 }
 
+.product-card:hover {
+  color: #252525;
+  text-decoration: none;
+}
+
+
 button.slick-prev:before,
 button.slick-next:before {
   color: #000 !important;
