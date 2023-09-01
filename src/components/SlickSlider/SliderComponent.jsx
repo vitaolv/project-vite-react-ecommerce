@@ -50,5 +50,5 @@ export function SliderComponent({ products }) {
 }
 
 SliderComponent.propTypes = {
-  products: PropTypes.object.isRequired,
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
