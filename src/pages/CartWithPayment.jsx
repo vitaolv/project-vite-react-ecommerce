@@ -1,3 +1,5 @@
+import "/src/css/pageCartWithPayment.css";
+
 import { ListCart } from "../components/Lists/ListCart";
 import { ResumeAside } from "../components/Asides/ResumeAside";
 import { ButtonClearCart } from "../components/Buttons/ButtonClearCart";

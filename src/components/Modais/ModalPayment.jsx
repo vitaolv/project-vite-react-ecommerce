@@ -12,6 +12,9 @@ import { resetCart } from "../../store/actions/ActionsCart";
 
 import { ButtonsPaymentContainerDialogComponent } from "../Buttons/ButtonsPaymentContainerDialogComponent";
 
+import "/src/css/DialogPayment/RecipientDataReview.css";
+import "/src/css/DialogPayment/Pagination.css";
+
 export function ModalPayment() {
   const isPaymentOpen = useSelector((state) => state.modal.isPaymentOpen);
   const dispatch = useDispatch();

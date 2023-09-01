@@ -1,3 +1,4 @@
+import "/src/css/pageNotFound.css";
 import { ButtonsToHomeOrToBack } from "../components/Buttons/ButtonsToHomeOrToBack";
 
 export default function PageNotFound() {

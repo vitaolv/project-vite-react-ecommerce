@@ -1,3 +1,5 @@
+import "/src/css/Contador.css";
+
 import PropTypes from "prop-types";
 
 import { Button } from "antd";

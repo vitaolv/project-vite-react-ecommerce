@@ -1,10 +1,11 @@
+import "/src/css/buttonToHomeOrToBack.css";
+
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { showNotification } from "../../store/actions/ActionsNotification";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 
-Button;
 export function ButtonToCartOrBuyNow({ onClick }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();

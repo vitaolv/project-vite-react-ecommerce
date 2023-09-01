@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { updatePriceTotalAction } from "../../store/actions/ActionsCart";
+import "/src/css/asideBuyResume.css";
+
 import { useEffect } from "react";
 
 import { AiOutlineFileSearch } from "react-icons/ai";

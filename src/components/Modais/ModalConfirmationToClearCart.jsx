@@ -1,3 +1,5 @@
+import "/src/css/buttonsContainerConfirmationModal.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import { closeModalToClearCartAction } from "../../store/actions/ActionsModais";
 

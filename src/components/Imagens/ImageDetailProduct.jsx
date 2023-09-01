@@ -4,7 +4,6 @@ import { useProductContext } from "../../context/ProductContext";
 
 export function ImageDetailProduct({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const selectedProduct = product;
 
   const handleImageClick = (index) => {
     setSelectedImageIndex(index);
@@ -13,7 +12,7 @@ export function ImageDetailProduct({ product }) {
   const prevSlide = () => {
     setSelectedImageIndex((prevIndex) => {
       if (prevIndex === 0) {
-        return selectedProduct.cover.length - 1;
+        return product.cover.length - 1;
       } else {
         return prevIndex - 1;
       }
@@ -28,7 +27,7 @@ export function ImageDetailProduct({ product }) {
 
   const nextSlide = () => {
     setSelectedImageIndex((prevIndex) => {
-      if (prevIndex === selectedProduct.cover.length - 1) {
+      if (prevIndex === product.cover.length - 1) {
         return 0;
       } else {
         return prevIndex + 1;
@@ -42,11 +41,11 @@ export function ImageDetailProduct({ product }) {
     });
   };
 
-  const shouldRenderArrows = selectedProduct.cover.length > 3;
+  const shouldRenderArrows = product.cover.length > 3;
   const listPhotosRef = useRef(null);
 
   const renderPhotos = () => {
-    return selectedProduct.cover.map((index) => (
+    return product.cover.map((index) => (
       <img
         key={index.objID}
         src={index.cover}
@@ -66,8 +65,8 @@ export function ImageDetailProduct({ product }) {
         <div>
           <div>
             <img
-              src={selectedProduct.cover[selectedImageIndex]}
-              alt={`${selectedProduct.name}-${selectedImageIndex}`}
+              src={product.cover[selectedImageIndex]}
+              alt={`${product.name}-${selectedImageIndex}`}
             />
           </div>
         </div>

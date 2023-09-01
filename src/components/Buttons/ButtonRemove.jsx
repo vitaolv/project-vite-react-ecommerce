@@ -1,3 +1,5 @@
+import "/src/css/button-remove.css";
+
 import { TiDelete } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { openModalToRemoveAction } from "../../store/actions/ActionsModais";

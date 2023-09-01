@@ -1,3 +1,4 @@
+import "/src/css/searchResultPage.css";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
 import { Link } from "react-router-dom";
