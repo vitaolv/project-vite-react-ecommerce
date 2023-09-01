@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { useProductContext } from "../../context/ProductContext";
 
 export function ImageDetailProduct({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -42,7 +41,6 @@ export function ImageDetailProduct({ product }) {
   };
 
   const shouldRenderArrows = product.cover.length > 3;
-  const listPhotosRef = useRef(null);
 
   const renderPhotos = () => {
     return product.cover.map((index) => (
@@ -59,32 +57,47 @@ export function ImageDetailProduct({ product }) {
   };
 
   return (
-    <div>
+    <>
       <br />
-      <div>
-        <div>
-          <div>
+      <div className="section-info-product">
+        <div className="main-image-container">
+          <div className="main-image-wrapper">
             <img
               src={product.cover[selectedImageIndex]}
               alt={`${product.name}-${selectedImageIndex}`}
+              className="main-image"
             />
           </div>
         </div>
-        <div>
-          <div>
-            <div>
-              <div ref={listPhotosRef}>{renderPhotos()}</div>
+        <div className="slide-photos-container">
+          <div className="section-slide">
+            <div className="list-photos">
+              {product.cover.map((cover, index) => (
+                <img
+                  key={index}
+                  src={cover}
+                  alt={`${product.name}-${index}`}
+                  className={`slide-photo ${
+                    index === selectedImageIndex ? "active" : ""
+                  }`}
+                  onClick={() => handleImageClick(index)}
+                />
+              ))}
             </div>
-            {shouldRenderArrows && (
-              <div>
-                <button onClick={prevSlide}>❮</button>
-                <button onClick={nextSlide}>❯</button>
-              </div>
-            )}
           </div>
+          {shouldRenderArrows && (
+            <>
+              <button color="black" id="prev-slide-Detail" onClick={prevSlide}>
+                ❮
+              </button>
+              <button color="black" id="next-slide-Detail" onClick={nextSlide}>
+                ❯
+              </button>
+            </>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
