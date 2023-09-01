@@ -58,7 +58,7 @@ export default function SearchResultsPage() {
         </div>
       ) : (
         <div className="not-found-in-search-result">
-          <img src="..//assets/not-found-search.png" alt="Não encontrado" />
+          <img src="../assets//not-found-search.png" alt="Não encontrado" />
           <h3>Não encontramos o produto que você digitou: {term}</h3>
           <p>
             Verifique se a palavra foi digitada corretamente ou tente novamente
