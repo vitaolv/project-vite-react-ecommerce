@@ -1,4 +1,4 @@
-import "/src/css/buttonToHomeOrToBack.css";
+import "/src/css/ButtonToCartOrBuyNow.css";
 
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
