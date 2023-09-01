@@ -6,9 +6,13 @@ import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import CartWithPayment from "./pages/CartWithPayment";
 import PageNotFound from "./pages/PageNotFound";
+
 import SearchResultsPage from "./pages/SearchResultsPage";
 
 import Notification from "./components/Notifications/Notification";
+
+import "./App.css";
+import "/src/css/alerts.css";
 
 import { ProductProvider } from "./context/ProductContext";
 
@@ -39,7 +43,16 @@ function App() {
               path="/project-vite-react-ecommerce/carrinho-e-pagamento"
               element={<CartWithPayment />}
             />
+            <Route
+              path="/project-vite-react-ecommerce/resultado-da-busca/:term"
+              element={<SearchResultsPage />}
+            />
+
             <Route path="*" element={<PageNotFound />} />
+            <Route
+              path="/project-vite-react-ecommerce/*"
+              element={<PageNotFound />}
+            />
             <Route
               path="/project-vite-react-ecommerce/resultado-da-busca/:term"
               element={<SearchResultsPage />}

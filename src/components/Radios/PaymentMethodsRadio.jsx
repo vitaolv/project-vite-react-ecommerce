@@ -1,3 +1,5 @@
+import "/src/css/DialogPayment/PaymentMethodsRadios.css";
+
 import { Radio } from "antd";
 import { BarcodeOutlined, CreditCardOutlined } from "@ant-design/icons";
 

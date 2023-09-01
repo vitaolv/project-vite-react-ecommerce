@@ -1,3 +1,6 @@
+import "/src/css/modalToRemove.css";
+import "/src/css/buttonsContainerConfirmationModal.css";
+
 import { useSelector, useDispatch } from "react-redux";
 import { closeModalToRemoveAction } from "../../store/actions/ActionsModais";
 import { removeFromCartAction } from "../../store/actions/ActionsCart";

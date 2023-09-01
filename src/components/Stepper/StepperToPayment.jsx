@@ -1,3 +1,5 @@
+import "/src/css/DialogPayment/stepper.css";
+
 import { Steps } from "antd";
 import PropTypes from "prop-types";
 

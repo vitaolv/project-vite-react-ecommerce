@@ -1,3 +1,6 @@
+import "/src/css/pageProductDetail.css";
+import "/src/css/imageInPageDetail.css";
+
 import { FlavorRadio } from "../components/Radios/FlavorRadio";
 import { ButtonToCartOrBuyNow } from "../components/Buttons/ButtonToCartOrBuyNow";
 import { ImageDetailProduct } from "../components/Imagens/ImageDetailProduct";
@@ -56,9 +59,7 @@ export default function ProductDetail() {
       </div>
       <div className="content-detalhe-produto">
         <div className="info-produto-com-foto">
-          <ImageDetailProduct
-            product={selectedProduct}
-          />
+          <ImageDetailProduct product={selectedProduct} />
         </div>
         <aside className="lateral-detalhe-produto">
           <ValorDoProduto name={selectedProduct.name} id={selectedProduct.id} />

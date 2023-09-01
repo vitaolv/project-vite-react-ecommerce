@@ -1,3 +1,5 @@
+import "/src/css/buttonClearCart.css";
+
 import { useDispatch } from "react-redux";
 import { openModalToClearCartAction } from "../../store/actions/ActionsModais";
 import { ClearOutlined } from "@ant-design/icons";

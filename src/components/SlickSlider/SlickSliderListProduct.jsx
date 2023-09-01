@@ -1,13 +1,10 @@
-import Slider from "react-slick";
-import { Link, useLocation } from "react-router-dom";
+import "/src/css/SlickSliderListProduct.css";
+import { SliderComponent } from "./SliderComponent";
 import { useProductContext } from "../../context/ProductContext";
-import { settings } from "./SettingsSlickSlider";
 
-import { Button } from "antd";
 export function SlickSliderListProduct() {
   const produtosFormatados = useProductContext();
 
-  const location = useLocation();
   const lista = produtosFormatados;
   const tamanho = lista.length;
   const meio = Math.floor(tamanho / 2);
@@ -18,84 +15,14 @@ export function SlickSliderListProduct() {
     <div className="slider-container" id="slider-container">
       <br />
       <h4>Para grandes grupos e ocasiões especiais:</h4>
-      <Slider {...settings}>
-        {filteredProducts1.map((product) => (
-          <Link
-            key={product.id}
-            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
-              product.name
-            )}/${product.id}`}
-            className={`card-hover ${
-              location.pathname ===
-              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
-                product.name
-              )}/${product.id}`
-                ? "active"
-                : ""
-            }`}
-          >
-            <div className="product-card">
-              <img
-                src={product.cover[0]}
-                alt={product.name}
-                className="card-image-slick"
-              />
-              <h5>{product.name}</h5>
-              <h5 style={{ textDecoration: "line-through" }}>
-                {product.formattedPriceBefore}
-              </h5>
-              <h5> {product.formattedPrice}</h5>
-              <div className="card-body-action">
-                <Button className="card-link" size="large">
-                  Ver detalhes...
-                </Button>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </Slider>
+      <SliderComponent products={filteredProducts1} />
       <br />
       <br />
       <h4>
         Porções individuais, porções únicas e dividir um pedaço com quem você
         ama:
       </h4>
-      <Slider {...settings}>
-        {filteredProducts2.map((product) => (
-          <Link
-            key={product.id}
-            to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
-              product.name
-            )}/${product.id}`}
-            className={`card-hover ${
-              location.pathname ===
-              `/project-vite-react-ecommerce/produto/${encodeURIComponent(
-                product.name
-              )}/${product.id}`
-                ? "active"
-                : ""
-            }`}
-          >
-            <div className="product-card">
-              <img
-                src={product.cover[0]}
-                alt={product.name}
-                className="card-image-slick"
-              />
-              <h5>{product.name}</h5>
-              <h5 style={{ textDecoration: "line-through" }}>
-                {product.formattedPriceBefore}
-              </h5>
-              <h5> {product.formattedPrice}</h5>
-              <div className="card-body-action">
-                <Button className="card-link" size="large">
-                  Ver detalhes...
-                </Button>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </Slider>
+      <SliderComponent products={filteredProducts2} />
     </div>
   );
 }

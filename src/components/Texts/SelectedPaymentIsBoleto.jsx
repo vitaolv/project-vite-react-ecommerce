@@ -1,3 +1,5 @@
+import "/src/css/DialogPayment/BoletoText.css";
+
 import { useSelector } from "react-redux";
 import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 

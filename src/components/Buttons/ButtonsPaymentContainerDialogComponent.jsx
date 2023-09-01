@@ -1,3 +1,6 @@
+import "/src/css/DialogPayment/buttonContainer.css";
+import "/src/css/DialogPayment/ButtonCloseModal.css";
+
 import { Button } from "antd";
 import PropTypes from "prop-types";
 
