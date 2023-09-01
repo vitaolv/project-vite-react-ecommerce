@@ -6,7 +6,7 @@ export default function PageNotFound() {
 
   return (
     <div className="content-page-404">
-      <img src="assets//404.png" alt="Page Not Found" />
+      <img src="/assets//404.png" alt="Page Not Found" />
 
       <h2>Opsss, a página não foi encontrada.</h2>
 

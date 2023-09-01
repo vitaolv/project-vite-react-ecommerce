@@ -63,7 +63,7 @@ export function ImageDetailProduct({ product }) {
         <div className="main-image-container">
           <div className="main-image-wrapper">
             <img
-              src={product.cover[selectedImageIndex]}
+              src={`/${product.cover[selectedImageIndex]}`}
               alt={`${product.name}-${selectedImageIndex}`}
               className="main-image"
             />
@@ -75,7 +75,7 @@ export function ImageDetailProduct({ product }) {
               {product.cover.map((cover, index) => (
                 <img
                   key={index}
-                  src={cover}
+                  src={`/${cover}`}
                   alt={`${product.name}-${index}`}
                   className={`slide-photo ${
                     index === selectedImageIndex ? "active" : ""
