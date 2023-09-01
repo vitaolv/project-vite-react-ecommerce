@@ -29,7 +29,7 @@
 }
 
 .imagem-in-about {
-  background-image: url("assets//fundo-chocolate.png");
+  background-image: url("/assets//fundo-chocolate.png");
   background-repeat: repeat;
   height: 800px;
   width: 400px;
