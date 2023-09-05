@@ -3,7 +3,7 @@ import "/src/css/footer.css";
 export default function Footer() {
   return (
     <footer>
-      <img className="img-footer" src="/assets/img-footer.svg" />
+      <div className="img-footer" />
       <div className="content-card" id="content-footer">
         <div className="card-body">
           <div className="links-map">
