@@ -89,7 +89,7 @@ a.nav-link:hover {
 
 #seucarrinho:hover,
 #logar-conta:hover {
-  background-color: #382a21;
+  background-color: #2c2723;
   color: #e3d98d;
   transition: 0.24s ease-in-out;
 }
@@ -107,7 +107,7 @@ a.nav-link:hover {
 }
 
 .custom-search-button:hover {
-  background-color: #382a21 !important;
+  background-color: #2c2723 !important;
   color: #e3d98d !important;
 }
 
@@ -115,7 +115,7 @@ a.nav-link:hover {
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #382a21;
+  background-color: #2c2723;
   color: #e3d98d;
   font-size: 12px;
   font-weight: bold;

@@ -35,7 +35,7 @@
 
 .slide-photo.active {
   opacity: 1;
-  border: 3px solid #382a21;
+  border: 3px solid #2c2723;
   border-radius: 9px;
 }
 
@@ -84,7 +84,7 @@
 
 #next-slide-Detail:hover,
 #prev-slide-Detail:hover {
-  box-shadow: 0px 15px 20px rgba(400, 229, 157, 0.3);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
   transition: 0.2s linear;
   background: #bba66e !important;
   color: #252525 !important;
