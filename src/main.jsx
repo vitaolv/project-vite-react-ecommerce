@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import Modal from "react-modal";
-import StoreProvider from "./store/index";
+import StoreProvider from "./store/index.jsx";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
