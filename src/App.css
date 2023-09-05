@@ -13,7 +13,7 @@ html {
 
 .section-product {
   width: 100%;
-  background-image: url("assets/img-header.svg");
+  background-image: url("/assets/img-header.svg");
   background-size: contain;
   background-repeat: repeat-x;
 }
