@@ -10,7 +10,7 @@
 }
 
 .section-about {
-  background: #382a21;
+  background: #2c2723;
   width: 100%;
   box-shadow: inset 0 140px #ededed, inset 0 -340px #ededed;
 }
@@ -42,7 +42,7 @@
   margin: 2rem 2rem 2rem 5rem;
   text-align: center;
   backdrop-filter: blur(7px);
-  background: rgb(37, 37, 37, 0.7);
+  background: rgb(37, 37, 37, 0.9);
   border-radius: 16px;
   box-shadow: 0px 0px 25px 1px #252525;
 }
@@ -56,7 +56,7 @@
 
 .hr-subtext {
   border-style: dotted;
-  border-image: linear-gradient(to right, #382a21, rgba(0, 0, 0, 0)) 50;
+  border-image: linear-gradient(to right, #2c2723, rgba(0, 0, 0, 0)) 50;
 }
 
 .p-subtext {
@@ -81,7 +81,7 @@
   }
 
   .section-about {
-    background: #382a21;
+    background: #2c2723;
     overflow: hidden;
   }
 }
