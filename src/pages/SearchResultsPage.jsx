@@ -4,6 +4,7 @@ import { useProductContext } from "../context/ProductContext";
 import { Link } from "react-router-dom";
 import { getFormattedPriceValue } from "../utils/prices/priceUtils";
 import { ButtonsToHomeOrToBack } from "../components/Buttons/ButtonsToHomeOrToBack";
+import { SkeletonImageComponent } from "../components/Skeleton/SkeletonImageComponents";
 
 export default function SearchResultsPage() {
   const { term } = useParams();
@@ -34,10 +35,10 @@ export default function SearchResultsPage() {
                 )}/${product.id}`}
                 className={"card-in-searchResults"}
               >
-                <li key={product.id} className="search-result-item">
-                  <img
-                    src={`/project-vite-react-ecommerce/${product.cover[0]}`}
-                    alt={product.name}
+                <li className="search-result-item">
+                  <SkeletonImageComponent
+                    productImage={`/project-vite-react-ecommerce/${product.cover[0]}`}
+                    productName={product.name}
                     className="product-image-in-search"
                   />
                   <span id="idSearch">ID de item: {product.id}</span>
@@ -58,9 +59,9 @@ export default function SearchResultsPage() {
         </div>
       ) : (
         <div className="not-found-in-search-result">
-          <img
-            src="/project-vite-react-ecommerce/assets//not-found-search.png"
-            alt="Não encontrado"
+          <SkeletonImageComponent
+            productImage="/project-vite-react-ecommerce/assets/not-found-search.png"
+            productName="Não encontrado"
           />
           <h3>Não encontramos o produto que você digitou: {term}</h3>
           <p>

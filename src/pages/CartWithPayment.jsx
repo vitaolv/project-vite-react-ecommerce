@@ -4,7 +4,7 @@ import { ListCart } from "../components/Lists/ListCart";
 import { ResumeAside } from "../components/Asides/ResumeAside";
 import { ButtonClearCart } from "../components/Buttons/ButtonClearCart";
 import { ModalConfirmationToClearCart } from "../components/Modais/ModalConfirmationToClearCart";
-
+import { SkeletonImageComponent } from "../components/Skeleton/SkeletonImageComponents";
 import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -30,9 +30,10 @@ export default function CartWithPayment() {
         ) : (
           <>
             <div className="cart-without-products">
-              <img
-                src="assets/cart-without-products.png"
-                alt="Carrinho vazio"
+              <SkeletonImageComponent
+                productImage="/project-vite-react-ecommerce/assets/cart-without-products.png"
+                productName="Carrinho vazio image"
+                className="cart-without-products"
               />
               <h4>Seu carrinho de compras está vazio.</h4>
               <p>

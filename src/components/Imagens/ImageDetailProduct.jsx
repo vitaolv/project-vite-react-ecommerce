@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
+import { SkeletonImageComponent } from "../Skeleton/SkeletonImageComponents";
 
 export function ImageDetailProduct({ product }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -42,29 +43,15 @@ export function ImageDetailProduct({ product }) {
 
   const shouldRenderArrows = product.cover.length > 3;
 
-  const renderPhotos = () => {
-    return product.cover.map((index) => (
-      <img
-        key={index.objID}
-        src={index.cover}
-        alt={`${index.name}-${index.id}`}
-        className={`slide-photo ${
-          index === selectedImageIndex ? "active" : ""
-        }`}
-        onClick={() => handleImageClick(index)}
-      />
-    ));
-  };
-
   return (
     <>
       <br />
       <div className="section-info-product">
         <div className="main-image-container">
           <div className="main-image-wrapper">
-            <img
-              src={`/project-vite-react-ecommerce/${product.cover[selectedImageIndex]}`}
-              alt={`${product.name}-${selectedImageIndex}`}
+            <SkeletonImageComponent
+              productImage={`/project-vite-react-ecommerce/${product.cover[selectedImageIndex]}`}
+              productName={`${product.name}-${selectedImageIndex}`}
               className="main-image"
             />
           </div>

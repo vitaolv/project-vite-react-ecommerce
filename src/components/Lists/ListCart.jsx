@@ -8,6 +8,7 @@ import { Contador } from "../Count/Contador";
 import { updateQuantityAction } from "../../store/actions/ActionsCart";
 import { getFormattedPriceValue } from "../../utils/prices/priceUtils";
 import { ModalConfirmationToRemove } from "../Modais/ModalConfirmationToRemove";
+import { SkeletonImageComponent } from "../Skeleton/SkeletonImageComponents";
 
 export function ListCart() {
   const cart = useSelector((state) => state.cart.productInCart);
@@ -46,9 +47,9 @@ export function ListCart() {
                   }`}
                 >
                   <div className="product-details">
-                    <img
-                      src={item.cover[0]}
-                      alt={item.name}
+                    <SkeletonImageComponent
+                      productImage={item.cover[0]}
+                      productName={item.name}
                       className="product-image"
                     />
                     <span>
