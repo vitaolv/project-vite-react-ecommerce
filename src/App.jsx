@@ -34,16 +34,18 @@ function App() {
         <Header />
         <ProductProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/produto/:nome/:id" element={<ProductDetail />} />
-            <Route path="/carrinho-e-pagamento" element={<CartWithPayment />} />
+            <Route path="/project-vite-react-ecommerce/" element={<Home />} />
             <Route
-              path="/resultado-da-busca/:term"
-              element={<SearchResultsPage />}
+              path="/project-vite-react-ecommerce/produto/:nome/:id"
+              element={<ProductDetail />}
             />
-            <Route path="*" element={<PageNotFound />} />
             <Route
-              path="/resultado-da-busca/:term"
+              path="/project-vite-react-ecommerce/carrinho-e-pagamento"
+              element={<CartWithPayment />}
+            />
+            <Route path="/*" element={<PageNotFound />} />
+            <Route
+              path="/project-vite-react-ecommerce/resultado-da-busca/:term"
               element={<SearchResultsPage />}
             />
           </Routes>
