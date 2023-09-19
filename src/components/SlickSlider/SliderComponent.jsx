@@ -1,13 +1,16 @@
-import { Button } from "antd";
+import { Button, Skeleton } from "antd";
 import { settings } from "./SettingsSlickSlider";
 
 import PropTypes from "prop-types";
 
 import Slider from "react-slick";
 
+import { useState } from "react";
+
 import { Link, useLocation } from "react-router-dom";
 
 export function SliderComponent({ products }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const location = useLocation();
   return (
     <Slider {...settings}>
@@ -27,10 +30,13 @@ export function SliderComponent({ products }) {
           }`}
         >
           <div className="product-card">
+            {!imageLoaded && <Skeleton active />}
             <img
               src={product.cover[0]}
               alt={product.name}
               className="card-image-slick"
+              onLoad={() => setImageLoaded(true)}
+              style={{ display: imageLoaded ? "block" : "none" }}
             />
             <h5>{product.name}</h5>
             <h5 style={{ textDecoration: "line-through" }}>
