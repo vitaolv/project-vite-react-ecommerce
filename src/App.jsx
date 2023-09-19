@@ -29,7 +29,7 @@ function App() {
   }, [productInCart]);
 
   return (
-    <BrowserRouter basename="/project-vite-react-ecommerce">
+    <BrowserRouter>
       <StoreProvider>
         <Header />
         <ProductProvider>
