@@ -22,7 +22,7 @@ export function ButtonToCartOrBuyNow({ onClick }) {
 
   const handleBuyNow = () => {
     handleAddToCart();
-    navigate("/project-vite-react-ecommerce/carrinho-e-pagamento");
+    navigate("/carrinho-e-pagamento");
   };
 
   return (

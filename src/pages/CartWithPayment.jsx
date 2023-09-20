@@ -36,8 +36,7 @@ export default function CartWithPayment() {
               />
               <h4>Seu carrinho de compras está vazio.</h4>
               <p>
-                Há produtos esperam por você,{" "}
-                <Link to="/project-vite-react-ecommerce/">dê uma olhada.</Link>{" "}
+                Há produtos esperam por você, <Link to="/">dê uma olhada.</Link>{" "}
               </p>
             </div>
           </>

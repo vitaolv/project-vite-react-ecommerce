@@ -11,7 +11,7 @@ export default function Notification() {
     if (notification.isVisible) {
       const timer = setTimeout(() => {
         dispatch(hideNotification());
-      }, 10000);
+      }, 5000);
 
       return () => {
         clearTimeout(timer);

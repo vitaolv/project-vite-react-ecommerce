@@ -34,14 +34,10 @@ export function ListCart() {
               <div className="item-info">
                 <Link
                   key={item.objID}
-                  to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
-                    item.name
-                  )}/${item.id}`}
+                  to={`/produto/${encodeURIComponent(item.name)}/${item.id}`}
                   className={`card-hover ${
                     location.pathname ===
-                    `/project-vite-react-ecommerce/produto/${encodeURIComponent(
-                      item.name
-                    )}/${item.id}`
+                    `/produto/${encodeURIComponent(item.name)}/${item.id}`
                       ? "active"
                       : ""
                   }`}

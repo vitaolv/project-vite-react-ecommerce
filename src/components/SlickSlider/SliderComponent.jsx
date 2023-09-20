@@ -14,14 +14,10 @@ export function SliderComponent({ products }) {
       {products.map((product) => (
         <Link
           key={product.id}
-          to={`/project-vite-react-ecommerce/produto/${encodeURIComponent(
-            product.name
-          )}/${product.id}`}
+          to={`/produto/${encodeURIComponent(product.name)}/${product.id}`}
           className={`card-hover ${
             location.pathname ===
-            `/project-vite-react-ecommerce/produto/${encodeURIComponent(
-              product.name
-            )}/${product.id}`
+            `/produto/${encodeURIComponent(product.name)}/${product.id}`
               ? "active"
               : ""
           }`}

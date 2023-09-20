@@ -3,6 +3,8 @@ import { Result, Space, Button } from "antd";
 import { Spinner } from "react-bootstrap";
 import { Alert } from "antd";
 
+import "/src/css/DialogPayment/ButtonCloseModal.css";
+
 import { useDispatch } from "react-redux";
 
 import PropTypes from "prop-types";
