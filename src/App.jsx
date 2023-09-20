@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./partials/Header";
 import Footer from "./partials/Footer";
@@ -29,31 +29,29 @@ function App() {
   }, [productInCart]);
 
   return (
-    <BrowserRouter>
-      <StoreProvider>
-        <Header />
-        <ProductProvider>
-          <Routes>
-            <Route path="/project-vite-react-ecommerce/" element={<Home />} />
-            <Route
-              path="/project-vite-react-ecommerce/produto/:nome/:id"
-              element={<ProductDetail />}
-            />
-            <Route
-              path="/project-vite-react-ecommerce/carrinho-e-pagamento"
-              element={<CartWithPayment />}
-            />
-            <Route path="/*" element={<PageNotFound />} />
-            <Route
-              path="/project-vite-react-ecommerce/resultado-da-busca/:term"
-              element={<SearchResultsPage />}
-            />
-          </Routes>
-        </ProductProvider>
-        <Notification />
-        <Footer />
-      </StoreProvider>
-    </BrowserRouter>
+    <StoreProvider>
+      <Header />
+      <ProductProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/project-vite-react-ecommerce/produto/:nome/:id"
+            element={<ProductDetail />}
+          />
+          <Route
+            path="/project-vite-react-ecommerce/carrinho-e-pagamento"
+            element={<CartWithPayment />}
+          />
+          <Route path="/*" element={<PageNotFound />} />
+          <Route
+            path="/project-vite-react-ecommerce/resultado-da-busca/:term"
+            element={<SearchResultsPage />}
+          />
+        </Routes>
+      </ProductProvider>
+      <Notification />
+      <Footer />
+    </StoreProvider>
   );
 }
 
