@@ -2,6 +2,7 @@
 
 .color-nav {
   background-color: #e3d98d;
+  box-shadow: 0px 3px 20px 5px #e3d98d;
 }
 
 .navbar-collapse {
