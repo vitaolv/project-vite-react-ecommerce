@@ -6,7 +6,7 @@ export function LeftNavLinksComponents() {
 
   return (
     <>
-      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/project-vite-react-ecommerce/">Home</Nav.Link>
       <Nav.Link
         to="/"
         onClick={(event) => {
