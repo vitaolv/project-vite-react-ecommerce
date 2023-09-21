@@ -1,9 +1,11 @@
 import "/src/css/Carousel.css";
 
 import Carousel from "react-bootstrap/Carousel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function ControlCarousel() {
+  const navigate = useNavigate();
+
   return (
     <div className="content-carrousel">
       <Carousel variant="dark">
@@ -13,9 +15,21 @@ export function ControlCarousel() {
           </Link>
         </Carousel.Item>
         <Carousel.Item>
-          <a href="#section-about">
+          <Link
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+              const sectionIdToScrollTo = "content-card-about";
+              window.scrollTo({
+                top: document
+                  .getElementById(sectionIdToScrollTo)
+                  .getBoundingClientRect().top,
+              });
+            }}
+          >
             <img src="assets/sobre-empresa.png" alt="Sobre a Empresa" />
-          </a>
+          </Link>
         </Carousel.Item>
       </Carousel>
     </div>
