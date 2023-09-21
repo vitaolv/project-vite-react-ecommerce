@@ -68,6 +68,11 @@
     visibility: hidden; /* Para ocultar a imagem */
   }
 
+  .section-about {
+    overflow: hidden;
+    box-shadow: inset 0 110px #ededed, inset 0 -330px #ededed;
+  }
+
   .text-about {
     width: 90%;
     margin: 0 auto;
@@ -94,7 +99,7 @@
 
   .section-about {
     overflow: hidden;
-    box-shadow: inset 0 140px #ededed, inset 0 -410px #ededed;
+    box-shadow: inset 0 100px #ededed, inset 0 -430px #ededed;
   }
 
   .subtexts-about {
@@ -114,7 +119,7 @@
 
   .section-about {
     overflow: hidden;
-    box-shadow: inset 0 100px #ededed, inset 0 -500px #ededed;
+    box-shadow: inset 0 82px #ededed, inset 0 -450px #ededed;
   }
 
   .subtexts-about {
@@ -127,14 +132,21 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 425px) {
+  .section-about {
+    overflow: hidden;
+    box-shadow: inset 0 74px #ededed, inset 0 -520px #ededed;
+  }
+}
+
+@media (max-width: 355px) {
   .text-about {
     width: 90%;
   }
 
   .section-about {
     overflow: hidden;
-    box-shadow: inset 0 20px #ededed, inset 0 -520px #ededed;
+    box-shadow: inset 0 20px #ededed, inset 0 -545px #ededed;
   }
 
   .subtexts-about {
@@ -144,5 +156,12 @@
 
   .p-subtext {
     width: 100%;
+  }
+}
+
+@media (max-width: 300px) {
+  .section-about {
+    overflow: hidden;
+    box-shadow: inset 0 20px #ededed, inset 0 -580px #ededed;
   }
 }

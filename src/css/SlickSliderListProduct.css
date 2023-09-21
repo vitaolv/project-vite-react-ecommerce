@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+.slider-container h4 {
+  margin: 0 34px 0 34px;
+}
+
 .product-card {
   background-color: #fff;
   backdrop-filter: blur(10px);

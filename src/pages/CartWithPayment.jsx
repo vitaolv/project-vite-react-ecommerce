@@ -15,6 +15,7 @@ export default function CartWithPayment() {
   return (
     <>
       <div className="container-page-cartWithPayment">
+        <br />
         <h2>Meu carrinho de compras</h2>
 
         {cart.length > 0 ? (
