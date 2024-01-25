@@ -1,14 +1,14 @@
 .ant-radio-button-wrapper:hover {
-  color: #bba66e !important;
+  color: #252525 !important;
 
   border-color: #bba66e !important;
-  background-color: #fffeff !important;
+  background-color: #bba66e !important;
 }
 
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-  border-color: #bba66e !important;
+  border-color: #e3d98d !important;
   color: #252525 !important;
-  background-color: #bba66e !important;
+  background-color: #e3d98d !important;
   box-shadow: 0px 6px 10px rgba(000, 000, 000, 0.25);
 }
 
