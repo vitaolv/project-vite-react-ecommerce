@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { hideNotification } from "../../store/actions/ActionsNotification";
 import { useDispatch, useSelector } from "react-redux";
-import Alert from "react-bootstrap/Alert";
+import { Alert } from "antd";
 
 export default function Notification() {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export default function Notification() {
     >
       {notification.isVisible && (
         <Alert
-          variant={notification.variant}
+          type={notification.variant}
           onClose={() => handleclose()}
           dismissible
         >

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Result, Space, Button } from "antd";
+import { Result, Space, Button, Alert } from "antd";
 import { Spinner } from "react-bootstrap";
-import { Alert } from "antd";
 
 import "/src/css/DialogPayment/ButtonCloseModal.css";
 
