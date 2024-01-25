@@ -13,22 +13,20 @@
   bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
+  text-align: start;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 500px) {
   .notification-container {
-    width: 95%;
-  }
-}
-
-@media (max-width: 300px) {
-  .notification-container {
+    text-align: center;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
   }
 }
 

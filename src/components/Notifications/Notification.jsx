@@ -32,12 +32,13 @@ export default function Notification() {
     >
       {notification.isVisible && (
         <Alert
+          message={notification.message}
           type={notification.variant}
           onClose={() => handleclose()}
+          showIcon
+          closeIcon
           dismissible
-        >
-          {notification.message}
-        </Alert>
+        />
       )}
     </div>
   );
